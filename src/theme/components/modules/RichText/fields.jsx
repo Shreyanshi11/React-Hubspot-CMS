@@ -2,13 +2,13 @@ import {
   ModuleFields,
   FieldGroup,
 } from '@hubspot/cms-components/fields';
-import RichTextContent from '../../components/RichTextContent/index.jsx';
+// import RichTextContent from '../../components/RichTextContent/index.jsx';
 import SectionStyle from '../../components/fieldLibrary/SectionStyle/index.jsx';
 
 
 export const fields = (
   <ModuleFields>
-    <RichTextContent featureSet='extended' />
+    {/* <RichTextContent featureSet='extended' /> */}
     
     <FieldGroup
       label='Styles'
