@@ -215,7 +215,7 @@ import { logInfo } from '@hubspot/cms-components';
         <ul
           role="menu"
           className={MenuClasses}
-          style={isMobileMenu ? {} : { ...getAlignmentFieldCss(menuAlignment), ...listStyles }}
+          style={isMobileMenu ? {} : { ...listStyles }}
         >
           {menuDataArray.map((item, index) => (
             <MenuItemComponent
