@@ -6,7 +6,7 @@ import {
     useMemo,
   } from 'react';
   import MenuItemComponent from './MenuItemComponent.jsx';
-  import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
+  // import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
 import { logInfo } from '@hubspot/cms-components';
   
   function MenuComponent(props) {
