@@ -19,6 +19,7 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
+    "@hubspot/cms-components": "^1.0.35",
     "@react-icons/all-files": "^4.1.0",
     "html-react-parser": "^5.2.3",
     "isomorphic-dompurify": "^2.24.0",
