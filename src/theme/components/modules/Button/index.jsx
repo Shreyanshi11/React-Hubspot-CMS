@@ -25,7 +25,7 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: var(--buttons__gap);
-  justify-content: ${props => getAlignmentFieldCss(props.$alignment).justifyContent};
+ // justify-content: ${props => getAlignmentFieldCss(props.$alignment).justifyContent};
   // When the container around the button gets smaller we want buttons to stack
   @container (max-width: 400px) {
     flex-direction: column;
