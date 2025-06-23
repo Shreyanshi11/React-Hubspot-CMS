@@ -1,32 +1,5 @@
-/* font-face */
-@font-face {
-  font-family: 'bahnschrift';
-  src: url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/bahnschrift/bahnschrift.eot');
-  src: url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/bahnschrift/bahnschrift.eot?#iefix')
-      format('embedded-opentype'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/bahnschrift/bahnschrift.woff')
-      format('woff'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/bahnschrift/bahnschrift.ttf')
-      format('truetype'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/bahnschrift/bahnschrift.svg#bahnschrift')
-      format('svg');
-  font-weight: 700;
-}
-
-/* @font-face {
-  font-family: 'MinionProRegular';
-  src: url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/MinionProRegular/MinionProRegular.eot');
-  src: url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/MinionProRegular/MinionProRegular.eot?#iefix')
-      format('embedded-opentype'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/MinionProRegular/MinionProRegular.woff')
-      format('woff'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/MinionProRegular/MinionProRegular.ttf')
-      format('truetype'),
-    url('https://8882038.fs1.hubspotusercontent-na1.net/hubfs/8882038/Theme_2025/Fonts/MinionProRegular/MinionProRegular.svg#bahnschrift')
-      format('svg');
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*  font-family: "Inter", sans-serif; */
 
 *,
 :after,
@@ -85,43 +58,31 @@ h5,
 h6 {
   line-height: 1.25;
   margin: 0 0 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.display_2 {
-  font-size: 82px;
-  color: #fff;
-  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
 }
 
 h1 {
-  font-size: 40px;
-  line-height: 1.2em;
+  line-height: 1.5;
 }
 
 h2 {
-  font-size: 34px;
-  line-height: 1.1em;
+  line-height: 1.5;
 }
 
 h3 {
-  font-size: 28px;
-  line-height: 1.1em;
+  line-height: 1.35;
 }
 
 h4 {
-  font-size: 24px;
-  line-height: 1.3em;
+  line-height: 1.35;
 }
 
 h5 {
-  font-size: 20px;
-  line-height: 1.3125em;
+  line-height: 1.3125;
 }
 
 h6 {
-  font-size: 16px;
-  line-height: 1.3125em;
+  line-height: 1.3125;
 }
 
 /* Lists */
