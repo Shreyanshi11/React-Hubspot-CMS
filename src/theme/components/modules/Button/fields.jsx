@@ -49,6 +49,7 @@ export const fields = (
   <ModuleFields>
     <RepeatedFieldGroup
       label='Buttons'
+      labelFieldName="buttonContentText"
       name='groupButtons'
       occurrence={{
         min: 1,
