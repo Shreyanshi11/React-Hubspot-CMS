@@ -232,9 +232,9 @@ export const Component = (props) => {
     groupButton: { buttonStyleVariant, buttonStyleSize },
   } = styles;
 
-  // const translations = useLanguageVariants();
-  // const showLanguageSwitcher = translations?.length > 1;
-  // const langSwitcherIconFieldPath = 'globe_icon';
+  const translations = useLanguageVariants();
+  const showLanguageSwitcher = translations?.length > 1;
+  const langSwitcherIconFieldPath = 'globe_icon';
 
   const mobileBreakpoint = showLanguageSwitcher ? MOBILE_BREAKPOINT_WITH_LANG_SWITCHER : MOBILE_BREAKPOINT_NO_LANG_SWITCHER;
 
@@ -348,4 +348,3 @@ export const meta = {
   label: 'Site header',
   content_types: ['BLOG_LISTING', 'BLOG_POST', 'SITE_PAGE', 'LANDING_PAGE'],
 };
-
