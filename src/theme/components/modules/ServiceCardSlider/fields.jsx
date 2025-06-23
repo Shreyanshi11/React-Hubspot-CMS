@@ -2,7 +2,8 @@ import React from 'react';
 import {
 FieldGroup,
 ModuleFields,
-ImageField
+ImageField,
+RepeatedFieldGroup
 } from '@hubspot/cms-components/fields';
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx';
