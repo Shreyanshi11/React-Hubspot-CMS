@@ -1,7 +1,7 @@
 import { Icon, logInfo, usePageUrl } from '@hubspot/cms-components';
 import StyledComponentsRegistry from '../../components/StyledComponentsRegistry/StyledComponentsRegistry.jsx';
 import { styled } from 'styled-components';
-import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
+// import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
 
 
 // Utility Functions
