@@ -11,7 +11,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 
 export default function ServiceCard({ groupContent }) {
-
+    console.log('groupContent',groupContent);
      const settings = {
         dots: true,
         infinite: true,
