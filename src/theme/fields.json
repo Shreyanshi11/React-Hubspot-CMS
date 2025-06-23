@@ -1064,7 +1064,7 @@
                     "display": "slider",
                     "max": 50,
                     "min": 0,
-                    "default": 0
+                    "default": 5
                   }
                 ]
               },
@@ -1104,7 +1104,7 @@
                     "type": "color",
                     "default": {
                       "color": "#3D63EA",
-                      "opacity": 80
+                      "opacity": 100
                     }
                   },
                   {
@@ -1296,7 +1296,7 @@
                     "display": "slider",
                     "max": 50,
                     "min": 0,
-                    "default": 0
+                    "default": 5
                   }
                 ]
               },
