@@ -291,6 +291,11 @@ button:disabled,
 
 
 /* buttons new css */
+.button--primary:hover{
+  background: linear-gradient(225deg, #57007B 0%, #6675F7 100%) !important;
+  opacity:1 !important;
+}
+
 .button--secondary{
   background: linear-gradient(225deg, #6675F7 0%, #57007B 100%) !important;
 }
