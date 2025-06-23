@@ -24,7 +24,7 @@ export function Component(props) {
           <div className='page-center'>
             <div className='inner_slider_container'>
            
-            <Island module={ServiceCard} content={groupContent} clientOnly hydrateOn='idle' />
+            <Island module={ServiceCard} content={groupContent} clientOnly hydrateOn='load' />
 
             </div>
           </div>
