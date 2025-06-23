@@ -1,0 +1,53 @@
+<!--
+  templateType: none
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8" />
+    {% if page_meta.html_title or pageTitle %}
+      <title>{{ page_meta.html_title or pageTitle }}</title>
+    {% endif %}
+    {% if brand_settings.primaryFavicon.src %}
+      <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
+    {% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}" />
+    
+  
+    <link rel="preload" href="{{ get_asset_url('../css/default.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ get_asset_url('../css/default.css') }}"></noscript>
+
+    <link rel="preload" href="{{ get_asset_url('../css/variables.hubl.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ get_asset_url('../css/variables.hubl.css') }}"></noscript>
+
+    {{ require_css(get_asset_url("../css/customStyles.css")) }}
+
+    <link rel="preload" href="{{ get_asset_url('../css/theme-overrides.hubl.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ get_asset_url('../css/theme-overrides.hubl.css') }}"></noscript>
+
+
+
+    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ standard_header_includes }}
+  </head>
+  <body class="body-wrapper {{ builtin_body_classes }}">
+    {% block header %}
+    {% global_partial path="../partials/header.hubl.html" %}
+  {% endblock header %}
+
+    <div id="main-content">
+      {% block body %}
+      {% endblock body %}
+    </div>
+    {% block footer %}
+    {% global_partial path="../partials/footer.hubl.html" %}
+  {% endblock footer %}
+    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {% set custom_footer_includes = standard_footer_includes|split('\n') %}
+      {% for line in custom_footer_includes %}      
+        {% unless line is string_containing '{{portal_id}}.js' %}
+          {{line}}
+        {% endunless %}      
+      {% endfor %}
+  </body>
+</html>

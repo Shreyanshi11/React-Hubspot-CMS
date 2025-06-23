@@ -1,0 +1,97 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+
+{# Partial variables #}
+
+
+<header class="hs-header">
+
+  {% dnd_area "header" label="Header" %}
+    {% dnd_section
+      full_width=true,
+      vertical_alignment="MIDDLE"
+      padding={
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0 
+      }
+    %}
+      {% dnd_module
+        path="../../components/modules/SiteHeader",
+        groupNavigation={
+          "menu": "default"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+
+</header>
+
+{% require_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Add the <span class="child-trigger-new">...</span> after specific <a> elements
+      document.querySelectorAll(".custom-menu-primary-new .flyouts .hs-item-has-children > a").forEach(link => {
+        const trigger = document.createElement("span");
+        trigger.className = "child-trigger-new";
+        trigger.innerHTML = '<span></span><i></i>';
+        link.insertAdjacentElement("afterend", trigger);
+      });
+
+      // Add click event listeners to all .child-trigger-new elements
+      document.querySelectorAll(".child-trigger-new").forEach(trigger => {
+        trigger.addEventListener("click", function () {
+          const parent = this.parentElement;
+          const siblings = Array.from(parent.parentElement.children).filter(el =>
+            el !== parent && el.classList.contains("hs-item-has-children")
+          );
+
+          siblings.forEach(sibling => {
+            sibling.querySelectorAll(".child-trigger-new").forEach(t => t.classList.remove("child-open"));
+            sibling.querySelectorAll(".hs-menu-children-wrapper").forEach(w => {
+              w.style.display = "none";
+            });
+          });
+
+          const wrapper = this.nextElementSibling;
+
+          if (wrapper && wrapper.classList.contains("hs-menu-children-wrapper")) {
+            const isVisible = wrapper.style.display === "block";
+            wrapper.style.display = isVisible ? "none" : "block";
+
+            wrapper.querySelectorAll(".hs-item-has-children .hs-menu-children-wrapper").forEach(w => {
+              w.style.display = "none";
+            });
+            wrapper.querySelectorAll(".hs-item-has-children .child-trigger-new").forEach(t => {
+              t.classList.remove("child-open");
+            });
+          }
+
+          this.classList.toggle("child-open");
+        });
+      });
+
+      // Get the logo element
+      {# var logo = document.querySelector('.headerLogo');
+
+      // Get all top-level <li> inside the menu
+      var menuItems = document.querySelectorAll('.header__menu .hs-menu-flow-horizontal > ul > li');
+
+      if (menuItems.length > 1 && logo) {
+          // Create a new <li> element
+          var newLi = document.createElement('li');
+
+          // Move the logo inside the new <li>
+          newLi.appendChild(logo);
+
+          // Insert the new <li> after the second <li>
+          menuItems[1].parentNode.insertBefore(newLi, menuItems[1].nextSibling);
+      } #}
+  });
+</script>
+{% end_require_js %}
+

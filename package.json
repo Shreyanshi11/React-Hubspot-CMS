@@ -1,0 +1,29 @@
+{
+  "name": "getting-started-with-cms-react",
+  "description": "Getting started with CMS React",
+  "devDependencies": {
+    "@hubspot/cli": "^7.4.2",
+    "@hubspot/prettier-plugin-hubl": "latest",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "start": "cd src/theme && npm start",
+    "prettier": "prettier . --check",
+    "deploy": "hs project upload"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "html-react-parser": "^5.2.3",
+    "isomorphic-dompurify": "^2.24.0",
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
+  }
+}

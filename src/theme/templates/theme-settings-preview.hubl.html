@@ -1,0 +1,100 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Theme settings preview template
+-->
+{% extends "./layouts/base.hubl.html" %}
+
+{% block body %}
+
+<div style="display: flex; padding: 50px; justify-content: space-between;">
+  <div>
+    <span class="h5">Typography</span>
+    <hr>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Paragraph 1</p>
+    <p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque.</p>
+    <div class="hs_cos_wrapper_type_rich_text">
+      <blockquote>
+        <h5>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</h5>
+        <p><em> - Vestibulum id ligula</em></p>
+      </blockquote>
+    </div>
+    <ul>
+      <li>Mauris consequat urna id mauris congue, ac molestie felis tincidunt.
+        <ul>
+          <li>Proin a ipsum eget sem ullamcorper</li>
+          <li>Aliquam at erat maximus</li>
+          <li>Duis interdum ante sit</li>
+        </ul>
+      </li>
+      <li>Proin a ipsum eget sem ullamcorper rutrum at in metus.</li>
+      <li>Fusce dignissim dui in ante hendrerit, nec vehicula quam eleifend.</li>
+      <li>Aliquam at erat maximus, molestie risus id, vehicula risus.</li>
+      <li>Fusce non leo sit amet sem egestas posuere quis ac tortor.</li>
+      <li>Duis interdum ante sit amet scelerisque accumsan.</li>
+    </ul>
+    <ol>
+      <li>Mauris consequat urna id mauris congue, ac molestie felis tincidunt.
+        <ol>
+          <li>Proin a ipsum eget sem ullamcorper</li>
+          <li>Aliquam at erat maximus</li>
+          <li>Duis interdum ante sit</li>
+        </ol>
+      </li>
+      <li>Proin a ipsum eget sem ullamcorper rutrum at in metus.</li>
+      <li>Fusce dignissim dui in ante hendrerit, nec vehicula quam eleifend.</li>
+      <li>Aliquam at erat maximus, molestie risus id, vehicula risus.</li>
+      <li>Fusce non leo sit amet sem egestas posuere quis ac tortor.</li>
+      <li>Duis interdum ante sit amet scelerisque accumsan.</li>
+    </ol>
+
+    <span class="caption h5">Caption</span>
+    <div>
+    </div>
+    <div style="margin-top: 30px;">
+      <div style="display: inline-flex; flex-direction: column; gap: 15px;">
+        <span class="h5">Tags</span>
+        <span class="tag">Tags</span>
+        <span class="tag">Tags2</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; width: 50%;">
+    <div>
+      <span class="h5">Buttons</span>
+      <hr>
+      <div style="display: flex; flex-wrap: wrap; flex-direction: column;gap: 10px;">
+        {% module "button-primary"
+        path="../components/modules/Button"
+        buttonContentText="PRIMARY BUTTON"
+        %}
+
+      </div>
+    </div>
+    <div style="margin-top: 30px">
+      <span class="h5">Links</span>
+      <hr>
+      <div style="display: flex; flex-direction: column;">
+        <a class="link--primary">Primary Link</a>
+        <a class="link--primary">Primary Link with a bit more text, for example</a>
+
+        <a class="link--secondary">Secondary Link</a>
+        <a class="link--secondary">Secondary Link with a bit more text, for example</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 30px;">
+      <span class="h5">Forms</span>
+      <hr>
+      {% module "form" path="@hubspot/form" %}
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
