@@ -1,5 +1,5 @@
 import React from 'react';
-import { logInfo, RichText } from '@hubspot/cms-components';
+import { logInfo, RichText, Island } from '@hubspot/cms-components';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import StyledComponentsRegistry from '../../components/StyledComponentsRegistry/StyledComponentsRegistry.jsx';
