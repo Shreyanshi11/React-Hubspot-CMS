@@ -966,7 +966,8 @@
                   }
                 },
                 "default": {
-                  "color": "#FAFAFA"
+                  "color": "#FAFAFA",
+                  "variant": "600"
                 }
               },
               {
@@ -981,7 +982,7 @@
                 ],
                 "display": "select",
                 "sortable": false,
-                "default": "uppercase"
+                "default": "capitalize"
               },
               {
                 "label": "Background color",
@@ -1094,7 +1095,7 @@
                     }
                     ,
                 "default": {
-                  "color": "#FFFFFF"
+                  "color": "#FAFAFA"
                 }
                   },
                   {
@@ -1102,7 +1103,7 @@
                     "name": "bg_color",
                     "type": "color",
                     "default": {
-                      "color": "#FAFAFA",
+                      "color": "#3D63EA",
                       "opacity": 80
                     }
                   },
@@ -1198,7 +1199,8 @@
                   }
                 },
                 "default": {
-                  "color": "#FAFAFA"
+                  "color": "#FAFAFA",
+                  "variant":"600"
                 }
               },
               {
@@ -1213,7 +1215,7 @@
                 ],
                 "display": "select",
                 "sortable": false,
-                "default": "uppercase"
+                "default": "capitalize"
               },
               {
                 "label": "Background color",
