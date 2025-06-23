@@ -165,7 +165,7 @@ const MainNav = styled.div`
     }
   }
 
-  @media (max-width:) {
+  @media (max-width: ${props => props.$mobileBreakpoint}) {
     display: none;
   }
 
@@ -185,7 +185,7 @@ const ButtonContainer = styled.div`
 
 const MobileMenuContainer = styled.div`
 display: none;
-  @media (max-width: ) {
+  @media (max-width: ${props => props.$mobileBreakpoint}) {
     display: block;
   }
 `;
@@ -232,17 +232,17 @@ export const Component = (props) => {
     groupButton: { buttonStyleVariant, buttonStyleSize },
   } = styles;
 
-  // const translations = useLanguageVariants();
-  // const showLanguageSwitcher = translations?.length > 1;
-  // const langSwitcherIconFieldPath = 'globe_icon';
+  const translations = useLanguageVariants();
+  const showLanguageSwitcher = translations?.length > 1;
+  const langSwitcherIconFieldPath = 'globe_icon';
 
-  // const mobileBreakpoint = showLanguageSwitcher ? MOBILE_BREAKPOINT_WITH_LANG_SWITCHER : MOBILE_BREAKPOINT_NO_LANG_SWITCHER;
+  const mobileBreakpoint = showLanguageSwitcher ? MOBILE_BREAKPOINT_WITH_LANG_SWITCHER : MOBILE_BREAKPOINT_NO_LANG_SWITCHER;
 
 
   // logInfo(props)
   return (
     <StyledComponentsRegistry>
-      <SiteHeader className="site-header" $navBarBackgroundColor={menuBackgroundColor} >
+      <SiteHeader className="site-header" $navBarBackgroundColor={menuBackgroundColor} $mobileBreakpoint={mobileBreakpoint}>
         <SharedIslandState value={[]}>
           <SiteHeaderContainer>
             <LogoButtonContainer>
@@ -259,6 +259,7 @@ export const Component = (props) => {
               $menuAccentColor={menuAccentColor}
               $menuTextColor={menuTextColor}
               $menuTextHoverColor={menuTextHoverColor}
+              $mobileBreakpoint={mobileBreakpoint}
               className="header__main-nav"
             >
               <StyledIsland
@@ -297,7 +298,7 @@ export const Component = (props) => {
               </ButtonContainer>
             )}
 
-            <MobileMenuContainer className="header__mobile-menu-container">
+            <MobileMenuContainer className="header__mobile-menu-container" $mobileBreakpoint={mobileBreakpoint}>
               <StyledIsland
                 module={MobileMenuIsland}
                 menuDataArray={navDataArray}
@@ -314,6 +315,9 @@ export const Component = (props) => {
                 buttonStyleSize={buttonStyleSize}
                 groupButton={groupButton}
                 hublData={props.hublData}
+                myAvailableTranslations={translations}
+                languageSwitcherSelectText={languageSwitcherSelectText}
+                langSwitcherIconFieldPath={langSwitcherIconFieldPath}
               />
             </MobileMenuContainer>
           </SiteHeaderContainer>
@@ -344,4 +348,3 @@ export const meta = {
   label: 'Site header',
   content_types: ['BLOG_LISTING', 'BLOG_POST', 'SITE_PAGE', 'LANDING_PAGE'],
 };
-
