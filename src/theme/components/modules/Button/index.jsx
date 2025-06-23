@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx';
 import { getLinkFieldHref, getLinkFieldRel, getLinkFieldTarget, setAriaLabel } from '../../utils/content-fields.jsx';
 import { logInfo } from '@hubspot/cms-components';
-import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
+// import { getAlignmentFieldCss } from '../../utils/style-fields.jsx';
 
 
 
@@ -25,7 +25,7 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: var(--buttons__gap);
-  justify-content: ${props => getAlignmentFieldCss(props.$alignment).justifyContent};
+  // justify-content: ${props => getAlignmentFieldCss(props.$alignment).justifyContent};
   // When the container around the button gets smaller we want buttons to stack
   @container (max-width: 400px) {
     flex-direction: column;
