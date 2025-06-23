@@ -289,6 +289,25 @@ button:disabled,
   transform: translate(4px, 0);
 }
 
+
+/* buttons new css */
+.button--secondary{
+  background: linear-gradient(225deg, #6675F7 0%, #57007B 100%) !important;
+}
+.button--secondary:hover{
+  background: linear-gradient(225deg, #57007B 0%, #6675F7 100%) !important;
+}
+
+.button--tertiary{
+  background: linear-gradient(225deg, #FFC656 0%, #F16063 100%) !important;
+}
+.button--tertiary:hover{
+  background: linear-gradient(225deg, #F16063 0%, #FFC656 100%) !important;
+}
+
+
+
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 }
 
