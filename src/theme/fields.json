@@ -14,7 +14,7 @@
           }
         },
         "default": {
-          "color": "#122C41"
+          "color": "#718096"
         }
       },
       {
@@ -27,7 +27,7 @@
           }
         },
         "default": {
-          "color": "#B68825"
+          "color": "#1A202C"
         }
       },
       {
@@ -64,9 +64,9 @@
         },
         "load_external_fonts": true,
         "default": {
-          "color": "#757575",
+          "color": "#718096",
           "fallback": "sans-serif",
-          "font": "Montserrat",
+          "font": "Inter",
           "font_set": "GOOGLE",
           "variant": "400"
         }
@@ -85,9 +85,9 @@
           }
         },
         "default": {
-          "color": "#252525",
+          "color": "#1A202C",
           "fallback": "sans-serif",
-          "font": "bahnschrift",
+          "font": "Inter",
           "font_set": "GOOGLE",
           "variant": "700"
         }
@@ -108,7 +108,7 @@
         "max": 1600,
         "min": 700,
         "step": 10,
-        "default": 1231
+        "default": 1262
       },
       {
         "label": "Vertical spacing",
@@ -211,7 +211,7 @@
                   }
                 },
                 "default": {
-                  "size": 40,
+                  "size": 45,
                   "size_unit": "px"
                 }
               },
@@ -250,7 +250,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 38
+                "default": 40
               },
               {
                 "label": "Tablet Font Size",
@@ -274,7 +274,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 32
+                "default": 34
               }
             ]
           },
@@ -302,7 +302,7 @@
                   }
                 },
                 "default": {
-                  "size": 34,
+                  "size": 35,
                   "size_unit": "px"
                 }
               },
@@ -456,7 +456,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 24
+                "default": 22
               }
             ]
           },
@@ -638,7 +638,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 16
+                "default": 18
               }
             ]
           },
@@ -666,7 +666,7 @@
                 },
                 "default": {
                   "size": 16,
-                  "color": "#B68825",
+                  "color": "#1A202C",
                   "size_unit": "px"
                 }
               },
@@ -705,7 +705,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 16
+                "default": 18
               },
               {
                 "label": "Tablet Font Size",
@@ -717,7 +717,7 @@
                 "max": 100,
                 "min": 0,
                 "step": 0.1,
-                "default": 16
+                "default": 17
               },
               {
                 "label": "Mobile Font Size",
@@ -841,7 +841,7 @@
                     "type": "number",
                     "help_text": "Value is in pixels",
                     "display": "slider",
-                    "default": 14
+                    "default": 12
                   },
                   {
                     "label": "Vertical spacing",
@@ -878,7 +878,7 @@
                     "type": "number",
                     "help_text": "Value is in pixels",
                     "display": "slider",
-                    "default": 16
+                    "default": 14
                   },
                   {
                     "label": "Vertical spacing",
@@ -889,7 +889,7 @@
                     "max": 200,
                     "min": 0,
                     "step": 1,
-                    "default": 20
+                    "default": 19
                   },
                   {
                     "label": "Horizontal spacing",
@@ -915,7 +915,7 @@
                     "type": "number",
                     "help_text": "Value is in pixels",
                     "display": "slider",
-                    "default": 18
+                    "default": 16
                   },
                   {
                     "label": "Vertical spacing",
@@ -926,7 +926,7 @@
                     "max": 200,
                     "min": 0,
                     "step": 1,
-                    "default": 20
+                    "default": 21
                   },
                   {
                     "label": "Horizontal spacing",
@@ -937,7 +937,7 @@
                     "max": 200,
                     "min": 0,
                     "step": 1,
-                    "default": 30
+                    "default": 32
                   }
                 ]
               }
@@ -966,7 +966,7 @@
                   }
                 },
                 "default": {
-                  "color": "#FFFFFF"
+                  "color": "#FAFAFA"
                 }
               },
               {
@@ -989,11 +989,12 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "theme.colors.secondary.color"
+
                   }
                 },
                 "default": {
-                  "opacity": 100
+                  "opacity": 100,
+                  "color":"#3D63EA"
                 }
               },
               {
@@ -1018,7 +1019,7 @@
                       [ "outset", "Outset" ]
                     ],
                     "display": "select",
-                    "default": "solid"
+                    "default": "none"
                   },
                   {
                     "label": "Width",
@@ -1101,8 +1102,8 @@
                     "name": "bg_color",
                     "type": "color",
                     "default": {
-                      "color": "#a47a21",
-                      "opacity": 100
+                      "color": "#FAFAFA",
+                      "opacity": 80
                     }
                   },
                   {
@@ -1197,7 +1198,7 @@
                   }
                 },
                 "default": {
-                  "color": "#FFFFFF"
+                  "color": "#FAFAFA"
                 }
               },
               {
@@ -1220,11 +1221,11 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "theme.colors.primary.color"
                   }
                 },
                 "default": {
-                  "opacity": 100
+                  "opacity": 100,
+                  "color":"#6675F7"
                 }
               },
               {
@@ -1249,7 +1250,7 @@
                       [ "outset", "Outset" ]
                     ],
                     "display": "select",
-                    "default": "solid"
+                    "default": "none"
                   },
                   {
                     "label": "Width",
@@ -1322,7 +1323,7 @@
                       }
                     },
                     "default": {
-                      "color": "#FFFFFF"
+                      "color": "#FAFAFA"
                     }
                   },
                   {
@@ -1332,11 +1333,10 @@
                     "inherited_value": {
                       "property_value_paths": {
                        
-                        "opacity": "theme.global.buttons.secondary.bg_color.opacity"
                       }
                     },
                     "default": {
-                      "color": "#10283b",
+                      "color": "#6675F7",
                       "opacity": 100
                     }
                   },
@@ -1430,8 +1430,8 @@
                   }
                 },
                 "default": {
-                  "color": "#1F2A37",
-                  "variant": "400"
+                  "color": "#57007B",
+                  "variant": "500"
                 }
 
               },
@@ -1447,7 +1447,7 @@
                 ],
                 "display": "select",
                 "sortable": false,
-                "default": "uppercase"
+                "default": "none"
               },
               {
                 "label": "Underline",
@@ -1459,7 +1459,7 @@
                     "name": "add_underline",
                     "id": "theme.global.buttons.simple.underline.add_underline",
                     "type": "boolean",
-                    "default": true
+                    "default": false
                   },
                   {
                     "label": "Width",
@@ -1523,7 +1523,7 @@
                       }
                     },
                     "default": {
-                      "color": "#000000"
+                      "color": "#57007B"
                     }
                   },
                   {
@@ -2409,9 +2409,9 @@
                   }
                 },
                 "default": {
-                  "variant": "700",
+                  "variant": "500",
                   "size": 15,
-                  "color": "#252525" 
+                  "color": "#4A5568" 
                 }
               },
               {
@@ -2426,7 +2426,7 @@
                 ],
                 "display": "select",
                 "sortable": false,
-                "default": "uppercase"
+                "default": "capitalize"
               },
               {
                 "label": "Hover",
@@ -2452,7 +2452,7 @@
                       }
                     },
                     "default": {
-                      "color": "#b68825" 
+                      "color": "#57007B" 
                     }
                   },
                   {
@@ -2524,8 +2524,12 @@
                 },
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "theme.fonts.primary.color"
+
                   }
+                },
+                "default": {
+                  "color": "#4A5568",
+                  "opacity": 100
                 }
               }
             ]
@@ -2636,7 +2640,7 @@
                   }
                 },
                 "default": {
-                  "color": "#FFFFFF"
+                  "color": "#718096"
                 }
               },
               {
@@ -2739,7 +2743,7 @@
                 "name": "color",
                 "type": "color",
                 "default": {
-                  "color": "#122C41",
+                  "color": "#FFFFFF",
                   "opacity": 100
                 }
               }
