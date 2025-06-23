@@ -32,7 +32,7 @@ export default function ServiceCard({ groupContent }) {
     return (
         <>
             <Slider {...settings}>
-                {groupContent?.map((item, index) => (
+                {groupContent.map((item, index) => (
                     <div key={index} className={Styles.logo_card}>
                     <div className={`${Styles.logo_card_inner} active-border`}>
                         <div className={Styles.image_block}>
