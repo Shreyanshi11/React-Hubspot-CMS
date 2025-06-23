@@ -1104,7 +1104,7 @@
                     "type": "color",
                     "default": {
                       "color": "#3D63EA",
-                      "opacity": 80
+                      "opacity": 100
                     }
                   },
                   {
