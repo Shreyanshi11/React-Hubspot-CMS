@@ -314,7 +314,6 @@ export const Component = (props) => {
                 buttonStyleSize={buttonStyleSize}
                 groupButton={groupButton}
                 hublData={props.hublData}
-                langSwitcherIconFieldPath={langSwitcherIconFieldPath}
               />
             </MobileMenuContainer>
           </SiteHeaderContainer>
