@@ -12,11 +12,6 @@ export function Component(props) {
   const {
     module_id,
     groupContent = [],
-    groupStyle: {
-      groupContent: {
-        headingStyleVariant
-      }
-    },
 
   } = props;
 

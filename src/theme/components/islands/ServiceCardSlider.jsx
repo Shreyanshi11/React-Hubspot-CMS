@@ -41,7 +41,7 @@ export default function ServiceCard({ groupContent }) {
                         <div className={Styles.content_block}>
                         <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
                             <div className='description_container'>
-                            <RichText fieldPath="item.description"></RichText>
+                            <RichText fieldPath={`groupContent[${index}].description`}></RichText>
                             </div>
                         </div>
                     </div>

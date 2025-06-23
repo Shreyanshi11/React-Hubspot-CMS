@@ -33,6 +33,7 @@ export const fields = (
     showLoading={true}
 ></ImageField>
         <HeadingContent />
+         <HeadingStyles headingStyleAsDefault='h3' />
         <RichTextField name='description' label='Description'></RichTextField>
 
     </RepeatedFieldGroup>
@@ -45,14 +46,6 @@ export const fields = (
     >
         <CommonStylesSpacingFields />
 
-        <FieldGroup
-            label='Content'
-            name='groupContent'
-            display='inline'
-        >
-            <HeadingStyles headingStyleAsDefault='h3' />
-        </FieldGroup>            
-        
     </FieldGroup>
 </ModuleFields>
 );
