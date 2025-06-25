@@ -316,14 +316,6 @@ button:disabled,
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 }
 
-.link--primary, .link--primary:hover {
-    color: var(--primary_color);
-    cursor: pointer;
-}
-.link--secondary, .link--secondary:hover {
-    color: var(--secondary_color);
-    cursor: pointer;
-}
 /* Base */
 
 .hs-form-field {
