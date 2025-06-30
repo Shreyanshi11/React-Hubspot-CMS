@@ -1,5 +1,5 @@
 import { logInfo, RichText } from '@hubspot/cms-components';
-import Styles from '../TwoColTextandImage/twocoltextandimage.css';
+import Styles from '../TwoColTextandImage/twocoltextandimage.module.css';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx'
 import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx'
