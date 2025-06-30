@@ -12,78 +12,80 @@ import 'slick-carousel/slick/slick-theme.css';
 
 export default function ServiceCard({ groupContent }) {
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+const [currentSlide, setCurrentSlide] = useState(0);
 
-    const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    arrows: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '60px',
-    afterChange: index => setCurrentSlide(index),
-    responsive: [
-         {
-        breakpoint: 991,
-        settings: {
-        slidesToShow: 2,
-        slidesToShow: 1,
-        centerMode: true,
-        centerPadding: '40px',
-        }
-    },
-    {
-        breakpoint: 768,
-        settings: {
-        slidesToShow: 1,
-        slidesToShow: 1,
-        centerMode: true,
-        centerPadding: '40px',
-        }
+const settings = {
+dots: true,
+infinite: true,
+speed: 700,
+arrows: true,
+    autoplay: true,
+autoplaySpeed: 2000,
+slidesToShow: 3,
+slidesToScroll: 1,
+// centerMode: true,
+// centerPadding: '60px',
+afterChange: index => setCurrentSlide(index),
+responsive: [
+        {
+    breakpoint: 991,
+    settings: {
+    slidesToShow: 2,
+    slidesToShow: 1,
+    // centerMode: true,
+    // centerPadding: '40px',
     }
-    ]
+},
+{
+    breakpoint: 768,
+    settings: {
+    slidesToShow: 1,
+    slidesToShow: 1,
+    // centerMode: true,
+    // centerPadding: '40px',
+    }
+}
+]
 };
 
 return (
-    <>
-        <Slider {...settings}>
-            {groupContent.map((item, index) => (
-                <div key={index} className={Styles.logo_card}>
-                <div className={`${Styles.logo_card_inner} active-border`}>
-                    <div className={Styles.image_block}>
-                      <RenderImage imageField={item.image} />
+<>
+    <Slider {...settings}>
+        {groupContent.map((item, index) => (
+            <div key={index} className={Styles.logo_card}>
+            <div className={`${Styles.logo_card_inner} active-border`}>
+                <div className={Styles.image_block}>
+                    <RenderImage imageField={item.image} />
+                </div>
+                <div className={Styles.content_block}>
+                    <div className={Styles.heading_block}>
+                        <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
                     </div>
-                    <div className={Styles.content_block}>
-                        <div className={Styles.heading_block}>
-                           <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
-                        </div>
-                        <div className='description_container'>
-                        <RichText fieldPath={`groupContent[${index}].description`}></RichText>
-                        </div>
+                    <div className='description_container'>
+                    <RichText fieldPath={`groupContent[${index}].description`}></RichText>
                     </div>
                 </div>
-                </div>
-            ))}
-        </Slider>
-        
-        <div className={Styles.slider_progress_wrapper}>
-    <span className={Styles.slide_index}>
-      {String(currentSlide + 1).padStart(2, '0')}
-    </span>
-    <div className={Styles.progress_bar}>
-      <div
-        className={Styles.progress_fill}
-        style={{
-          width: `${((currentSlide + 1) / groupContent.length) * 100}%`
-        }}
-      ></div>
+            </div>
+            </div>
+        ))}
+    </Slider>
+    
+    <div className={Styles.slider_progress_wrapper}>
+<span className={Styles.slide_index}>
+    {String(currentSlide + 1).padStart(2, '0')}
+</span>
+<div className={Styles.progress_bar}>
+    <div
+    className={Styles.progress_fill}
+    style={{
+        width: `${((currentSlide + 1) / groupContent.length) * 100}%`
+    }}
+    ></div>
+</div>
+<span className={Styles.slide_total}>
+    {String(groupContent.length).padStart(2, '0')}
+</span>
     </div>
-    <span className={Styles.slide_total}>
-      {String(groupContent.length).padStart(2, '0')}
-    </span>
-        </div>
-    </>
+</>
 );
 }
