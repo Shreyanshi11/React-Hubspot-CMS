@@ -20,7 +20,7 @@ export function Component(props) {
     <>
      
         <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-          <div className='page-center'>
+          <div>
             <div className='inner_slider_container'>
            
             <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
