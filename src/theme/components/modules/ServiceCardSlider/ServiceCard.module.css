@@ -7,6 +7,7 @@ object-fit: cover;
 }
 .inner_slider_container {
 overflow: hidden;
+padding: 0 0 0 calc(50vw - 565px);
 }
 .inner_slider_container .slick-slide {
 margin-right: 40px;
@@ -22,7 +23,6 @@ background-color: #fafafa;
 box-shadow: 0px 4px 30px 0px #0000000d;
 border-radius: 16px;
 padding: 16px 36px;
-margin-right: 40px;
 }
 .inner_slider_container .slick-dots {
 bottom: -65px;
@@ -83,9 +83,9 @@ overflow: hidden;
 }
 
 .slider_progress_wrapper .progress_fill {
-height: 100%;
-background-color: #57007b;
-transition: width 0.3s ease;
+    height: 100%;
+    background-color: #57007b;
+    transition: width 0.3s ease;
 }
 
 @media only screen and (max-width:991px){
