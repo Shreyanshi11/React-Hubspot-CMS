@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModuleFields, FieldGroup, RichTextField, BooleanField } from '@hubspot/cms-components/fields';
+import { ModuleFields, FieldGroup, RichTextField, BooleanField, ImageField } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx'
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
@@ -99,6 +99,16 @@ export const fields = (
 
       </FieldGroup>
 
+    </FieldGroup>
+
+    <FieldGroup label="Image Content" name="imagecontent" display="inline">
+      <ImageField
+        label="Image"
+        name="image"
+        resizable={true}
+        responsive={true}
+        showLoading={true}
+      ></ImageField>
     </FieldGroup>
 
   </ModuleFields>
