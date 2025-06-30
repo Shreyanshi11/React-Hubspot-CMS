@@ -249,8 +249,9 @@ button:disabled,
 .button.button--simple:focus {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #122c41;
-  padding-bottom: 10px !important;
+  font-weight: 600;
+  /* border-bottom: 1px solid #122c41; */
+  /* padding-bottom: 10px !important; */
 }
 
 .button.button--simple:active {
