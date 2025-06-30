@@ -9,50 +9,64 @@ import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 const buttonFieldVisibility = {
   boolean_operator: 'OR',
   criteria: [{
-      controlling_field_path: 'groupButton.showButton',
-      controlling_value_regex: 'true',
-      operator: 'EQUAL',
+    controlling_field_path: 'groupButton.showButton',
+    controlling_value_regex: 'true',
+    operator: 'EQUAL',
   }]
 }
 
 const matchButtonType = {
-controlling_field_path: 'groupButton.buttonContentType',
-operator: 'MATCHES_REGEX',
-controlling_value_regex: '^button$'
+  controlling_field_path: 'groupButton.buttonContentType',
+  operator: 'MATCHES_REGEX',
+  controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-controlling_field_path: 'groupButton.buttonContentType',
-operator: 'MATCHES_REGEX',
-controlling_value_regex: '^cta$'
+  controlling_field_path: 'groupButton.buttonContentType',
+  operator: 'MATCHES_REGEX',
+  controlling_value_regex: '^cta$'
 };
 
 const buttonTypeVisibility = {
-boolean_operator: 'OR',
-criteria: [matchButtonType]
+  boolean_operator: 'OR',
+  criteria: [matchButtonType]
 };
 
 const ctaTypeVisibility = {
-boolean_operator: 'OR',
-criteria: [matchCtaType]
+  boolean_operator: 'OR',
+  criteria: [matchCtaType]
 };
 
 const iconTypeVisibility = {
-boolean_operator: 'AND',
-criteria: [
-  matchButtonType,
-  {
-    controlling_field_path: 'groupButton.buttonContentShowIcon',
-    operator: 'MATCHES_REGEX',
-    controlling_value_regex: '^true$'
-  }
-]
+  boolean_operator: 'AND',
+  criteria: [
+    matchButtonType,
+    {
+      controlling_field_path: 'groupButton.buttonContentShowIcon',
+      operator: 'MATCHES_REGEX',
+      controlling_value_regex: '^true$'
+    }
+  ]
 };
 
 export const fields = (
   <ModuleFields>
     <FieldGroup tab="STYLE" name="groupStyle" label="Style">
       <HeadingStyles headingStyleAsDefault="h1" />
+
+      <FieldGroup
+        label='Button Section'
+        name='groupButton'
+        display='inline'
+      >
+        <ButtonStyle
+          buttonStyleDefault='primary'
+          buttonSizeDefault='medium'
+          buttonSizeVisibility={buttonFieldVisibility}
+          buttonStyleVisibility={buttonFieldVisibility}
+        />
+      </FieldGroup>
+
       <CommonStylesSpacingFields />
     </FieldGroup>
 
