@@ -13,17 +13,20 @@ export function Component(props) {
   const {
     module_id,
     groupStyle: {
-      headingStyleVariant, headingStyleColor
+      headingStyleVariant, headingStyleColor,
+      groupButton: {
+        buttonStyleSize,
+        buttonStyleVariant, 
+      }
     },
-    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, button_group: {
-      buttonContentText,
+    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText,  groupButton: {
+      showButton,
+      buttonContentText: text,
       buttonContentLink: link,
-      buttonStyleSize,
-      buttonStyleVariant,
       buttonContentShowIcon: showIcon,
       buttonContentIconPosition: iconPosition,
-      buttonContentIconStyle
-    }
+      buttonContentType
+    },
     }
   } = props;
 
@@ -54,22 +57,23 @@ export function Component(props) {
                     <RichText fieldPath="textcontent.paragraphText" value={paragraphText} />
                   </div>
                 )}
-         
-                  <div className={Styles.button_content}>
-                    <Button
-                      buttonSize={buttonStyleSize}
-                      buttonStyle={buttonStyleVariant}
-                      href={buttonHref}
-                      rel={buttonRel}
-                      target={buttonTarget}
-                      showIcon={showIcon}
-                      iconFieldPath="buttonContentIconPosition"
-                      iconPosition={iconPosition}
-                    >
-                      {buttonContentText}
-                    </Button>
-                  </div>
-        
+
+                <div className={Styles.button_content}>
+                  <Button
+                    buttonSize={buttonStyleSize}
+                    buttonStyle={buttonStyleVariant}
+                    href={buttonHref}
+                    rel={buttonRel}
+                    target={buttonTarget}
+                    showIcon={showIcon}
+                    iconFieldPath='groupButton.buttonContentIcon'
+                    iconPosition={iconPosition}
+                    additionalClassArray={['button-container__button']}
+                    ctaFieldpath={`groupButton.ctaField`}
+                    buttonType={buttonContentType}
+                  >{text}</Button>
+                </div>
+
               </div>
               <div className={Styles.image_container}>
 
