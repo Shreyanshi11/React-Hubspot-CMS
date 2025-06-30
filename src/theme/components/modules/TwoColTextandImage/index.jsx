@@ -1,5 +1,5 @@
-import { Icon, Island, logInfo, RichText } from '@hubspot/cms-components';
-import Styles from '../TwoColTextandImage/twocoltextandimage.css';
+import { logInfo } from '@hubspot/cms-components';
+// import Styles from '../TwoColTextandImage/twocoltextandimage.css';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 
 export function Component(props) {
