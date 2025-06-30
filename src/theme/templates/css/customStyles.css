@@ -25,3 +25,9 @@
 .slick-dots {
     margin-top: 41px;
 }
+.slick-slide{
+    margin-right: 39px;
+}
+.slick-list {
+    overflow: visible !important;
+}
