@@ -25,11 +25,13 @@ return (
   <>
     
       <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-        <div>
-          <div className={Styles.heading_container}>
-              {headingAndTextHeading && (
-            <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
-          )}
+        <div className={Styles.sec_heading}>
+          <div className="page-center">
+              <div className={Styles.heading_container}>
+                  {headingAndTextHeading && (
+                <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
+              )}
+              </div>
           </div>
           <div className={Styles.inner_slider_container}>
           <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
