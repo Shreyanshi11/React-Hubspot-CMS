@@ -18,7 +18,7 @@ export const fields = (
 
      <RichTextField label='Paragraph Text' name='paragraphText' />
 
-     <FieldGroup label="Bottom Group" name="bottom_group">
+     <FieldGroup label="Button Group" name="button_group">
         <ButtonContent />
         <ButtonStyle buttonStyleDefault="primary" buttonSizeDefault="medium" />
      </FieldGroup>

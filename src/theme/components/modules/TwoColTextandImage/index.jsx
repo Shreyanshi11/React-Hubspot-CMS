@@ -15,7 +15,7 @@ export function Component(props) {
     groupStyle: {
       headingStyleVariant, headingStyleColor
     },
-    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, bottom_group: {
+    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, button_group: {
       buttonContentText: text,
       buttonContentLink: link,
       buttonStyleSize,
@@ -51,7 +51,7 @@ export function Component(props) {
                 )}
                 {paragraphText && (
                   <div className={Styles.paragraph_text}>
-                    <RichText fieldPath={textcontent.paragraphText}></RichText>
+                    <RichText fieldPath="paragraphText"></RichText>
                   </div>
                 )}
                 {text && (
