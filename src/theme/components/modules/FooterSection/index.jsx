@@ -3,7 +3,7 @@ import { Icon, logInfo, RichText } from '@hubspot/cms-components';
 import FooterStyles from './footer.module.css';
 import RenderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
-export function Component({ props }) {
+export function Component( props ) {
 
 
     const {
@@ -24,7 +24,6 @@ export function Component({ props }) {
 
                             <div className={FooterStyles.logo_block}>
                                 <a
-                                    key={index}
                                     href={logo_link?.url || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
                                     rel={
@@ -52,7 +51,7 @@ export function Component({ props }) {
 
                         <div className={FooterStyles.menu_block}>
                             {headingAndTextHeading && (
-                                <div className={Styles.heading_content}>
+                                <div className={FooterStyles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={headingAndTextHeadingLevel}
                                         headingStyleVariant={headingStyleVariant}
@@ -88,7 +87,7 @@ export function Component({ props }) {
                         </div>
                         <div className={FooterStyles.contact_block}>
                             {col_three_heading && (
-                                <div className={Styles.heading_content}>
+                                <div className={FooterStyles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={col_three_headinglevel}
                                         headingStyleVariant={col_three_headingVariant}
