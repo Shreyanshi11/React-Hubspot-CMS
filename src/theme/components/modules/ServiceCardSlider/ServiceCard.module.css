@@ -1,11 +1,32 @@
+.slick-dots li button:before {
+  height: 13px;
+  content: "";
+  text-align: center;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+  border: 2px solid #cbd5e0;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  border-radius: 100%;
+  background: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+  width: 18px;
+  height: 18px;
+}
 .logo_card .image_block img {
   display: block;
   width: 34px;
   height: 34px;
   object-fit: cover;
 }
-.inner_slider_container{
-    overflow: hidden;
+.inner_slider_container {
+  overflow: hidden;
 }
 .inner_slider_container .slick-slide {
   margin-right: 40px;
@@ -23,33 +44,12 @@
   padding: 16px 36px;
   margin-right: 40px;
 }
-.inner_slider_container .slick-dots li button:before {
-    height: 13px;
-    content: "";
-    text-align: center;
-    opacity: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    opacity: 1;
-    border: 2px solid #CBD5E0;
-    border-radius: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-}
-.inner_slider_container .slick-dots li.slick-active button:before {
-    opacity: 1;
-    border-radius: 100%;
-    background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
-    width: 18px;
-    height: 18px;
-}
 .inner_slider_container .slick-dots {
-    bottom: -65px;
+  bottom: -65px;
 }
-.sec_heading .heading_container{
-    text-align: center;
-    margin-bottom:73px;
+.sec_heading .heading_container {
+  text-align: center;
+  margin-bottom: 73px;
 }
 .sec_heading .heading_container h1,
 .sec_heading .heading_container h2,
@@ -57,5 +57,50 @@
 .sec_heading .heading_container h4,
 .sec_heading .heading_container h5,
 .sec_heading .heading_container h6 {
-    margin-bottom:0;
+  margin-bottom: 0;
+}
+.logo_card_inner .heading_block h1,
+.logo_card_inner .heading_block h2,
+.logo_card_inner .heading_block h3,
+.logo_card_inner .heading_block h4,
+.logo_card_inner .heading_block h5,
+.logo_card_inner .heading_block h6 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Progressbar style start here */
+.slider_progress_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.slider_progress_wrapper .slide_index,
+.slider_progress_wrapper .slide_total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.slider_progress_wrapper .slide_index {
+  color: #99a3b0; /* light gray */
+}
+
+.slider_progress_wrapper .slide_total {
+  color: #57007b; /* purple */
+}
+
+.slider_progress_wrapper .progress_bar {
+  flex: 1;
+  height: 5px;
+  background-color: #e3e8ee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slider_progress_wrapper .progress_fill {
+  height: 100%;
+  background-color: #57007b; /* active purple */
+  transition: width 0.3s ease;
 }
