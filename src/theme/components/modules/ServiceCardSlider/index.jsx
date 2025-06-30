@@ -12,9 +12,11 @@ export function Component(props) {
 
 const {
   module_id,
+  heading_group:{
   headingAndTextHeadingLevel,
   headingAndTextHeading,
-  headingStyleVariant,
+  headingStyleVariant
+  },
   groupContent = [],
 
 } = props;

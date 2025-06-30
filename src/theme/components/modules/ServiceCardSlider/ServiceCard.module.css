@@ -49,4 +49,13 @@
 }
 .sec_heading .heading_container{
     text-align: center;
+    margin-bottom:73px;
+}
+.sec_heading .heading_container h1,
+.sec_heading .heading_container h2,
+.sec_heading .heading_container h3,
+.sec_heading .heading_container h4,
+.sec_heading .heading_container h5,
+.sec_heading .heading_container h6 {
+    margin-bottom:0;
 }
