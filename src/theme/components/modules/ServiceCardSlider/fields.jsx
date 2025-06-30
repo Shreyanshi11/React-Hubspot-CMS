@@ -16,6 +16,14 @@ import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/Co
 export const fields = (
 <ModuleFields>
 
+  <FieldGroup
+        label='Heading Group'
+        name='heading_group'
+    >
+        <HeadingContent />
+        <HeadingStyles headingStyleAsDefault='h2' />
+    </FieldGroup>
+           
     <RepeatedFieldGroup
         label="Card Group"
         name="groupContent"
