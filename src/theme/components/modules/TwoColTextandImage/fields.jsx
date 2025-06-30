@@ -102,6 +102,8 @@ export const fields = (
     </FieldGroup>
 
     <FieldGroup label="Image Content" name="imagecontent" display="inline">
+  
+
       <ImageField
         label="Image"
         name="image"
