@@ -1,18 +1,18 @@
-.footer__site_page .flex_container{
+.footer_section .flex_container{
   display: flex;
   flex-wrap: wrap;
 
 }
-.footer__site_page .flex_container .logo_block{
+.footer_section .flex_container .logo_block{
   width: 30%;
 }
-.footer__site_page .flex_container .menu_block{
+.footer_section .flex_container .menu_block{
   width: 20%;
 }
-.footer__site_page .flex_container .contact_block{
+.footer_section .flex_container .contact_block{
   width: 30%;
 }
-.footer__site_page .flex_container .social_icon_block{
+.footer_section .flex_container .social_icon_block{
   width: 20%;
 }
 .logo_block img{
