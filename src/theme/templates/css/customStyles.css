@@ -31,3 +31,6 @@
 .slick-list {
     overflow: visible !important;
 }
+.slick-slider.slick-initialized {
+    padding-right: 330px;
+}
