@@ -18,9 +18,9 @@ export function Component(props) {
 
     const renderMenu = (items) => {
   return (
-    <ul className={styles.menu_list}>
+    <ul className={Styles.menu_list}>
       {items.map((item, index) => (
-        <li key={index} className={styles.list_items}>
+        <li key={index} className={Styles.list_items}>
           {item.linkUrl ? (
             <a
               href={item.linkUrl}
