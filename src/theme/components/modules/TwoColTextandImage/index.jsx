@@ -1,5 +1,6 @@
 import { logInfo, RichText } from '@hubspot/cms-components';
 import Styles from '../TwoColTextandImage/twocoltextandimage.module.css';
+import RenderImage from '../../components/ImageComponent/imageRenderer.jsx'
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx'
 import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx'
@@ -27,7 +28,8 @@ export function Component(props) {
       buttonContentIconPosition: iconPosition,
       buttonContentType
     },
-    }
+    },
+    imagecontent: {image}
   } = props;
 
   const buttonHref = getLinkFieldHref(link);
@@ -76,7 +78,7 @@ export function Component(props) {
 
               </div>
               <div className={Styles.image_container}>
-
+              <RenderImage imageField={image} />
               </div>
             </div>
           </div>
