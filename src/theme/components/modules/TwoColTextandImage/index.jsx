@@ -16,7 +16,7 @@ export function Component(props) {
       headingStyleVariant, headingStyleColor
     },
     textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, button_group: {
-      buttonContentText: text,
+      buttonContentText,
       buttonContentLink: link,
       buttonStyleSize,
       buttonStyleVariant,
@@ -66,7 +66,7 @@ export function Component(props) {
                       iconFieldPath="buttonContentIconPosition"
                       iconPosition={iconPosition}
                     >
-                      {text}
+                      {buttonContentText}
                     </Button>
                   </div>
         
