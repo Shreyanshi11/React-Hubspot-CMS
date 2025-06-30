@@ -1,1 +1,27 @@
 /* Add Custom Module Style Only */
+.slick-dots li button:before {
+  content: "" !important;
+  height: 13px !important;
+  width: 13px !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  opacity: 1 !important;
+  border: 2px solid #cbd5e0 !important;
+  border-radius: 100% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  border-radius: 100% !important;
+  background: linear-gradient(225deg, #f76680 0%, #57007b 100%) !important;
+  width: 18px!important;
+  height: 18px !important;
+  border:none !important;
+}
+.slick-dots {
+    margin-top: 41px;
+}

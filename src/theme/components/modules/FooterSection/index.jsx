@@ -3,7 +3,7 @@ import { Icon, logInfo, RichText } from '@hubspot/cms-components';
 import FooterStyles from './footer.module.css';
 import RenderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
-export function Component({ props }) {
+export function Component( props ) {
 
 
     const {
@@ -24,7 +24,6 @@ export function Component({ props }) {
 
                             <div className={FooterStyles.logo_block}>
                                 <a
-                                    key={index}
                                     href={logo_link?.url || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
                                     rel={
