@@ -63,24 +63,38 @@ export function Component(props) {
                             )}
                             <div>
                                 <ul>
-                                    {footer_menu.map((item, i) => (
-                                        <li key={i}>
-                                            {item.link_url ? (
-                                                <a href={item.link_url}>{item.link_label}</a>
-                                            ) : (
-                                                <span>{item.link_label}</span>
-                                            )}
-                                            {item.children && item.children.length > 0 && (
-                                                <ul>
-                                                    {item.children.map((child, j) => (
-                                                        <li key={j}>
-                                                            <a href={child.link_url}>{child.link_label}</a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </li>
+                                    {footer_menu?.map((item, i) => (
+                                        item && (
+                                            <li key={i}>
+                                                {/* Check if link_url exists, else use span */}
+                                                {item.link_url ? (
+                                                    <a href={item.link_url}>
+                                                        {item.link_label?.trim() || 'Untitled'}
+                                                    </a>
+                                                ) : (
+                                                    <span>
+                                                        {item.link_label?.trim() || 'Untitled'}
+                                                    </span>
+                                                )}
+
+                                                {/* Handle children if they exist */}
+                                                {item.children?.length > 0 && (
+                                                    <ul>
+                                                        {item.children.map((child, j) => (
+                                                            child && (
+                                                                <li key={j}>
+                                                                    <a href={child.link_url}>
+                                                                        {child.link_label?.trim() || 'Untitled'}
+                                                                    </a>
+                                                                </li>
+                                                            )
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </li>
+                                        )
                                     ))}
+
                                 </ul>
 
                             </div>
