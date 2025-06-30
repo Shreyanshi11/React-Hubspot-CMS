@@ -10,34 +10,39 @@ import Styles from '../ServiceCardSlider/ServiceCard.module.css';
 
 export function Component(props) {
 
-  const {
-    module_id,
-    groupContent = [],
+const {
+  module_id,
+  headingAndTextHeadingLevel,
+  headingAndTextHeading,
+  headingStyleVariant,
+  groupContent = [],
 
-  } = props;
+} = props;
 
-  logInfo(props, 'Service Card Slider');
+logInfo(props, 'Service Card Slider');
 
-  return (
-    <>
-     
-        <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-          <div>
-            <div className={Styles.heading_container}>
-              
-            </div>
-            <div className={Styles.inner_slider_container}>
-            <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
-            </div>
+return (
+  <>
+    
+      <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
+        <div>
+          <div className={Styles.heading_container}>
+              {headingAndTextHeading && (
+            <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
+          )}
           </div>
-        </ResponsiveSpacingWrapper>
-     
-    </>
-  );
+          <div className={Styles.inner_slider_container}>
+          <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
+          </div>
+        </div>
+      </ResponsiveSpacingWrapper>
+    
+  </>
+);
 }
 
 export { fields } from './fields.jsx';
 
 export const meta = {
-  label: 'Service Card Slider Module',
+label: 'Service Card Slider Module',
 };
