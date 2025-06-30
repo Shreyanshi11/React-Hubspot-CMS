@@ -3,7 +3,7 @@ import { Icon, logInfo, RichText } from '@hubspot/cms-components';
 import FooterStyles from './footer.module.css';
 import RenderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
-export function Component({ props }) {
+export function Component( props ) {
 
 
     const {
