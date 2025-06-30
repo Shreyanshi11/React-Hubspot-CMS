@@ -23,7 +23,9 @@
   border:none !important;
 }
 .slick-dots {
-    margin-top: 41px;
+    margin-top: 38px;
+    position: relative !important;
+    bottom: -38px;
 }
 .slick-slide{
     margin-right: 39px;
