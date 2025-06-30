@@ -51,7 +51,7 @@ export function Component(props) {
                 )}
                 {paragraphText && (
                   <div className={Styles.paragraph_text}>
-                    <RichText fieldPath={paragraphText}></RichText>
+                    <RichText fieldPath="paragraphText"></RichText>
                   </div>
                 )}
                 {text && (
