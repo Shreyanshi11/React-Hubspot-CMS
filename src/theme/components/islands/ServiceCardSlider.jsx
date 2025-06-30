@@ -25,9 +25,19 @@ export default function ServiceCard({ groupContent }) {
     centerPadding: '60px',
     afterChange: index => setCurrentSlide(index),
     responsive: [
+         {
+        breakpoint: 991,
+        settings: {
+        slidesToShow: 2,
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: '40px',
+        }
+    },
     {
         breakpoint: 768,
         settings: {
+        slidesToShow: 1,
         slidesToShow: 1,
         centerMode: true,
         centerPadding: '40px',
