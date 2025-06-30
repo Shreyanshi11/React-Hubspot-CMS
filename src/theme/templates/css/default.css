@@ -85,6 +85,15 @@ h6 {
   line-height: 1.3125;
 }
 
+
+/* font weight */
+.font-300{
+  font-weight:300;
+}
+.font-700{
+  font-weight:700;
+}
+
 /* Lists */
 
 ul li,
