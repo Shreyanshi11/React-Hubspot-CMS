@@ -1520,7 +1520,7 @@
                         "fallback": "theme.global.buttons.simple.font.fallback",
                         "font": "theme.global.buttons.simple.font.font",
                         "font_set": "theme.global.buttons.simple.font.font_set",
-                        "styles": "theme.global.buttons.simple.font.styles",
+                        "styles": "theme.global.buttons.simple.font.styles"
                       }
                     },
                     "default": {
