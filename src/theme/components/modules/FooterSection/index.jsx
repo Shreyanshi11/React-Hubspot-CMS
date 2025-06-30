@@ -89,9 +89,9 @@ export function Component(props) {
                                 </div>
                             )}
                             <div className={Styles.menu_list}>
-                                <div className={styles.menu_container}>
+                                <div className={Styles.menu_container}>
                                     {footer_menu.length > 0 ? (
-                                        <div className={styles.menu_group}>
+                                        <div className={Styles.menu_group}>
                                             {renderMenu(footer_menu)}
                                         </div>
                                     ) : (
