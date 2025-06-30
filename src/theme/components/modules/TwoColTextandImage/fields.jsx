@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModuleFields, FieldGroup, RichTextField } from '@hubspot/cms-components/fields';
+import { ModuleFields, FieldGroup, RichTextField, BooleanField } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx'
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
