@@ -63,7 +63,7 @@ export function Component(props) {
                       rel={buttonRel}
                       target={buttonTarget}
                       showIcon={showIcon}
-                      iconFieldPath="bottom_group.buttonContentIconPosition"
+                      iconFieldPath="button_group.buttonContentIconPosition"
                       iconPosition={iconPosition}
                     >
                       {text}
