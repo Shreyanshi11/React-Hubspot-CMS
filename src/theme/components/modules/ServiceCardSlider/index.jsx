@@ -2,7 +2,7 @@ import React from 'react';
 import { logInfo, RichText, Island } from '@hubspot/cms-components';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
-import Styles from '../ServiceCardSlider/ServiceCard.module';
+import Styles from '../ServiceCardSlider/ServiceCard.module.css';
 import ServiceCard from '../../islands/ServiceCardSlider?island';
 
 
