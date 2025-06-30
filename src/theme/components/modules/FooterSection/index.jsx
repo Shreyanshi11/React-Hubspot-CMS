@@ -1,5 +1,5 @@
 
-import { Icon, RichText } from '@hubspot/cms-components';
+import { Icon, logInfo, RichText } from '@hubspot/cms-components';
 import FooterStyles from './footer.module.css';
 import renderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
@@ -7,7 +7,6 @@ export function Component({ props }) {
 
 
     const {
-        module_id,
         column_one: { logoImage, logo_link, content, bottom_image },
         column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
@@ -15,7 +14,7 @@ export function Component({ props }) {
         copyright_text
 
     } = props;
-    logInfo("Footer Section Props", props);
+    logInfo ("Footer Section Props", props);
     return (
         <>
             <footer className='footer__site_page'>
