@@ -25,8 +25,7 @@ logInfo(props, 'Service Card Slider');
 
 return (
   <>
-    
-      <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
+     <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
         <div className={Styles.sec_heading}>
           <div className="page-center">
               <div className={Styles.heading_container}>
