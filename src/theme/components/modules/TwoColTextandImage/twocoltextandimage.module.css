@@ -1,6 +1,6 @@
 .two_col_image_text .two_col_container{
     display:flex;
-    flex-wrap:reverse-wrap;
+    flex-wrap: wrap-reverse;
     align-items:center;
     margin:0 -10px;
 }
