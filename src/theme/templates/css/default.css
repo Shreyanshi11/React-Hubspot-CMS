@@ -234,8 +234,8 @@ button:disabled,
   border-radius: 0;
   padding: 0 !important;
   position: relative;
-  border-bottom: 1px solid #c6cacc;
-  padding-bottom: 10px !important;
+  /* border-bottom: 1px solid #c6cacc; */
+  /* padding-bottom: 10px !important; */
 }
 
 .button.button--simple:after {
