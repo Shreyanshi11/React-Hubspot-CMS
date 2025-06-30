@@ -51,10 +51,10 @@ export function Component(props) {
                 )}
                 {paragraphText && (
                   <div className={Styles.paragraph_text}>
-                    <RichText fieldPath="paragraphText"></RichText>
+                    <RichText fieldPath="textcontent.paragraphText" value={paragraphText} />
                   </div>
                 )}
-                {text && (
+         
                   <div className={Styles.button_content}>
                     <Button
                       buttonSize={buttonStyleSize}
@@ -63,13 +63,13 @@ export function Component(props) {
                       rel={buttonRel}
                       target={buttonTarget}
                       showIcon={showIcon}
-                      iconFieldPath="bottom_group.buttonContentIconPosition"
+                      iconFieldPath="button_group.buttonContentIconPosition"
                       iconPosition={iconPosition}
                     >
                       {text}
                     </Button>
                   </div>
-                )}
+        
               </div>
               <div className={Styles.image_container}>
 

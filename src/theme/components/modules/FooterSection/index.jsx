@@ -1,7 +1,7 @@
 
 import { Icon, logInfo, RichText } from '@hubspot/cms-components';
 import FooterStyles from './footer.module.css';
-import renderImage from '../../components/ImageComponent/imageRenderer.jsx';
+import RenderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 export function Component({ props }) {
 
@@ -14,7 +14,7 @@ export function Component({ props }) {
         copyright_text
 
     } = props;
-    logInfo ("Footer Section Props", props);
+    logInfo("Footer Section Props", props);
     return (
         <>
             <footer className='footer__site_page'>
@@ -39,14 +39,14 @@ export function Component({ props }) {
                                     }
                                 >
 
-                                    <renderImage imageField={column_one.logoImage} />
+                                    <RenderImage imageField='column_one.logoImage' />
                                 </a>
                             </div>
                             <div>
-                                <RichText fieldPath={column_one.content}></RichText>
+                                <RichText fieldPath='column_one.content'></RichText>
                             </div>
                             <div className={FooterStyles.logo_block}>
-                                <renderImage imageField={column_one.bottom_image} />
+                                <RenderImage imageField='column_one.bottom_image' />
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@ export function Component({ props }) {
                                 </div>
                             )}
                             <div>
-                                <RichText fieldPath={column_three.address}></RichText>
+                                <RichText fieldPath='column_three.address'></RichText>
                             </div>
 
                         </div>
