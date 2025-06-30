@@ -3,7 +3,7 @@ import Styles from '../modules/ServiceCardSlider/ServiceCard.module.css';
 import $ from 'jquery';
 import 'jquery-match-height';
 import HeadingComponent from '../components/HeadingComponent/HeadingComponent';
-import renderImage from '../components/ImageComponent/imageRenderer.jsx';
+import RenderImage from '../components/ImageComponent/imageRenderer.jsx';
 import { logInfo, RichText } from '@hubspot/cms-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -36,7 +36,7 @@ export default function ServiceCard({ groupContent }) {
                     <div key={index} className={Styles.logo_card}>
                     <div className={`${Styles.logo_card_inner} active-border`}>
                         <div className={Styles.image_block}>
-                        <renderImage imageField={item.image} />
+                      <RenderImage imageField={item.image} />
                         </div>
                         <div className={Styles.content_block}>
                         <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
