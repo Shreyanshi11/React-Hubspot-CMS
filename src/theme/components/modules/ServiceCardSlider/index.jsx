@@ -2,8 +2,9 @@ import React from 'react';
 import { logInfo, RichText, Island } from '@hubspot/cms-components';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
-import Styles from '../ServiceCardSlider/ServiceCard.module.css';
 import ServiceCard from '../../islands/ServiceCardSlider?island';
+import Styles from '../ServiceCardSlider/ServiceCard.module.css';
+
 
 
 
@@ -22,9 +23,11 @@ export function Component(props) {
      
         <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
           <div>
+            <div className={Styles.heading_container}>
+              
+            </div>
             <div className={Styles.inner_slider_container}>
             <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
-
             </div>
           </div>
         </ResponsiveSpacingWrapper>
