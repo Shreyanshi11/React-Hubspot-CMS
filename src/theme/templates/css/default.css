@@ -234,8 +234,8 @@ button:disabled,
   border-radius: 0;
   padding: 0 !important;
   position: relative;
-  border-bottom: 1px solid #c6cacc;
-  padding-bottom: 10px !important;
+  /* border-bottom: 1px solid #c6cacc; */
+  /* padding-bottom: 10px !important; */
 }
 
 .button.button--simple:after {
@@ -249,8 +249,9 @@ button:disabled,
 .button.button--simple:focus {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #122c41;
-  padding-bottom: 10px !important;
+  font-weight: 600;
+  /* border-bottom: 1px solid #122c41; */
+  /* padding-bottom: 10px !important; */
 }
 
 .button.button--simple:active {
@@ -316,14 +317,6 @@ button:disabled,
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 }
 
-.link--primary, .link--primary:hover {
-    color: var(--primary_color);
-    cursor: pointer;
-}
-.link--secondary, .link--secondary:hover {
-    color: var(--secondary_color);
-    cursor: pointer;
-}
 /* Base */
 
 .hs-form-field {

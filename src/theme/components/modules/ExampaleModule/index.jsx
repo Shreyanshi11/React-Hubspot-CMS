@@ -26,7 +26,7 @@ export function Component(props) {
       },
       groupButton: {
         buttonStyleSize,
-        buttonStyleVariant,
+        buttonStyleVariant, 
       }
     },
 

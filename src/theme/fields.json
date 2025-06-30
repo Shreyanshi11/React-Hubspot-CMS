@@ -1511,7 +1511,7 @@
                     "visibility": {
                       "hidden_subfields": {
                         "size": true,
-                        "underline": true
+                        "underline": false
                       }
                     },
                     "load_external_fonts": true,
@@ -1520,12 +1520,12 @@
                         "fallback": "theme.global.buttons.simple.font.fallback",
                         "font": "theme.global.buttons.simple.font.font",
                         "font_set": "theme.global.buttons.simple.font.font_set",
-                        "styles": "theme.global.buttons.simple.font.styles",
-                        "variant": "theme.global.buttons.simple.font.variant"
+                        "styles": "theme.global.buttons.simple.font.styles"
                       }
                     },
                     "default": {
-                      "color": "#57007B"
+                      "color": "#57007B",
+                       "variant": "500"
                     }
                   },
                   {
