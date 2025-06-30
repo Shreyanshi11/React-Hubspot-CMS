@@ -51,7 +51,7 @@ export function Component( props ) {
 
                         <div className={FooterStyles.menu_block}>
                             {headingAndTextHeading && (
-                                <div className={Styles.heading_content}>
+                                <div className={FooterStyles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={headingAndTextHeadingLevel}
                                         headingStyleVariant={headingStyleVariant}
@@ -87,7 +87,7 @@ export function Component( props ) {
                         </div>
                         <div className={FooterStyles.contact_block}>
                             {col_three_heading && (
-                                <div className={Styles.heading_content}>
+                                <div className={FooterStyles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={col_three_headinglevel}
                                         headingStyleVariant={col_three_headingVariant}
