@@ -1,4 +1,4 @@
-.logo_card .slick-slide img {
+.logo_card .image_block img {
   display: block;
   width: 34px;
   height: 34px;
@@ -10,6 +10,8 @@
 .logo_card .image_block {
   border: 1px solid;
   border-image-source: linear-gradient(225deg, #f76680 0%, #57007b 100%);
+  border-image-slice: 1;
+  display: inline-block;
 }
 .logo_card .logo_card_inner {
   background-color: #fafafa;
