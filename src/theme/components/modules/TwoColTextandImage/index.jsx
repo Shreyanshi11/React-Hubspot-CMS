@@ -54,7 +54,7 @@ export function Component(props) {
                     <RichText fieldPath="textcontent.paragraphText" value={paragraphText} />
                   </div>
                 )}
-                {text && (
+         
                   <div className={Styles.button_content}>
                     <Button
                       buttonSize={buttonStyleSize}
@@ -69,7 +69,7 @@ export function Component(props) {
                       {text}
                     </Button>
                   </div>
-                )}
+        
               </div>
               <div className={Styles.image_container}>
 
