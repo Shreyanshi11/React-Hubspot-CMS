@@ -8,35 +8,36 @@ export function Component(props) {
 
     const {
         column_one: { logoImage, logo_link, content, bottom_image },
-        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu },
+        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
-        copyright_text
+        copyright_text,
+        footer_menu = []
 
     } = props;
 
     const renderMenu = (items) => {
-        return (
-            <ul className={Styles.menu_list}>
-                {items.map((item, index) => (
-                    <li key={index} className={Styles.list_items}>
-                        {item.linkUrl ? (
-                            <a
-                                href={item.linkUrl}
-                                target={item.linkTarget || '_self'}
-                                rel="noopener noreferrer"
-                                dangerouslySetInnerHTML={{ __html: item.linkLabel }}
-                            />
-                        ) : (
-                            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
-                        )}
+  return (
+    <ul className={styles.menu_list}>
+      {items.map((item, index) => (
+        <li key={index} className={styles.list_items}>
+          {item.linkUrl ? (
+            <a
+              href={item.linkUrl}
+              target={item.linkTarget || '_self'}
+              rel="noopener noreferrer"
+              dangerouslySetInnerHTML={{ __html: item.linkLabel }}
+            />
+          ) : (
+            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
+          )}
+          {item.children && item.children.length > 0 && renderMenu(item.children)}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
-                        {item.children && item.children.length > 0 && renderMenu(item.children)}
-                    </li>
-                ))}
-            </ul>
-        );
-    };
 
     logInfo("Footer Section Props", props);
 
@@ -88,8 +89,15 @@ export function Component(props) {
                                 </div>
                             )}
                             <div className={Styles.menu_list}>
-                                {renderMenu(column_two.footer_menu)}
-
+                                <div className={styles.menu_container}>
+                                    {footer_menu.length > 0 ? (
+                                        <div className={styles.menu_group}>
+                                            {renderMenu(footer_menu)}
+                                        </div>
+                                    ) : (
+                                        <p>No menu items added.</p>
+                                    )}
+                                </div>
                             </div>
 
                         </div>
