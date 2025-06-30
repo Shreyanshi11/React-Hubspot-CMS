@@ -9,20 +9,20 @@ import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 const buttonFieldVisibility = {
   boolean_operator: 'OR',
   criteria: [{
-    controlling_field_path: 'groupButton.showButton',
+    controlling_field_path: 'textcontent.groupButton.showButton',
     controlling_value_regex: 'true',
     operator: 'EQUAL',
   }]
 }
 
 const matchButtonType = {
-  controlling_field_path: 'groupButton.buttonContentType',
+  controlling_field_path: 'textcontent.groupButton.buttonContentType',
   operator: 'MATCHES_REGEX',
   controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-  controlling_field_path: 'groupButton.buttonContentType',
+  controlling_field_path: 'textcontent.groupButton.buttonContentType',
   operator: 'MATCHES_REGEX',
   controlling_value_regex: '^cta$'
 };
@@ -42,7 +42,7 @@ const iconTypeVisibility = {
   criteria: [
     matchButtonType,
     {
-      controlling_field_path: 'groupButton.buttonContentShowIcon',
+      controlling_field_path: 'textcontent.groupButton.buttonContentShowIcon',
       operator: 'MATCHES_REGEX',
       controlling_value_regex: '^true$'
     }
