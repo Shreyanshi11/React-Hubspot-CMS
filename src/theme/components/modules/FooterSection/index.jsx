@@ -1,9 +1,9 @@
 
 import { Icon, logInfo, RichText } from '@hubspot/cms-components';
-import FooterStyles from './footer.module.css';
+import Styles from './footer.module.css';
 import RenderImage from '../../components/ImageComponent/imageRenderer.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
-export function Component( props ) {
+export function Component(props) {
 
 
     const {
@@ -17,12 +17,13 @@ export function Component( props ) {
     logInfo("Footer Section Props", props);
     return (
         <>
-            <footer className='footer__site_page'>
-                <div className='footer__container'>
-                    <div className={FooterStyles.flex_container}>
-                        <div className={FooterStyles.footer_logo}>
 
-                            <div className={FooterStyles.logo_block}>
+            <footer className={`${Styles.footer_section} footer__site_page`}>
+                <div className='footer__container'>
+                    <div className={Styles.flex_container}>
+                        <div className={Styles.footer_logo}>
+
+                            <div className={Styles.logo_block}>
                                 <a
                                     href={logo_link?.url || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
@@ -38,20 +39,20 @@ export function Component( props ) {
                                     }
                                 >
 
-                                    <RenderImage imageField='column_one.logoImage' />
+                                    <RenderImage imageField={logoImage} />Ik developers
                                 </a>
                             </div>
                             <div>
                                 <RichText fieldPath='column_one.content'></RichText>
                             </div>
-                            <div className={FooterStyles.logo_block}>
-                                <RenderImage imageField='column_one.bottom_image' />
+                            <div className={Styles.logo_block}>
+                                <RenderImage imageField={bottom_image} />
                             </div>
                         </div>
 
-                        <div className={FooterStyles.menu_block}>
+                        <div className={Styles.menu_block}>
                             {headingAndTextHeading && (
-                                <div className={FooterStyles.heading_content}>
+                                <div className={Styles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={headingAndTextHeadingLevel}
                                         headingStyleVariant={headingStyleVariant}
@@ -85,9 +86,9 @@ export function Component( props ) {
                             </div>
 
                         </div>
-                        <div className={FooterStyles.contact_block}>
+                        <div className={Styles.contact_block}>
                             {col_three_heading && (
-                                <div className={FooterStyles.heading_content}>
+                                <div className={Styles.heading_content}>
                                     <HeadingComponent
                                         headingLevel={col_three_headinglevel}
                                         headingStyleVariant={col_three_headingVariant}
@@ -101,7 +102,7 @@ export function Component( props ) {
                             </div>
 
                         </div>
-                        <div className={FooterStyles.social_icon_block}>
+                        <div className={Styles.social_icon_block}>
                             <div>
                                 <ul>
                                     {add_social_icon.map((item, index) => (
@@ -115,7 +116,7 @@ export function Component( props ) {
                             </div>
                         </div>
                     </div>
-                    <div className={FooterStyles.bottom_footer}>
+                    <div className={Styles.bottom_footer}>
                         <RichText fieldPath='copyright_text'></RichText>
                     </div>
                 </div>
