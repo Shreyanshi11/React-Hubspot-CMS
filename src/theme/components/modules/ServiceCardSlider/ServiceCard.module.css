@@ -4,8 +4,8 @@
   height: 34px;
   object-fit: cover;
 }
-.logo_card .slick-slide{
-    margin-right: 40px;
+.logo_card .slick-slide {
+  margin-right: 40px;
 }
 .logo_card .image_block {
   border: 1px solid;
@@ -16,5 +16,6 @@
 .logo_card .logo_card_inner {
   background-color: #fafafa;
   box-shadow: 0px 4px 30px 0px #0000000d;
-  border-radius: 7px;
+  border-radius: 16px;
+  padding: 16px 36px;
 }
