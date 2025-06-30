@@ -34,3 +34,6 @@
 .slick-slider.slick-initialized {
     padding-right: 330px;
 }
+.slick-track{
+    display: flex !important;
+}
