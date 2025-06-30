@@ -18,22 +18,33 @@
   opacity: 1 !important;
   border-radius: 100% !important;
   background: linear-gradient(225deg, #f76680 0%, #57007b 100%) !important;
-  width: 18px!important;
+  width: 18px !important;
   height: 18px !important;
-  border:none !important;
+  border: none !important;
 }
 .slick-dots {
-    margin-top: 41px;
+  margin-top: 38px;
+  position: relative !important;
+  bottom: -38px;
 }
-.slick-slide{
-    margin-right: 39px;
+.slick-slide {
+  margin-right: 39px;
 }
 .slick-list {
-    overflow: visible !important;
+  overflow: visible !important;
 }
 .slick-slider.slick-initialized {
-    padding-right: 330px;
+  padding-right: 217px;
 }
-.slick-track{
-    display: flex !important;
+.slick-track {
+  display: flex !important;
+}
+
+@media only screen and (max-width: 1199px) {
+  .slick-slider.slick-initialized {
+    padding-right: 0;
+  }
+  .slick-slide {
+    margin: 0 15px;
+  }
 }
