@@ -2,7 +2,6 @@ import React from 'react';
 import { logInfo, RichText, Island } from '@hubspot/cms-components';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
-import StyledComponentsRegistry from '../../components/StyledComponentsRegistry/StyledComponentsRegistry.jsx';
 import ServiceCard from '../../islands/ServiceCardSlider?island';
 
 
@@ -19,17 +18,17 @@ export function Component(props) {
 
   return (
     <>
-      <StyledComponentsRegistry>
+     
         <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
           <div className='page-center'>
             <div className='inner_slider_container'>
            
-            <Island module={ServiceCard} content={groupContent} clientOnly hydrateOn='load' />
+            <Island module={ServiceCard} groupContent={ groupContent } clientOnly hydrateOn='idle' />
 
             </div>
           </div>
         </ResponsiveSpacingWrapper>
-      </StyledComponentsRegistry>
+     
     </>
   );
 }
