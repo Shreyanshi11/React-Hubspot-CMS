@@ -16,7 +16,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 
 const settings = {
 dots: true,
-infinite: false,
+infinite: true,
 speed: 700,
 arrows: true,
     autoplay: true,
