@@ -14,7 +14,7 @@ export function Component({ props }) {
         copyright_text
 
     } = props;
-    logInfo ("Footer Section Props", props);
+    logInfo("Footer Section Props", props);
     return (
         <>
             <footer className='footer__site_page'>
@@ -39,14 +39,14 @@ export function Component({ props }) {
                                     }
                                 >
 
-                                    <renderImage imageField={column_one.logoImage} />
+                                    <renderImage imageField='column_one.logoImage' />
                                 </a>
                             </div>
                             <div>
-                                <RichText fieldPath={column_one.content}></RichText>
+                                <RichText fieldPath='column_one.content'></RichText>
                             </div>
                             <div className={FooterStyles.logo_block}>
-                                <renderImage imageField={column_one.bottom_image} />
+                                <renderImage imageField='column_one.bottom_image' />
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@ export function Component({ props }) {
                                 </div>
                             )}
                             <div>
-                                <RichText fieldPath={column_three.address}></RichText>
+                                <RichText fieldPath='column_three.address'></RichText>
                             </div>
 
                         </div>
