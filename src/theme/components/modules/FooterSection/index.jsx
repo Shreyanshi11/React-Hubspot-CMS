@@ -24,7 +24,6 @@ export function Component( props ) {
 
                             <div className={FooterStyles.logo_block}>
                                 <a
-                                    key={index}
                                     href={logo_link?.url || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
                                     rel={
