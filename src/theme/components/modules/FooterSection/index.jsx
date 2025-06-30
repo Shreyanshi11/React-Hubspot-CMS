@@ -14,7 +14,33 @@ export function Component(props) {
         copyright_text
 
     } = props;
+
+    const renderMenu = (items) => {
+        return (
+            <ul className={Styles.menu_list}>
+                {items.map((item, index) => (
+                    <li key={index} className={Styles.list_items}>
+                        {item.linkUrl ? (
+                            <a
+                                href={item.linkUrl}
+                                target={item.linkTarget || '_self'}
+                                rel="noopener noreferrer"
+                                dangerouslySetInnerHTML={{ __html: item.linkLabel }}
+                            />
+                        ) : (
+                            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
+                        )}
+
+                        {item.children && item.children.length > 0 && renderMenu(item.children)}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
     logInfo("Footer Section Props", props);
+
+
     return (
         <>
 
@@ -61,41 +87,8 @@ export function Component(props) {
                                     />
                                 </div>
                             )}
-                            <div>
-                                <ul>
-                                    {footer_menu?.map((item, i) => (
-                                        item && (
-                                            <li key={i}>
-                                                {/* Check if link_url exists, else use span */}
-                                                {item.link_url ? (
-                                                    <a href={item.link_url}>
-                                                        {item.link_label?.trim() || 'Untitled'}
-                                                    </a>
-                                                ) : (
-                                                    <span>
-                                                        {item.link_label?.trim() || 'Untitled'}
-                                                    </span>
-                                                )}
-
-                                                {/* Handle children if they exist */}
-                                                {item.children?.length > 0 && (
-                                                    <ul>
-                                                        {item.children.map((child, j) => (
-                                                            child && (
-                                                                <li key={j}>
-                                                                    <a href={child.link_url}>
-                                                                        {child.link_label?.trim() || 'Untitled'}
-                                                                    </a>
-                                                                </li>
-                                                            )
-                                                        ))}
-                                                    </ul>
-                                                )}
-                                            </li>
-                                        )
-                                    ))}
-
-                                </ul>
+                            <div className={Styles.menu_list}>
+                                {renderMenu(column_two.footer_menu)}
 
                             </div>
 
