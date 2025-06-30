@@ -21,6 +21,7 @@
   box-shadow: 0px 4px 30px 0px #0000000d;
   border-radius: 16px;
   padding: 16px 36px;
+  margin-right: 40px;
 }
 .inner_slider_container .slick-dots li button:before {
     height: 13px;

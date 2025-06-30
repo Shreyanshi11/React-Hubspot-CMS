@@ -17,7 +17,7 @@ console.log('groupContent',groupContent);
     infinite: true,
     speed: 500,
     arrows: true,
-    slidesToShow: 3, // or 1, depending on design
+    slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '60px',
@@ -40,7 +40,7 @@ return (
                 <div key={index} className={Styles.logo_card}>
                 <div className={`${Styles.logo_card_inner} active-border`}>
                     <div className={Styles.image_block}>
-                    <RenderImage imageField={item.image} />
+                      <RenderImage imageField={item.image} />
                     </div>
                     <div className={Styles.content_block}>
                     <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
