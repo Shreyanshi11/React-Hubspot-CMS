@@ -57,14 +57,14 @@ export function Component(props) {
          
                   <div className={Styles.button_content}>
                     <Button
-                      buttonSize={button_group.buttonStyleSize}
-                      buttonStyle={button_group.buttonStyleVariant}
+                      buttonSize={buttonStyleSize}
+                      buttonStyle={buttonStyleVariant}
                       href={buttonHref}
                       rel={buttonRel}
                       target={buttonTarget}
-                      showIcon={button_group.showIcon}
-                      iconFieldPath="button_group.buttonContentIconPosition"
-                      iconPosition={button_group.iconPosition}
+                      showIcon={showIcon}
+                      iconFieldPath="buttonContentIconPosition"
+                      iconPosition={iconPosition}
                     >
                       {text}
                     </Button>
