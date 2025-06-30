@@ -14,7 +14,7 @@
           }
         },
         "default": {
-          "color": "#718096"
+          "color": "#4A5568"
         }
       },
       {
@@ -64,7 +64,7 @@
         },
         "load_external_fonts": true,
         "default": {
-          "color": "#718096",
+          "color": "#4A5568",
           "fallback": "sans-serif",
           "font": "Inter",
           "font_set": "GOOGLE",
@@ -2642,7 +2642,7 @@
                   }
                 },
                 "default": {
-                  "color": "#718096"
+                  "color": "#4A5568"
                 }
               },
               {
