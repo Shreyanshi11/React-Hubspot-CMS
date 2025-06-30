@@ -8,11 +8,10 @@ export function Component(props) {
 
     const {
         column_one: { logoImage, logo_link, content, bottom_image },
-        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant },
+        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant,footer_menu = [] },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
-        copyright_text,
-        footer_menu = []
+        copyright_text
 
     } = props;
 
