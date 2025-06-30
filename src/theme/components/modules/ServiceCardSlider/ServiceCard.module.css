@@ -4,7 +4,10 @@
   height: 34px;
   object-fit: cover;
 }
-.logo_card .slick-slide {
+.logo_card{
+    overflow: hidden;
+}
+.inner_slider_container .slick-slide {
   margin-right: 40px;
 }
 .logo_card .image_block {
