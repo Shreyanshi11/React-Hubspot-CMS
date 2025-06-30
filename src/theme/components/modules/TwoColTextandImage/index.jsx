@@ -17,10 +17,10 @@ export function Component(props) {
       headingStyleVariant, headingStyleColor,
       groupButton: {
         buttonStyleSize,
-        buttonStyleVariant, 
+        buttonStyleVariant,
       }
     },
-    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText,  groupButton: {
+    textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, groupButton: {
       showButton,
       buttonContentText: text,
       buttonContentLink: link,
@@ -29,7 +29,7 @@ export function Component(props) {
       buttonContentType
     },
     },
-    imagecontent: {image}
+    imagecontent: { image }
   } = props;
 
   const buttonHref = getLinkFieldHref(link);
@@ -44,41 +44,43 @@ export function Component(props) {
           <div className='page-center'>
             <div className={Styles.two_col_container}>
               <div className={Styles.text_container}>
-                {headingAndTextHeading && (
-                  <div className={Styles.heading_content}>
-                    <HeadingComponent
-                      headingLevel={headingAndTextHeadingLevel}
-                      headingStyleVariant={headingStyleVariant}
-                      heading={headingAndTextHeading}
-                      headingStyleColor={headingStyleColor}
-                    />
-                  </div>
-                )}
-                {paragraphText && (
-                  <div className={Styles.paragraph_text}>
-                    <RichText fieldPath="textcontent.paragraphText" value={paragraphText} />
-                  </div>
-                )}
+                <div className={Styles.text_container_inner}>
+                  {headingAndTextHeading && (
+                    <div className={Styles.heading_content}>
+                      <HeadingComponent
+                        headingLevel={headingAndTextHeadingLevel}
+                        headingStyleVariant={headingStyleVariant}
+                        heading={headingAndTextHeading}
+                        headingStyleColor={headingStyleColor}
+                      />
+                    </div>
+                  )}
+                  {paragraphText && (
+                    <div className={Styles.paragraph_text}>
+                      <RichText fieldPath="textcontent.paragraphText" value={paragraphText} />
+                    </div>
+                  )}
 
-                <div className={Styles.button_content}>
-                  <Button
-                    buttonSize={buttonStyleSize}
-                    buttonStyle={buttonStyleVariant}
-                    href={buttonHref}
-                    rel={buttonRel}
-                    target={buttonTarget}
-                    showIcon={showIcon}
-                    iconFieldPath='groupButton.buttonContentIcon'
-                    iconPosition={iconPosition}
-                    additionalClassArray={['button-container__button']}
-                    ctaFieldpath={`groupButton.ctaField`}
-                    buttonType={buttonContentType}
-                  >{text}</Button>
+                  <div className={Styles.button_content}>
+                    <Button
+                      buttonSize={buttonStyleSize}
+                      buttonStyle={buttonStyleVariant}
+                      href={buttonHref}
+                      rel={buttonRel}
+                      target={buttonTarget}
+                      showIcon={showIcon}
+                      iconFieldPath='groupButton.buttonContentIcon'
+                      iconPosition={iconPosition}
+                      additionalClassArray={['button-container__button']}
+                      ctaFieldpath={`groupButton.ctaField`}
+                      buttonType={buttonContentType}
+                    >{text}</Button>
+                  </div>
                 </div>
-
               </div>
+
               <div className={Styles.image_container}>
-              <RenderImage imageField={image} />
+                <RenderImage imageField={image} />
               </div>
             </div>
           </div>
