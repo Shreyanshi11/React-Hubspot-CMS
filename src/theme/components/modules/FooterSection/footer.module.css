@@ -11,6 +11,10 @@
 .footer_logo {
   max-width: 123px;
 }
+.footer_logo a{
+  display: flex;
+  align-items: center;
+}
 .bottom_logo {
   max-width: 199px;
 }

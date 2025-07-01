@@ -34,7 +34,7 @@ return (
               )}
               </div>
           </div>
-          <div className={Styles.inner_slider_container}>
+          <div className={Styles.timeline_container}>
           <Island module={HorizontalTimeline} groupContent={ groupContent } clientOnly hydrateOn='idle' />
           </div>
         </div>

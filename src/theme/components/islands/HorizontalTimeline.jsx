@@ -19,7 +19,7 @@ export default function HorizontalTimeline({ groupContent }) {
 
 return (
 <>
-   <Timeline responsiveWidth={980}
+   <Timeline responsiveWidth={991}
         type="horizontal"
         animation={true}
         passiveLineStyle={{
@@ -33,11 +33,11 @@ return (
   {groupContent.map((item, idx) => (
     <TimelineItem
       key={idx}
-      place={idx % 2 === 0 ? 'normal' : 'opposite'}
+      place={idx % 2 === 0 ? 'opposite' : 'normal'}
       dotColor="#0f62fe"
       
     >
-      <div style={{ padding: '10px' }}>
+      <div style={{ padding: '10px' }} className={Styles.card_inner}>
         <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
         <RichText fieldPath={`groupContent[${idx}].description`}></RichText>
       </div>

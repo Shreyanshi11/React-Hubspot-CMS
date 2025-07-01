@@ -28,7 +28,7 @@ export const fields = (
         label="Card Group"
         name="groupContent"
         occurrence={{
-            min: 1,
+            min: 0,
             max: 20,
             default: 3,
         }}
