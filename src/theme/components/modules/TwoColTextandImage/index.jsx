@@ -29,7 +29,7 @@ export function Component(props) {
       buttonContentType
     },
     },
-    imagecontent: { image, videoUrl, videoPosterUrl }
+    imagecontent: { video_image, image, videoUrl, videoPosterUrl }
   } = props;
 
   const buttonHref = getLinkFieldHref(link);
