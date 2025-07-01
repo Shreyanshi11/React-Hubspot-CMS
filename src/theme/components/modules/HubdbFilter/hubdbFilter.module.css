@@ -53,3 +53,23 @@
     display:block;
     width:100%;
 }
+
+@media only screen and (max-width:991px){
+
+}
+
+@media only screen and (max-width:767px){
+    .hubdb_filter_sec .language_name_container{
+    margin:0 0 50px;
+}
+    .hubdb_filter_sec .filter_image_content{
+    margin:0 15px 20px;
+    max-width:120px;
+}
+.hubdb_filter_sec .language_name{
+    margin:0 15px 20px;
+}
+.hubdb_filter_sec .heading_container{
+    margin:0 0 25px;
+}
+}
