@@ -6,15 +6,15 @@ import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
 import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx'
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 
+
+// ✅ Show video fields only if "video" is selected
 const videoFieldVisibility = ({ getFieldValue }) => {
-  const value = getFieldValue('imagecontent.video_image');
-  console.log('Current selection:', value);
-  return value === 'video';
+  return getFieldValue('video_image') === 'video';
 };
 
-// Show image field only if "image" is selected
+// ✅ Show image field only if "image" is selected
 const imageFieldVisibility = ({ getFieldValue }) => {
-  return getFieldValue('imagecontent.video_image') === 'image';
+  return getFieldValue('video_image') === 'image';
 };
 
 
