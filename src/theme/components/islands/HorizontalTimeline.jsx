@@ -13,8 +13,6 @@ export default function HorizontalTimeline({ groupContent }) {
 
 
 
-
-
 return (
 <>
    <Timeline type="horizontal" animation={true}>
