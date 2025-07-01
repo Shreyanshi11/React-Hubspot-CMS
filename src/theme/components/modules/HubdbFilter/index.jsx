@@ -47,7 +47,7 @@ export function Component(props) {
             </div>
           </div>
           <div className={Styles.hubdb_filter_container}>
-            <Island module={HubdbFilter} table1={table1} language_type={language_type} language_image={language_image} clientOnly hydrateOn='idle' />
+            <Island module={HubdbFilter} language_type={language_type} language_image={language_image} clientOnly hydrateOn='idle' />
           </div>
         </div>
       </ResponsiveSpacingWrapper>
