@@ -92,6 +92,7 @@ export function Component(props) {
                     src={videoUrl}
                     poster={videoPosterUrl?.src || ''}
                     loop
+                    autoplay
                     className={Styles.video}
                   />
                 )}
