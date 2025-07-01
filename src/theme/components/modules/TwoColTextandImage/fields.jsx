@@ -7,17 +7,6 @@ import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx'
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 
 
-// ✅ Show video fields only if "video" is selected
-const videoFieldVisibility = ({ getFieldValue }) => {
-  return getFieldValue('video_image') === 'video';
-};
-
-// ✅ Show image field only if "image" is selected
-const imageFieldVisibility = ({ getFieldValue }) => {
-  return getFieldValue('video_image') === 'image';
-};
-
-
 const buttonFieldVisibility = {
   boolean_operator: 'OR',
   criteria: [{
@@ -130,16 +119,22 @@ export const fields = (
         label="Video URL"
         name="videoUrl"
         default=""
-        visibilityRules="ADVANCED"
-        advancedVisibility={videoFieldVisibility}
+        visibility={{
+          controlling_field_path: 'imagecontent.video_image',
+          operator: 'EQUAL',
+          controlling_value_regex: 'video'
+        }}
       />
 
       <ImageField
         label="Video Poster Image"
         name="videoPosterUrl"
         default=""
-        visibilityRules="ADVANCED"
-        advancedVisibility={videoFieldVisibility}
+        visibility={{
+           controlling_field_path: 'imagecontent.video_image',
+          operator: 'EQUAL',
+          controlling_value_regex: 'video'
+        }}
       />
 
       <ImageField
@@ -148,8 +143,11 @@ export const fields = (
         resizable={true}
         responsive={true}
         showLoading={true}
-        visibilityRules="ADVANCED"
-        advancedVisibility={imageFieldVisibility}
+        visibility={{
+           controlling_field_path: 'imagecontent.video_image',
+          operator: 'EQUAL',
+          controlling_value_regex: 'image'
+        }}
       />
 
 
