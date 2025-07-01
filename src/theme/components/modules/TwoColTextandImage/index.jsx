@@ -81,17 +81,20 @@ export function Component(props) {
               </div>
 
               <div className={Styles.image_container}>
-                {video_image === 'video' && videoUrl ? (
-                  <video
-                    src={videoUrl}
-                    poster={videoPosterUrl?.src || ''}
-                    controls
-                    className={Styles.video}
-                  />
-                ) : image ? (
-                  <RenderImage imageField={image} />
-                ) : null}
+              {video_image === 'video' && (
+                <video
+                  src={videoUrl}
+                  poster={videoPosterUrl?.src || ''}
+                  controls
+                  className={Styles.video}
+                />
+              )}
+
+              {video_image === 'image' && (
+                <RenderImage imageField={image} />
+              )}
               </div>
+
             </div>
           </div>
         </div>
