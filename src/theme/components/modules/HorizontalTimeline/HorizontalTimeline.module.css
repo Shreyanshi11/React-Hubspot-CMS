@@ -30,6 +30,75 @@ margin-bottom:88px
 padding:22px 33px 26px 21px;
 }
 
+
+
+.timelineWrapper {
+  padding: 40px 20px;
+  overflow-x: auto;
+  position: relative;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 40px;
+  height: 2px;
+  background-color: #ff3366;
+  z-index: 1;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  justify-content: flex-end;
+}
+
+.bottom {
+  justify-content: flex-start;
+  grid-row: 2;
+}
+
+.card {
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 250px;
+  z-index: 2;
+}
+
+.connector {
+  width: 2px;
+  height: 30px;
+  background-color: #ff3366;
+  margin-top: 6px;
+  z-index: 1;
+}
+
+.trophy {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  z-index: 2;
+}
+
 @media only screen and (max-width: 1199px) {
     .inner_slider_container {
         padding: 0;
