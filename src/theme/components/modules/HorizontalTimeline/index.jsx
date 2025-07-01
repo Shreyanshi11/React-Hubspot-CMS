@@ -47,5 +47,5 @@ return (
 export { fields } from './fields.jsx';
 
 export const meta = {
-label: 'Service Card Slider Module',
+label: 'Horizontal Timeline',
 };
