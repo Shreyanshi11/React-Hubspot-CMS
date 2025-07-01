@@ -1,8 +1,7 @@
 import React from 'react';
-import { logInfo, Island } from '@hubspot/cms-components';
+import { logInfo, Island, RichText } from '@hubspot/cms-components';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
-import HorizontalTimeline from '../../islands/HorizontalTimeline?island';
 import Styles from '../HorizontalTimeline/HorizontalTimeline.module.css';
 
 
@@ -35,7 +34,28 @@ return (
               </div>
           
           <div className={Styles.timeline_container}>
-          <Island module={HorizontalTimeline} groupContent={ groupContent } clientOnly hydrateOn='idle' />
+         <div className={Styles.timelineWrapper}>
+      <div className={Styles.timeline}>
+        {groupContent.map((item, idx) => (
+          <div
+            key={idx}
+            className={`${Styles.item} ${idx % 2 === 0 ? Styles.top : Styles.bottom}`}
+          >
+            <div className={Styles.card}>
+              <HeadingComponent
+                headingLevel={item.headingAndTextHeadingLevel}
+                headingStyleVariant={item.headingStyleVariant}
+                heading={`#${idx + 1} ${item.headingAndTextHeading}`}
+              />
+              <RichText fieldPath={`groupContent[${idx}].description`} />
+            </div>
+            <div className={Styles.connector}></div>
+          </div>
+        ))}
+
+        <div className={Styles.trophy}>🏆</div>
+      </div>
+    </div>
           </div>
           </div>
         </div>
