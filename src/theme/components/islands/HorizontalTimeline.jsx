@@ -37,7 +37,7 @@ return (
       dotColor="#0f62fe"
       
     >
-      <div style={{ padding: '10px' }} className={Styles.card_inner}>
+      <div className={Styles.card_inner}>
         <HeadingComponent headingLevel={item.headingAndTextHeadingLevel} headingStyleVariant={item.headingStyleVariant} heading={item.headingAndTextHeading} />
         <RichText fieldPath={`groupContent[${idx}].description`}></RichText>
       </div>
