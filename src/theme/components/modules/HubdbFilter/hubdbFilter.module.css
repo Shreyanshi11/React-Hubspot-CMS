@@ -23,7 +23,7 @@
     text-fill-color: transparent;
     position:relative;
 }
-.hubdb_filter_sec .language_name_inner p:active:after,.hubdb_filter_sec .language_name_inner p:hover:after{
+.hubdb_filter_sec .language_name_inner:active:after,.hubdb_filter_sec .language_name_inner:hover:after{
     content:'';
     position:absolute;
     top:5px;

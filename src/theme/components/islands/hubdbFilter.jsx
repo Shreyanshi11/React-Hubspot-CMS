@@ -40,8 +40,7 @@ export default function HubdbFilter({ language_type, language_image }) {
                         }
                     >
                         <div className={Styles.language_name_inner}>
-
-                            <p>{item.label}</p>
+                            <p className='font-700'>{item.label}</p>
                         </div>
                     </div>
                 ))}
