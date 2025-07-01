@@ -1519,8 +1519,7 @@
                       "property_value_paths": {
                         "fallback": "theme.global.buttons.simple.font.fallback",
                         "font": "theme.global.buttons.simple.font.font",
-                        "font_set": "theme.global.buttons.simple.font.font_set",
-                        "styles": "theme.global.buttons.simple.font.styles"
+                        "font_set": "theme.global.buttons.simple.font.font_set"
                       }
                     },
                     "default": {

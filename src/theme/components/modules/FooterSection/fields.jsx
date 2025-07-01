@@ -23,16 +23,10 @@ export const fields = (
                 label='Favicon Logo'
                 name='favicon_logo'
                 resizable={true}
-                responsive={false}
+                responsive={true}
                 showLoading={true}
             />
-            <ImageField
-                label='Brand Name Logo'
-                name='brand_name_logo'
-                resizable={true}
-                responsive={false}
-                showLoading={true}
-            />
+         
             <LinkField name="logo_link"
                 label="Logo Link" supportedTypes={[
                     'EXTERNAL',
@@ -57,7 +51,7 @@ export const fields = (
                 label='Bottom Image'
                 name='bottom_image'
                 resizable={true}
-                responsive={false}
+                responsive={true}
                 showLoading={true}
             />
         </FieldGroup>

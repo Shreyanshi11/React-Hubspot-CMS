@@ -8,11 +8,13 @@
   width: calc(30% - 60px);
   margin: 0 30px;
 }
-.logo_block {
+.footer_logo {
   max-width: 123px;
+  width: 100%;
 }
 .bottom_logo {
   max-width: 199px;
+  width: 100%;
 }
 .footer_section img {
   width: 100%;
@@ -58,11 +60,11 @@
   border-radius: 50%;
   transition: all 0.6s ease-in-out;
 }
-.social_icon_block .icon_list ul li:hover{
-    background: #718096;
+.social_icon_block .icon_list ul li:hover {
+  background: #718096;
 }
-.social_icon_block .icon_list ul li:hover svg{
-  fill:#fafafa;
+.social_icon_block .icon_list ul li:hover svg {
+  fill: #fafafa;
 }
 .social_icon_block .icon_list svg {
   height: 13px;
@@ -73,4 +75,70 @@
   padding: 34px 0 42px;
   border-top: 1px solid #cbd5e0;
   text-align: center;
+}
+
+@media (max-width: 1262px) {
+  .footer_section .flex_container {
+    margin: 0 -15px;
+  }
+  .footer_section .flex_container .logo_block {
+    width: calc(30% - 30px);
+    margin: 0 15px;
+  }
+
+  .footer_section .flex_container .menu_block {
+    width: calc(20% - 30px);
+    margin: 0 15px;
+  }
+
+  .footer_section .flex_container .contact_block {
+    width: calc(30% - 30px);
+    margin: 0 15px;
+  }
+  .footer_section .flex_container .social_icon_block {
+    width: calc(20% - 30px);
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer_section .flex_container .logo_block {
+    width: calc(50% - 30px);
+  }
+
+  .footer_section .flex_container .menu_block {
+    width: calc(50% - 30px);
+  }
+
+  .footer_section .flex_container .contact_block {
+    width: calc(50% - 30px);
+  }
+  .footer_section .flex_container .social_icon_block {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 767px) {
+  .footer_section .flex_container {
+    margin: 0;
+    padding-bottom: 40px;
+  }
+  .footer_section .flex_container .logo_block {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .footer_section .flex_container .menu_block {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .footer_section .flex_container .contact_block {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .footer_section .flex_container .social_icon_block {
+    width: 100%;
+    margin: 0;
+  }
 }
