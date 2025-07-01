@@ -137,6 +137,9 @@ export const fields = (
       <ImageField
         label="Video Poster Image"
         name="videoPosterUrl"
+        resizable={true}
+        responsive={true}
+        showLoading={true}
         default=""
         visibility={{
            controlling_field_path: 'imagecontent.video_image',

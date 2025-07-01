@@ -76,10 +76,10 @@ export function Component(props) {
                       rel={buttonRel}
                       target={buttonTarget}
                       showIcon={showIcon}
-                      iconFieldPath='groupButton.buttonContentIcon'
+                      iconFieldPath='textcontent.groupButton.buttonContentIcon'
                       iconPosition={iconPosition}
                       additionalClassArray={['button-container__button']}
-                      ctaFieldpath={`groupButton.ctaField`}
+                      ctaFieldpath={`textcontent.groupButton.ctaField`}
                       buttonType={buttonContentType}
                     >{text}</Button>
                   </div>
