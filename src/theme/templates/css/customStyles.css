@@ -51,7 +51,7 @@
 
 
 /* Timeline Style */
-.beautiful-timeline-item-content{
+.beautiful-timeline-item-content,.beautiful-timeline-item-content-opposite{
   border: 1px solid #E7DAED;
   border-radius: 9px;
 }
