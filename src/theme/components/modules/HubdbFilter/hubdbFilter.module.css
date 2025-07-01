@@ -23,7 +23,7 @@
     text-fill-color: transparent;
     position:relative;
 }
-.hubdb_filter_sec .language_name_inner:active:after,.hubdb_filter_sec .language_name_inner:hover:after{
+.hubdb_filter_sec .language_name_inner p:active:after,.hubdb_filter_sec .language_name_inner p:hover:after{
     content:'';
     position:absolute;
     top:5px;
@@ -38,6 +38,7 @@
 }
 .hubdb_filter_sec .language_name_inner p{
     margin:0;
+    cursor:pointer;
 }
 .hubdb_filter_sec .filter_image_container{
         display:flex;

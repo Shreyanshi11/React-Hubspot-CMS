@@ -51,7 +51,7 @@ export function Component(props) {
               
 
             <div className={Styles.heading_container}>
-              {showBorder && <div className='gradient-border' style={{ margin: '0 auto' , marginBottom: '20px' }}></div>}
+              {showBorder && <div className='gradient-border' style={{ margin: '0 auto' , marginBottom: '10px' }}></div>}
               
               {headingAndTextHeading && (
                 <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
