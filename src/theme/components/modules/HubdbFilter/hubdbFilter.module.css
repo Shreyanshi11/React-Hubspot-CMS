@@ -23,18 +23,17 @@
     text-fill-color: transparent;
     position:relative;
 }
-.hubdb_filter_sec .language_name_inner p:active:after,.hubdb_filter_sec .language_name_inner p:hover:after{
-    content:'';
-    position:absolute;
-    top:5px;
-    left:50%;
-    width:20px;
-    height:2px;
-     background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+.hubdb_filter_sec .language_name_inner p:active::after,.hubdb_filter_sec .language_name_inner p:hover::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4px;
+  width: 25px;
+  height: 3px;
+  background: linear-gradient(225deg, #f76680, #57007b);
+  border-radius: 3px;
+  z-index: 1;
 }
 .hubdb_filter_sec .language_name_inner p{
     margin:0;
