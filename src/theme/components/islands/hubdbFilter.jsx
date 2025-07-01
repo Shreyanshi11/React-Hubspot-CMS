@@ -40,7 +40,7 @@ export default function HubdbFilter({ language_type, language_image, table }) {
                         ))} */}
                           {table.map((item, index) => (
                             <div className={Styles.filter_image} key={index}>
-                                <img src={item.objects.language_image.url} alt={item.objects.language_image.altText} />
+                                <img src={item.language_image.url} alt={item.language_image.altText} />
                             </div>
                         ))}
                     </div>
