@@ -5,7 +5,6 @@ import HeadingStyles from "../../components/HeadingComponent/HeadingStyle";
 import HeadingContent from "../../components/HeadingComponent/HeadingContent";
 import ButtonContent from "../../components/ButtonComponent/ButtonContent";
 import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
-import { FieldGroup, ModuleFields, RepeatedFieldGroup, RichTextField } from "@hubspot/cms-components/fields";
 
 const buttonFieldVisibility = {
   boolean_operator: 'OR',
@@ -74,7 +73,7 @@ const matchBlockCtaType = {
 
 const blockButtonTypeVisibility = {
   boolean_operator: 'OR',
-  criteria: [matchBLockButtonType]
+  criteria: [matchBlockButtonType]
 };
 
 const blockCtaTypeVisibility = {
