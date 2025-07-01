@@ -10,13 +10,11 @@
 }
 .footer_logo {
   max-width: 123px;
-}
-.footer_logo a{
-  display: flex;
-  align-items: center;
+  width: 100%;
 }
 .bottom_logo {
   max-width: 199px;
+  width: 100%;
 }
 .footer_section img {
   width: 100%;
