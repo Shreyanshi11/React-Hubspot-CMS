@@ -31,7 +31,7 @@ export default function HeadingStyles(props) {
         required={false}
         locked={false}
         default={{
-          color: '#252525',
+          color: '#1A202C',
           opacity: 100,
         }}
 
