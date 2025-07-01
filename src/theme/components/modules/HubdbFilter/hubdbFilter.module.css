@@ -15,7 +15,7 @@
 .hubdb_filter_sec .language_name{
     margin:0 30px 30px;
 }
-.hubdb_filter_sec .language_name_inner p:active,.hubdb_filter_sec .language_name_inner p:hover{
+.hubdb_filter_sec .active.language_name p,.hubdb_filter_sec .language_name_inner p:hover{
     background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
