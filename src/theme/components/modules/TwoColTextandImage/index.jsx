@@ -32,6 +32,7 @@ export function Component(props) {
     imagecontent: { video_image, image, videoUrl, videoPosterUrl }
   } = props;
 
+
   const buttonHref = getLinkFieldHref(link);
   const buttonRel = getLinkFieldRel(link);
   const buttonTarget = getLinkFieldTarget(link);
@@ -83,13 +84,13 @@ export function Component(props) {
                 {video_image === 'video' && videoUrl ? (
                   <video
                     src={videoUrl}
-                    poster={videoPosterUrl?.src}
+                    poster={videoPosterUrl?.src || ''}
                     controls
                     className={Styles.video}
                   />
-                ) : (
-                  image && <RenderImage imageField={image} />
-                )}
+                ) : image ? (
+                  <RenderImage imageField={image} />
+                ) : null}
               </div>
             </div>
           </div>
