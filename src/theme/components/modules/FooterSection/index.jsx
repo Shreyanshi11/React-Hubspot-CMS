@@ -7,7 +7,7 @@ export function Component(props) {
 
 
     const {
-        column_one: { logoImage, logo_link, content, bottom_image },
+        column_one: { favicon_logo, brand_name_logo, logo_link, content, bottom_image },
         column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu = [] },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
@@ -65,13 +65,13 @@ export function Component(props) {
                                     }
                                 >
 
-                                    <RenderImage imageField={logoImage} />Ik developers
+                                    <RenderImage imageField={favicon_logo} />  {brand_name_logo && (<span> <RenderImage imageField={brand_name_logo} /></span>)}
                                 </a>
                             </div>
                             <div>
                                 <RichText fieldPath='column_one.content'></RichText>
                             </div>
-                            <div className={Styles.logo_block}>
+                            <div className={Styles.bottom_logo}>
                                 <RenderImage imageField={bottom_image} />
                             </div>
                         </div>
@@ -142,7 +142,22 @@ export function Component(props) {
                                     {add_social_icon.map((item, index) => (
 
                                         <li>
-                                            <Icon purpose="DECORATIVE" fieldPath={`column_four.add_social_icon[${index}].social_icon`} />
+                                            <a
+                                                href={item.social_link?.url || "#"}
+                                                target={item.social_link?.open_in_new_tab ? "_blank" : "_self"}
+                                                rel={
+                                                    [
+                                                        item.social_link?.no_follow ? "nofollow" : "",
+                                                        item.social_link?.sponsored ? "sponsored" : "",
+                                                        item.social_link?.user_generated_content ? "ugc" : "",
+                                                        item.social_link?.rel || ""
+                                                    ]
+                                                        .filter(Boolean)
+                                                        .join(" ") || undefined
+                                                }
+                                            >
+                                                <Icon purpose="DECORATIVE" fieldPath={`column_four.add_social_icon[${index}].social_icon`} />
+                                            </a>
                                         </li>
                                     ))}
 
@@ -154,7 +169,7 @@ export function Component(props) {
                         <RichText fieldPath='copyright_text'></RichText>
                     </div>
                 </div>
-            </footer>
+            </footer >
 
         </>
     );
