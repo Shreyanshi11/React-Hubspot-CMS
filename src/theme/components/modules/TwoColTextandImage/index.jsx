@@ -80,7 +80,7 @@ export function Component(props) {
               </div>
 
               <div className={Styles.image_container}>
-                {video_image === 'video' && videoUrl ? (
+                {imagecontent.video_image === 'video' && videoUrl ? (
                   <video
                     src={videoUrl}
                     poster={videoPosterUrl?.src}
