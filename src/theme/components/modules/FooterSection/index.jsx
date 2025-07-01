@@ -8,7 +8,7 @@ export function Component(props) {
 
     const {
         column_one: { logoImage, logo_link, content, bottom_image },
-        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant,footer_menu = [] },
+        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu = [] },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
         copyright_text
@@ -16,26 +16,26 @@ export function Component(props) {
     } = props;
 
     const renderMenu = (items) => {
-  return (
-    <ul className={Styles.menu_list}>
-      {items.map((item, index) => (
-        <li key={index} className={Styles.list_items}>
-          {item.linkUrl ? (
-            <a
-              href={item.linkUrl}
-              target={item.linkTarget || '_self'}
-              rel="noopener noreferrer"
-              dangerouslySetInnerHTML={{ __html: item.linkLabel }}
-            />
-          ) : (
-            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
-          )}
-          {item.children && item.children.length > 0 && renderMenu(item.children)}
-        </li>
-      ))}
-    </ul>
-  );
-};
+        return (
+            <ul className={Styles.menu_list}>
+                {items.map((item, index) => (
+                    <li key={index} className={Styles.list_items}>
+                        {item.linkUrl ? (
+                            <a
+                                href={item.linkUrl}
+                                target={item.linkTarget || '_self'}
+                                rel="noopener noreferrer"
+                                dangerouslySetInnerHTML={{ __html: item.linkLabel }}
+                            />
+                        ) : (
+                            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
+                        )}
+                        {item.children && item.children.length > 0 && renderMenu(item.children)}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
 
 
     logInfo("Footer Section Props", props);
@@ -47,9 +47,9 @@ export function Component(props) {
             <footer className={`${Styles.footer_section} footer__site_page`}>
                 <div className='footer__container'>
                     <div className={Styles.flex_container}>
-                        <div className={Styles.footer_logo}>
+                        <div className={Styles.logo_block}>
 
-                            <div className={Styles.logo_block}>
+                            <div className={Styles.footer_logo}>
                                 <a
                                     href={logo_link?.url || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
@@ -114,10 +114,30 @@ export function Component(props) {
                             <div>
                                 <RichText fieldPath='column_three.address'></RichText>
                             </div>
+                            <div>
+                                <a
+                                    href={number_link?.url || "#"}
+                                    target={number_link?.open_in_new_tab ? "_blank" : "_self"}
+                                    rel={
+                                        [
+                                            number_link?.no_follow ? "nofollow" : "",
+                                            number_link?.sponsored ? "sponsored" : "",
+                                            number_link?.user_generated_content ? "ugc" : "",
+                                            number_link?.rel || ""
+                                        ]
+                                            .filter(Boolean)
+                                            .join(" ") || undefined
+                                    }
+                                >
+
+                                    {phone_number}
+                                </a>
+                            </div>
+
 
                         </div>
                         <div className={Styles.social_icon_block}>
-                            <div>
+                            <div className={Styles.icon_list}>
                                 <ul>
                                     {add_social_icon.map((item, index) => (
 
