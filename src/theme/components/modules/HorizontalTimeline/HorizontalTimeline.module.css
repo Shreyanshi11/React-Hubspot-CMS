@@ -70,7 +70,7 @@ padding:22px 33px 26px 21px;
 }
 
 .bottom {
-  justify-content: flex-start;
+flex-direction: column-reverse;
   grid-row: 2;
 }
 
@@ -97,7 +97,7 @@ padding:22px 33px 26px 21px;
 .bottom .connector {
   margin-bottom: 6px;
   margin-top: 0;
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
 }
 
 .trophy {
