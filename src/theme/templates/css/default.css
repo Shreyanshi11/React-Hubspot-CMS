@@ -301,7 +301,7 @@ button:disabled,
 
 
 /* buttons new css */
-.button--primary,.button{
+.button--primary{
   background: linear-gradient(225deg, #3d63ea 0%, #3d63ea 100%) !important;
 }
 

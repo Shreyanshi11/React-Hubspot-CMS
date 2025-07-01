@@ -1,10 +1,21 @@
 import React from 'react';
-import { ModuleFields, FieldGroup, RichTextField, BooleanField, ImageField } from '@hubspot/cms-components/fields';
+import { ModuleFields, FieldGroup, RichTextField, BooleanField, ImageField, ChoiceField, TextField } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx'
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
 import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx'
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
+
+// Visibility logic for "video" related fields
+const videoFieldVisibility = ({ getFieldValue }) => {
+  return getFieldValue('video_image') === 'video';
+};
+
+// Visibility logic for "image" related fields
+const imageFieldVisibility = ({ getFieldValue }) => {
+  return getFieldValue('video_image') === 'image';
+};
+
 
 const buttonFieldVisibility = {
   boolean_operator: 'OR',
@@ -102,7 +113,33 @@ export const fields = (
     </FieldGroup>
 
     <FieldGroup label="Image Content" name="imagecontent" display="inline">
-  
+
+      <ChoiceField
+        label="Video/Image"
+        name="video_image"
+        display="select"
+        choices={[
+          ['video', 'Video'],
+          ['image', 'Image']
+        ]}
+        default="image"
+      />
+
+      <TextField
+        label="Video URL"
+        name="videoUrl"
+        default=""
+        visibilityRules="ADVANCED"
+        advancedVisibility={videoFieldVisibility}
+      />
+
+      <ImageField
+        label="Video Poster Image"
+        name="videoPosterUrl"
+        default=""
+        visibilityRules="ADVANCED"
+        advancedVisibility={videoFieldVisibility}
+      />
 
       <ImageField
         label="Image"
@@ -110,7 +147,11 @@ export const fields = (
         resizable={true}
         responsive={true}
         showLoading={true}
-      ></ImageField>
+        visibilityRules="ADVANCED"
+        advancedVisibility={imageFieldVisibility}
+      />
+
+
     </FieldGroup>
 
   </ModuleFields>
