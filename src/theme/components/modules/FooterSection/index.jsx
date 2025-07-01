@@ -8,13 +8,39 @@ export function Component(props) {
 
     const {
         column_one: { logoImage, logo_link, content, bottom_image },
-        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu },
+        column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant,footer_menu = [] },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
         copyright_text
 
     } = props;
+
+    const renderMenu = (items) => {
+  return (
+    <ul className={Styles.menu_list}>
+      {items.map((item, index) => (
+        <li key={index} className={Styles.list_items}>
+          {item.linkUrl ? (
+            <a
+              href={item.linkUrl}
+              target={item.linkTarget || '_self'}
+              rel="noopener noreferrer"
+              dangerouslySetInnerHTML={{ __html: item.linkLabel }}
+            />
+          ) : (
+            <span dangerouslySetInnerHTML={{ __html: item.linkLabel }} />
+          )}
+          {item.children && item.children.length > 0 && renderMenu(item.children)}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+
     logInfo("Footer Section Props", props);
+
+
     return (
         <>
 
@@ -61,28 +87,16 @@ export function Component(props) {
                                     />
                                 </div>
                             )}
-                            <div>
-                                <ul>
-                                    {footer_menu.map((item, i) => (
-                                        <li key={i}>
-                                            {item.link_url ? (
-                                                <a href={item.link_url}>{item.link_label}</a>
-                                            ) : (
-                                                <span>{item.link_label}</span>
-                                            )}
-                                            {item.children && item.children.length > 0 && (
-                                                <ul>
-                                                    {item.children.map((child, j) => (
-                                                        <li key={j}>
-                                                            <a href={child.link_url}>{child.link_label}</a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-
+                            <div className={Styles.menu_list}>
+                                <div className={Styles.menu_container}>
+                                    {footer_menu.length > 0 ? (
+                                        <div className={Styles.menu_group}>
+                                            {renderMenu(footer_menu)}
+                                        </div>
+                                    ) : (
+                                        <p>No menu items added.</p>
+                                    )}
+                                </div>
                             </div>
 
                         </div>
