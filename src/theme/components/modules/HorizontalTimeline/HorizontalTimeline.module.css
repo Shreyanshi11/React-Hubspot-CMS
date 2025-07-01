@@ -55,6 +55,7 @@ padding:22px 33px 26px 21px;
   height: 2px;
   background-color: #ff3366;
   z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .item {
@@ -86,8 +87,17 @@ padding:22px 33px 26px 21px;
   width: 2px;
   height: 30px;
   background-color: #ff3366;
-  margin-top: 6px;
   z-index: 1;
+}
+
+.top .connector {
+  margin-top: 6px;
+}
+
+.bottom .connector {
+  margin-bottom: 6px;
+  margin-top: 0;
+  transform: rotate(180deg);
 }
 
 .trophy {
@@ -99,13 +109,58 @@ padding:22px 33px 26px 21px;
   z-index: 2;
 }
 
-@media only screen and (max-width: 1199px) {
-    .inner_slider_container {
-        padding: 0;
-    }
-}
-@media only screen and (max-width:991px){
-    .slider_progress_wrapper {
-            margin-right: 20px;
-    }
+/* 🔄 Mobile: Vertical timeline */
+@media screen and (max-width: 991px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 30px;
+    gap: 40px;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 2px;
+    height: auto;
+    background-color: #ff3366;
+  }
+
+  .item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .top,
+  .bottom {
+    grid-row: auto;
+    justify-content: flex-start;
+  }
+
+  .connector {
+    width: 2px;
+    height: 30px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: #ff3366;
+  }
+
+  .bottom .connector {
+    transform: none;
+  }
+
+  .trophy {
+    position: static;
+    transform: none;
+    align-self: center;
+    font-size: 24px;
+    margin-top: 16px;
+  }
 }
