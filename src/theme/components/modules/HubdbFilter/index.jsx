@@ -52,9 +52,10 @@ export function Component(props) {
                 <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
               )}
             </div>
-          </div>
-          <div className={Styles.hubdb_filter_container}>
-            <Island module={HubdbFilter} language_type={ltype} language_image={image} clientOnly hydrateOn='idle' />
+
+            <div className={Styles.hubdb_filter_container}>
+              <Island module={HubdbFilter} language_type={ltype} language_image={image} clientOnly hydrateOn='idle' />
+            </div>
           </div>
         </div>
       </ResponsiveSpacingWrapper>
