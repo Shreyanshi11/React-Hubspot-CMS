@@ -1,36 +1,5 @@
 
-.logo_card .image_block img {
-display: block;
-width: 34px;
-height: 34px;
-object-fit: cover;
-}
-.inner_slider_container {
-overflow: hidden;
-padding: 0 0 0 calc(50vw - 611px);
-}
-.inner_slider_container .slick-slide {
-margin-right: 40px;
-}
-.logo_card .image_block {
-border: 1px solid;
-border-image-source: linear-gradient(225deg, #f76680 0%, #57007b 100%);
-border-image-slice: 1;
-display: inline-block;
-}
-.logo_card .logo_card_inner {
-background-color: #fafafa;
-box-shadow: 0px 4px 30px 0px #0000000d;
-border-radius: 16px;
-padding: 36px 16px;
-}
-.inner_slider_container .slick-dots {
-bottom: -65px;
-}
-.sec_heading .heading_container {
-text-align: center;
-margin-bottom: 73px;
-}
+
 .sec_heading .heading_container h1,
 .sec_heading .heading_container h2,
 .sec_heading .heading_container h3,
@@ -48,44 +17,9 @@ margin-bottom: 0;
 margin-top: 20px;
 margin-bottom: 20px;
 }
-
-/* Progressbar style start here */
-.slider_progress_wrapper {
-display: flex;
-align-items: center;
-gap: 8px;
-margin-top: 6px;
-max-width: 164px;
-margin-left: auto;
-margin-right: 188px;
-}
-
-.slider_progress_wrapper .slide_index,
-.slider_progress_wrapper .slide_total {
-font-weight: bold;
-font-size: 16px;
-}
-
-.slider_progress_wrapper .slide_index {
-color: #a0aec0;
-}
-
-.slider_progress_wrapper .slide_total {
-color: #57007b;
-}
-
-.slider_progress_wrapper .progress_bar {
-flex: 1;
-height: 3px;
-background-color: #e2e8f0;
-border-radius: 10px;
-overflow: hidden;
-}
-
-.slider_progress_wrapper .progress_fill {
-height: 100%;
-background-color: #57007b;
-transition: width 0.3s ease;
+.timeline_container{}
+.timeline_container .card_inner{
+padding:22px 33px 26px 21px;
 }
 
 @media only screen and (max-width: 1199px) {
