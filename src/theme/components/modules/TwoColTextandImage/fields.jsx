@@ -6,12 +6,13 @@ import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
 import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx'
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 
-// Visibility logic for "video" related fields
+
+// ✅ Show video fields only if "video" is selected
 const videoFieldVisibility = ({ getFieldValue }) => {
   return getFieldValue('video_image') === 'video';
 };
 
-// Visibility logic for "image" related fields
+// ✅ Show image field only if "image" is selected
 const imageFieldVisibility = ({ getFieldValue }) => {
   return getFieldValue('video_image') === 'image';
 };
