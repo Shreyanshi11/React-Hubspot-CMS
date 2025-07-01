@@ -21,7 +21,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    position:relative;
 }
 .hubdb_filter_sec .active.language_name p::after{
   content: "";
@@ -38,6 +37,7 @@
 .hubdb_filter_sec .language_name_inner p{
     margin:0;
     cursor:pointer;
+        position:relative;
 }
 .hubdb_filter_sec .filter_image_container{
         display:flex;
