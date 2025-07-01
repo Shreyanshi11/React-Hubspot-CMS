@@ -21,11 +21,11 @@ export default function HubdbFilter({ language_type, language_image }) {
                             ...new Map(
                                 language_type
                                     .flat() // Flatten the nested arrays
-                                    .map((item) => [item.name, item]) // Use name as key to filter unique
+                                    .map((item) => [item.label, item]) // Use name as key to filter unique
                             ).values()
                         ].map((uniqueItem, index) => (
                             <div className={Styles.language_name_inner} key={index}>
-                                <p>{uniqueItem.name}</p>
+                                <p>{uniqueItem.label}</p>
                             </div>
                         ))}
                     </div>
