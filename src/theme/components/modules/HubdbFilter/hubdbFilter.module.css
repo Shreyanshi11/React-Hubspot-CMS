@@ -23,7 +23,7 @@
     text-fill-color: transparent;
     position:relative;
 }
-.hubdb_filter_sec .language_name_inner p.active::after{
+.hubdb_filter_sec .active .language_name p::after{
   content: "";
   position: absolute;
   left: 50%;
