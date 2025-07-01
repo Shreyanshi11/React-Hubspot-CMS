@@ -28,6 +28,10 @@
 .two_col_image_text .button_content a{
     margin:0;
 }
+.two_col_image_text .image_container img, .two_col_image_text .image_container video{
+    width:100%;
+    display:block;
+}
 
 
 @media only screen and (max-width:991px){
