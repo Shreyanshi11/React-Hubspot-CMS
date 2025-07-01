@@ -73,7 +73,7 @@ const matchBlockCtaType = {
 
 const blockButtonTypeVisibility = {
   boolean_operator: 'OR',
-  criteria: [matchBLockButtonType]
+  criteria: [matchBlockButtonType]
 };
 
 const blockCtaTypeVisibility = {
