@@ -5,13 +5,6 @@ import { logInfo } from '@hubspot/cms-components';
 
 export default function HubdbFilter({ language_type, language_image }) {
 
-    const image = Array.isArray(props.hublData?.language_image)
-        ? props.hublData.language_image
-        : [];
-    const ltype = Array.isArray(props.hublData?.language_type)
-        ? props.hublData.language_type
-        : [];
-
     return (
         <>
             <div className={Styles.filter_content}>

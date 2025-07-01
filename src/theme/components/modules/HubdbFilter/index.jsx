@@ -23,6 +23,13 @@ export const hublDataTemplate = `
 
 export function Component(props) {
 
+  const image = Array.isArray(props.hublData?.language_image)
+    ? props.hublData.language_image
+    : [];
+  const ltype = Array.isArray(props.hublData?.language_type)
+    ? props.hublData.language_type
+    : [];
+
   const {
     module_id,
     heading_group: {
@@ -47,7 +54,7 @@ export function Component(props) {
             </div>
           </div>
           <div className={Styles.hubdb_filter_container}>
-            <Island module={HubdbFilter} language_type={language_type} language_image={language_image} clientOnly hydrateOn='idle' />
+            <Island module={HubdbFilter} language_type={ltype} language_image={image} clientOnly hydrateOn='idle' />
           </div>
         </div>
       </ResponsiveSpacingWrapper>
