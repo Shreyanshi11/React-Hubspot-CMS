@@ -7,7 +7,7 @@ export function Component(props) {
 
 
     const {
-        column_one: { favicon_logo, brand_name_logo, logo_link, content, bottom_image },
+        column_one: { favicon_logo, logo_link, content, bottom_image },
         column_two: { headingAndTextHeadingLevel, headingStyleColor, headingAndTextHeading, headingStyleVariant, footer_menu = [] },
         column_three: { headingAndTextHeadingLevel: col_three_headinglevel, headingStyleColor: col_three_headingStyleColor, headingAndTextHeading: col_three_heading, headingStyleVariant: col_three_headingVariant, address, number_link, phone_number },
         column_four: { add_social_icon = [] },
@@ -51,7 +51,7 @@ export function Component(props) {
 
                             <div className={Styles.footer_logo}>
                                 <a
-                                    href={logo_link?.url || "#"}
+                                    href={logo_link?.url?.href_with_scheme || "#"}
                                     target={logo_link?.open_in_new_tab ? "_blank" : "_self"}
                                     rel={
                                         [
@@ -65,7 +65,7 @@ export function Component(props) {
                                     }
                                 >
 
-                                    <RenderImage imageField={favicon_logo} />  {brand_name_logo && (<span> <RenderImage imageField={brand_name_logo} /></span>)}
+                                    <RenderImage imageField={favicon_logo} /> 
                                 </a>
                             </div>
                             <div>
@@ -116,7 +116,7 @@ export function Component(props) {
                             </div>
                             <div>
                                 <a
-                                    href={number_link?.url || "#"}
+                                    href={number_link?.url?.href_with_scheme || "#"}
                                     target={number_link?.open_in_new_tab ? "_blank" : "_self"}
                                     rel={
                                         [
@@ -143,7 +143,7 @@ export function Component(props) {
 
                                         <li>
                                             <a
-                                                href={item.social_link?.url || "#"}
+                                                href={item.social_link?.url?.href_with_scheme || "#"}
                                                 target={item.social_link?.open_in_new_tab ? "_blank" : "_self"}
                                                 rel={
                                                     [

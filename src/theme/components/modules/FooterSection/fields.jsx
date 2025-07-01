@@ -26,13 +26,7 @@ export const fields = (
                 responsive={true}
                 showLoading={true}
             />
-            <ImageField
-                label='Brand Name Logo'
-                name='brand_name_logo'
-                resizable={true}
-                responsive={true}
-                showLoading={true}
-            />
+         
             <LinkField name="logo_link"
                 label="Logo Link" supportedTypes={[
                     'EXTERNAL',
