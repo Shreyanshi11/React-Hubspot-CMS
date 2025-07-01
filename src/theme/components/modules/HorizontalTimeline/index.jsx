@@ -33,9 +33,10 @@ return (
                 <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
               )}
               </div>
-          </div>
+          
           <div className={Styles.timeline_container}>
           <Island module={HorizontalTimeline} groupContent={ groupContent } clientOnly hydrateOn='idle' />
+          </div>
           </div>
         </div>
       </ResponsiveSpacingWrapper>
