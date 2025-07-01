@@ -26,7 +26,7 @@ logInfo(props, 'Timeline');
 return (
   <>
      <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-        <div className={Styles.sec_heading}>
+        <div className={Styles.timeline_sec_heading}>
           <div className="page-center">
               <div className={Styles.heading_container}>
                   {headingAndTextHeading && (
