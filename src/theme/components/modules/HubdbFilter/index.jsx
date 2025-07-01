@@ -29,9 +29,6 @@ export function Component(props) {
   const ltype = Array.isArray(props.hublData?.language_type)
     ? props.hublData.language_type
     : [];
-  const table = Array.isArray(props.hublData?.table1)
-    ? props.hublData.table1
-    : [];
 
   const {
     module_id,
@@ -57,7 +54,7 @@ export function Component(props) {
             </div>
 
             <div className={Styles.hubdb_filter_container}>
-              <Island module={HubdbFilter} language_type={ltype} language_image={image} table={table} clientOnly hydrateOn='idle' />
+              <Island module={HubdbFilter} language_type={ltype} language_image={image} clientOnly hydrateOn='idle' />
             </div>
           </div>
         </div>
