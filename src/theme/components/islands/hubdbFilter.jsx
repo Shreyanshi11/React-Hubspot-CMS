@@ -29,32 +29,34 @@ export default function HubdbFilter({ language_type, language_image }) {
         <div className={Styles.filter_content}>
             {/* Filter Buttons */}
             <div className={Styles.language_name_container}>
-                <div className={Styles.language_name}>
-                    {uniqueLabels.map((item, index) => (
-                        <div
-                            className={`${Styles.language_name_inner} ${selectedLabel === item.label ? Styles.active : ''}`}
-                            key={index}
-                            onClick={() =>
-                                setSelectedLabel(
-                                    selectedLabel === item.label ? null : item.label
-                                )
-                            }
-                        >
+                {uniqueLabels.map((item, index) => (
+                    <div
+                        className={`${Styles.language_name} ${selectedLabel === item.label ? Styles.active : ''}`}
+                        key={index}
+                        onClick={() =>
+                            setSelectedLabel(
+                                selectedLabel === item.label ? null : item.label
+                            )
+                        }
+                    >
+                        <div className={Styles.language_name_inner}>
+
                             <p>{item.label}</p>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
+
             </div>
 
             {/* Filtered Images */}
             <div className={Styles.filter_image_container}>
-                <div className={Styles.filter_image_content}>
-                    {filteredImages.map((item, index) => (
+                {filteredImages.map((item, index) => (
+                    <div className={Styles.filter_image_content}>
                         <div className={Styles.filter_image} key={index}>
                             <img src={item.url} alt={item.altText} />
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </div>
     );

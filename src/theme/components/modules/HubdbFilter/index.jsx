@@ -32,6 +32,7 @@ export function Component(props) {
 
   const {
     module_id,
+    showBorder,
     heading_group: {
       headingAndTextHeadingLevel,
       headingAndTextHeading,
@@ -47,7 +48,11 @@ export function Component(props) {
       <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
         <div className={Styles.hubdb_filter_sec}>
           <div className="page-center">
+              
+
             <div className={Styles.heading_container}>
+              {showBorder && <div className='gradient-border' style={{ marginBottom: '20px' }}></div>}
+              
               {headingAndTextHeading && (
                 <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
               )}
