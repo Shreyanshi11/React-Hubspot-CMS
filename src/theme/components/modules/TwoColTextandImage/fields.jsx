@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModuleFields, FieldGroup, RichTextField, BooleanField, ImageField, ChoiceField, TextField } from '@hubspot/cms-components/fields';
+import { ModuleFields, FieldGroup, RichTextField, BooleanField, ImageField, ChoiceField, TextField, BooleanField } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx'
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx'
@@ -72,6 +72,14 @@ export const fields = (
     </FieldGroup>
 
     <FieldGroup label="Text Content" name="textcontent" display="inline">
+
+    <BooleanField
+       label='Show Border'
+       name='showBorder'
+       display='toggle'
+       default={false}
+     />
+
       <HeadingContent />
 
       <RichTextField label='Paragraph Text' name='paragraphText' />
