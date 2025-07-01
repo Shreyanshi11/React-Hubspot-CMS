@@ -10,7 +10,12 @@ export const hublDataTemplate = `
  {% set language_image = [] %}
  {% set language_type = [] %}
  {% for row in table1 %}
-   {% do language_image.append(row.language_image) %}
+   {% do language_image.append({
+  "url": row.language_image.url,
+  "altText": row.language_image.alt,
+  "language_type": row.language_type.label
+}) %}
+
    {% do language_type.append(row.language_type) %}
  {% endfor %}
  {% set hublData = {
