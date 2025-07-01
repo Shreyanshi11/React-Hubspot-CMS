@@ -20,13 +20,20 @@ export const fields = (
             name='column_one'
         >
             <ImageField
-                label='Logo Image'
-                name='logoImage'
+                label='Favicon Logo'
+                name='favicon_logo'
                 resizable={true}
                 responsive={false}
                 showLoading={true}
             />
-             <LinkField name="logo_link"
+            <ImageField
+                label='Brand Name Logo'
+                name='brand_name_logo'
+                resizable={true}
+                responsive={false}
+                showLoading={true}
+            />
+            <LinkField name="logo_link"
                 label="Logo Link" supportedTypes={[
                     'EXTERNAL',
                     'CONTENT',
@@ -106,13 +113,29 @@ export const fields = (
         <FieldGroup label='Column 4'
             name='column_four'>
             <RepeatedFieldGroup label='Add Social Icon' name='add_social_icon'>
-                <IconField label='Social Icon' name='social_icon'/>
+                <LinkField name="social_link"
+                    label="Social Link" supportedTypes={[
+                        'EXTERNAL',
+                        'CONTENT',
+                        'FILE',
+                        'EMAIL_ADDRESS',
+                        'BLOG',
+                        'CALL_TO_ACTION',
+                        'PHONE_NUMBER',
+                        'WHATSAPP_NUMBER',
+                        'PAYMENT',
+                    ]}
+                    showAdvancedRelOptions={true}
+                    default=''>
+
+                </LinkField>
+                <IconField label='Social Icon' name='social_icon' />
 
             </RepeatedFieldGroup>
 
         </FieldGroup>
         <RichTextField label='Copyright Text' name='copyright_text'
-        default='© 2023 Copyright by IK Developers. All rights reserved.'>
+            default='© 2023 Copyright by IK Developers. All rights reserved.'>
 
         </RichTextField>
     </ModuleFields>
