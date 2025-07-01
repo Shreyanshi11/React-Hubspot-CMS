@@ -21,6 +21,7 @@ export function Component(props) {
       }
     },
     textcontent: { headingAndTextHeadingLevel, headingAndTextHeading, paragraphText, groupButton: {
+      showBorder,
       showButton,
       buttonContentText: text,
       buttonContentLink: link,
@@ -31,6 +32,7 @@ export function Component(props) {
     },
     imagecontent: { video_image, image, videoUrl, videoPosterUrl }
   } = props;
+
 
   const buttonHref = getLinkFieldHref(link);
   const buttonRel = getLinkFieldRel(link);
@@ -45,6 +47,11 @@ export function Component(props) {
             <div className={Styles.two_col_container}>
               <div className={Styles.text_container}>
                 <div className={Styles.text_container_inner}>
+                  {showBorder &&
+                    <div className='gradient-border' style={{ marginBottom: '20px' }}>
+
+                    </div>
+                  }
                   {headingAndTextHeading && (
                     <div className={Styles.heading_content}>
                       <HeadingComponent
@@ -69,10 +76,10 @@ export function Component(props) {
                       rel={buttonRel}
                       target={buttonTarget}
                       showIcon={showIcon}
-                      iconFieldPath='groupButton.buttonContentIcon'
+                      iconFieldPath='textcontent.groupButton.buttonContentIcon'
                       iconPosition={iconPosition}
                       additionalClassArray={['button-container__button']}
-                      ctaFieldpath={`groupButton.ctaField`}
+                      ctaFieldpath={`textcontent.groupButton.ctaField`}
                       buttonType={buttonContentType}
                     >{text}</Button>
                   </div>
@@ -80,17 +87,20 @@ export function Component(props) {
               </div>
 
               <div className={Styles.image_container}>
-                {video_image === 'video' && videoUrl ? (
+                {video_image === 'video' && (
                   <video
                     src={videoUrl}
-                    poster={videoPosterUrl?.src}
+                    poster={videoPosterUrl?.src || ''}
                     controls
                     className={Styles.video}
                   />
-                ) : (
-                  image && <RenderImage imageField={image} />
+                )}
+
+                {video_image === 'image' && (
+                  <RenderImage imageField={image} />
                 )}
               </div>
+
             </div>
           </div>
         </div>
