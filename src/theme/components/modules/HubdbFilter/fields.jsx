@@ -2,7 +2,8 @@ import React from 'react';
 import {
     FieldGroup,
     ModuleFields,
-    HubDbTableField
+    HubDbTableField,
+    BooleanField
 } from '@hubspot/cms-components/fields';
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx';
 import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx';
@@ -13,6 +14,14 @@ import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/Co
 
 export const fields = (
     <ModuleFields>
+
+           <BooleanField
+      label='Show Border'
+      name='showBorder'
+      display='toggle'
+      default={false}
+    />
+
 
         <FieldGroup
             label='Heading Group'
