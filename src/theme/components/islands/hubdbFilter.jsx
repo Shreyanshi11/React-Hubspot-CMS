@@ -3,7 +3,7 @@ import Styles from '../../components/modules/HubdbFilter/hubdbFilter.module.css'
 import { logInfo } from '@hubspot/cms-components';
 
 
-export default function HubdbFilter({ language_type, language_image, table }) {
+export default function HubdbFilter({ language_type, language_image }) {
 
     return (
         <>
@@ -33,14 +33,9 @@ export default function HubdbFilter({ language_type, language_image, table }) {
 
                 <div className={Styles.filter_image_container}>
                     <div className={Styles.filter_image_content}>
-                        {/* {language_image.map((item, index) => (
+                        {language_image.map((item, index) => (
                             <div className={Styles.filter_image} key={index}>
                                 <img src={item.url} alt={item.altText} />
-                            </div>
-                        ))} */}
-                          {table.map((item, index) => (
-                            <div className={Styles.filter_image} key={index}>
-                                <img src={item.language_image.url} alt={item.language_image.altText} />
                             </div>
                         ))}
                     </div>
