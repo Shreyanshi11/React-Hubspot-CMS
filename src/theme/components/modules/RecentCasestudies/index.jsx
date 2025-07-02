@@ -105,7 +105,7 @@ export function component(props) {
 export { fields } from './fields.jsx';
 
 export const meta = {
-    label: 'Recent Casestudies',
+    label: 'Recent Case Studies',
 };
 
 
