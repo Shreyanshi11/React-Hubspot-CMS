@@ -6,7 +6,7 @@ import ResponsiveSpacingWrapper from "../../components/SpacingStyleComponent/Res
 import HeadingComponent from "../../components/HeadingComponent/HeadingComponent";
 import { Button } from "../../components/ButtonComponent/ButtonContent";
 
-export function component(props) {
+export function Component(props) {
   const {
     module,
     fieldValues,
