@@ -1,9 +1,9 @@
 import { logInfo, RichText } from "@hubspot/cms-components";
 import Styles from '../RecentCasestudies/RecentCasestudies.module.css';
-import renderImage from "../../components/ImageComponent/imageRenderer";
+import RenderImage from "../../components/ImageComponent/imageRenderer";
 import ResponsiveSpacingWrapper from "../../components/SpacingStyleComponent/ResponsiveSpacingWrapper";
 import HeadingComponent from "../../components/HeadingComponent/HeadingComponent";
-import { button } from "../../components/ButtonComponent/ButtonContent";
+import { Button } from "../../components/ButtonComponent/ButtonContent";
 
 export function component(props) {
     const {
@@ -35,7 +35,7 @@ export function component(props) {
                 <div className={Styles.recent_case_study_container}>
                     <div className="page-center">
                         <div className={Styles.heading_text_container}>
-                            <div class="gradient-border"></div>
+                            <div classNaame="gradient-border"></div>
                             {headingAndTextHeading && (
                                 <div className={Styles.heading_content}>
                                     <HeadingComponent
@@ -80,7 +80,7 @@ export function component(props) {
                                 </div>
                             ))}
                         </div>
-                        <div className="{Styles.section_button_container}">
+                        <div className={Styles.section_button_container}>
                             <Button
                                 buttonSize={buttonStyleSize}
                                 buttonStyle={buttonStyleVariant}
