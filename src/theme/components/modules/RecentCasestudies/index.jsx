@@ -150,5 +150,5 @@ export function Component(props) {
 export { fields } from "./fields.jsx";
 
 export const meta = {
-  label: "Recent Case Studies",
+  label: "Case Studies",
 };
