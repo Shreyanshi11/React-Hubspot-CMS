@@ -14,10 +14,25 @@ import {
 export function Component(props) {
     const {
         module_id,
+        groupStyle: {
+            headingStyleVariant,
+            headingStyleColor,
+            groupButton: {
+                buttonStyleSize,
+                buttonStyleVariant,
+            }
+        },
         headingAndTextHeadingLevel,
         headingAndTextHeading,
-        headingStyleVariant,
-        headingStyleColor,
+        groupButton: {
+            showBorder,
+            showButton,
+            buttonContentText: text,
+            buttonContentLink: link,
+            buttonContentShowIcon: showIcon,
+            buttonContentIconPosition: iconPosition,
+            buttonContentType
+        },
         add_image_text = [],
     } = props;
 
@@ -77,6 +92,20 @@ export function Component(props) {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                        <div className={Styles.button_content}>
+                            <Button
+                                buttonSize={buttonStyleSize}
+                                buttonStyle={buttonStyleVariant}
+                                href={getLinkFieldHref(buttonContentLink)}
+                                rel={getLinkFieldRel(buttonContentLink)}
+                                target={getLinkFieldTarget(buttonContentLink)}
+                                showIcon={buttonContentShowIcon}
+                                iconFieldPath='groupButton.buttonContentIcon'
+                                iconPosition={buttonContentIconPosition}
+                                ctaFieldpath={`groupButton.ctaField`}
+                                buttonType={buttonContentType}
+                            >{buttonContentText}</Button>
                         </div>
                     </div>
                 </div>

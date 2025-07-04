@@ -6,6 +6,49 @@ import HeadingStyles from "../../components/HeadingComponent/HeadingStyle";
 import ButtonContent from "../../components/ButtonComponent/ButtonContent";
 import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 
+const sectionButtonFieldVisibility = {
+    boolean_operator: 'OR',
+    criteria: [{
+        controlling_field_path: 'groupButton.showButton',
+        controlling_value_regex: 'true',
+        operator: 'EQUAL',
+    }]
+}
+
+const matchSectionButtonType = {
+    controlling_field_path: 'groupButton.buttonContentType',
+    operator: 'MATCHES_REGEX',
+    controlling_value_regex: '^button$'
+};
+
+const matchSectionCtaType = {
+    controlling_field_path: 'groupButton.buttonContentType',
+    operator: 'MATCHES_REGEX',
+    controlling_value_regex: '^cta$'
+};
+
+const sectionButtonTypeVisibility = {
+    boolean_operator: 'OR',
+    criteria: [matchButtonType]
+};
+
+const sectionCtaTypeVisibility = {
+    boolean_operator: 'OR',
+    criteria: [matchCtaType]
+};
+
+const sectionIconTypeVisibility = {
+    boolean_operator: 'AND',
+    criteria: [
+        matchButtonType,
+        {
+            controlling_field_path: 'groupButton.buttonContentShowIcon',
+            operator: 'MATCHES_REGEX',
+            controlling_value_regex: '^true$'
+        }
+    ]
+};
+
 
 const matchButtonType = {
     controlling_field_path: 'add_image_text.buttonContentType',
@@ -44,10 +87,48 @@ const iconTypeVisibility = {
 export const fields = (
     <ModuleFields>
         <FieldGroup tab="STYLE" name="groupStyle" label="Style">
+            <HeadingStyles headingStyleAsDefault="h2" />
+            <FieldGroup
+                label='Button Section'
+                name='groupButton'
+                display='inline'
+            >
+                <ButtonStyle
+                    buttonStyleDefault='primary'
+                    buttonSizeDefault='medium'
+                    buttonSizeVisibility={buttonFieldVisibility}
+                // buttonStyleVisibility={buttonFieldVisibility}
+                />
+            </FieldGroup>
             <CommonStylesSpacingFields />
         </FieldGroup>
         <HeadingContent />
-        <HeadingStyles headingStyleAsDefault="h2" />
+
+        <FieldGroup
+            label='Button Section'
+            name='groupButton'
+            display='inline'
+        >
+            <BooleanField
+                label='Show button'
+                name='showButton'
+                display='toggle'
+                default={true}
+            />
+            <ButtonContent
+                textDefault='Learn more'
+                linkDefault={{
+                    open_in_new_tab: true,
+                }}
+                iconPositionDefault='left'
+                buttonVisibility={buttonTypeVisibility}
+                ctaVisibility={ctaTypeVisibility}
+                iconVisibility={iconTypeVisibility}
+            />
+
+        </FieldGroup>
+
+
         <RepeatedFieldGroup name="add_image_text" label="Add Image and Text">
             <HeadingContent />
             <HeadingStyles headingStyleAsDefault="h2" />
