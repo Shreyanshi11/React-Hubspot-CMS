@@ -13,8 +13,7 @@ import {
 export function Component(props) {
   const {
     module_id,
-    add_case_study = [],
-    content_bg_color
+    add_case_study = []   
   } = props;
 
 
@@ -47,7 +46,7 @@ export function Component(props) {
                     )}
                     {add_case_study.content && (
                       <div className={Styles.paragraph_text}>
-                        <RichText fieldPath="add_case_study[index]?.content" value={content} />
+                        <RichText fieldPath={`add_case_study[${index}]?.content`} />
                       </div>
                     )}
 
