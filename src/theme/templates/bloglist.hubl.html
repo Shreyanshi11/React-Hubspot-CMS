@@ -95,10 +95,10 @@
                   </div>
                   <div class="card-decription">
                     <p>
-                      {{
-                      content.post_list_content|safe|striptags|truncatehtml(200, '...' , true) }}
+                      {{ content.post_list_content|safe|striptags|truncatehtml(200, '...' , true) }}
                     </p>
                   </div>
+                  <div class="read-more-btn button--simple"></div>
                 </div>
               </div>
               </a>
@@ -119,7 +119,11 @@
         <div class="recent-list-card">
           <a href="{{ post.absolute_url }}">
             <div class="recent-list-card-inner">
-
+                <div class="image-container">
+                   <a href="{{ post.absolute_url }}">
+                   <img src="{{ post.featured_image }}" alt="{{post.name}}">
+                  </a>
+                </div>
                 <div class="recent-card-heading">
                   <a href="{{ post.absolute_url }}">
                     <h3 class="small">{{post.name}}</h3>
