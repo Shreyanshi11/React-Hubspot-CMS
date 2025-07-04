@@ -1,0 +1,30 @@
+.blogpost_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.blog_card {
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.blog_image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.blog_title {
+  font-size: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.blog_summary {
+  font-size: 0.95rem;
+  color: #333;
+}
