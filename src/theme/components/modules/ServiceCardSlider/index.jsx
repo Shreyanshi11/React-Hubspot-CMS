@@ -31,7 +31,7 @@ return (
               <div className={Styles.heading_container}>
                   {headingAndTextHeading && (
                 <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
-              )}
+                )}
               </div>
           </div>
           <div className={Styles.inner_slider_container}>

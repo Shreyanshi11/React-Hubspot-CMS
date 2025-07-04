@@ -1,23 +1,31 @@
 import React from 'react';
 import {
-  ModuleFields,
-  BlogField,
-  FieldGroup
+    ModuleFields,
+    BlogField,
+    FieldGroup
 } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 
 
 export const fields = (
-  <ModuleFields>
-    <BlogField name="blog" label="Select Blog" />
+    <ModuleFields>
+        <FieldGroup
+            label='Heading Group'
+            name='heading_group'
+        >
+            <HeadingContent />
+            <HeadingStyles headingStyleAsDefault='h2' />
+        </FieldGroup>
 
-     <FieldGroup
-        label='Styles'
-        name='groupStyle'
-        tab='STYLE'
-    >
-        <CommonStylesSpacingFields />
+        <BlogField name="blog" label="Select Blog" />
 
-    </FieldGroup>
-  </ModuleFields>
+        <FieldGroup
+            label='Styles'
+            name='groupStyle'
+            tab='STYLE'
+        >
+            <CommonStylesSpacingFields />
+
+        </FieldGroup>
+    </ModuleFields>
 );
