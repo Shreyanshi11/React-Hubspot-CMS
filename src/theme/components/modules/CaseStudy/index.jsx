@@ -59,7 +59,8 @@ export function Component(props) {
                         target={getLinkFieldTarget(item.buttonContentLink)}
                         showIcon={item.buttonContentShowIcon}
                         // iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
-                        iconFieldPath='add_case_study.buttonContentIcon'
+                        // iconFieldPath='add_case_study.buttonContentIcon'
+                        iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
                         iconPosition={item.buttonContentIconPosition}
                         ctaFieldpath={`add_case_study[${index}].ctaField`}
                         buttonType={item.buttonContentType}
