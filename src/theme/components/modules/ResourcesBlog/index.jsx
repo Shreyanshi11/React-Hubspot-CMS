@@ -1,65 +1,61 @@
 import React from 'react';
-import { logInfo, RichText } from '@hubspot/cms-components';
+import { logInfo, RichText, BlogPosts } from '@hubspot/cms-components';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import Styles from '../ResourcesBlog/Resourcesblog.module.css';
 
 export function Component(props) {
   const { blog_field } = props;
+  const blogId = blog_field?.blog?.id;
 
-  logInfo(props, 'Resources Blog');
-
-  const posts = blog_field?.posts || [];
+  logInfo(blog_field, 'Resources Blog');
 
   return (
     <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-        <div className="page-center">
-            <div className={Styles.blogpost_container}>
-                {posts.length > 0 ? (
-                posts.map((post, index) => (
+      <div className="page-center">
+        <div className={Styles.blogpost_container}>
+          {blogId ? (
+            <BlogPosts blog={blogId} limit={5}>
+              {(posts) =>
+                posts.length > 0 ? (
+                  posts.map((post, index) => (
                     <div key={index} className={Styles.blog_card}>
-                    {/* Featured Image */}
-                    {post.featuredImage?.url && (
+                      {/* Featured Image */}
+                      {post.featuredImage?.url && (
                         <img
-                        src={post.featuredImage.url}
-                        alt={post.featuredImage.alt || post.name}
-                        className={Styles.blog_image}
+                          src={post.featuredImage.url}
+                          alt={post.featuredImage.alt || post.name}
+                          className={Styles.blog_image}
                         />
-                    )}
+                      )}
 
-                    {/* Title */}
-                    <h2 className={Styles.blog_title}>
-                            <a
-                         href={post.absoluteUrl}
-                         target={
-                           linkedin_link.open_in_new_tab ? '_blank' : '_self'
-                         }
-                         rel={
-                           [
-                             linkedin_link.no_follow ? 'nofollow' : '',
-                             linkedin_link.sponsored ? 'sponsored' : '',
-                             linkedin_link.user_generated_content ? 'ugc' : '',
-                             linkedin_link.rel || '',
-                           ]
-                             .filter(Boolean)
-                             .join(' ') || undefined
-                         }
-                       >
-                        {post.name}
-                       </a>
-                    </h2>
+                      {/* Title */}
+                      <h2 className={Styles.blog_title}>
+                        <a
+                          href={post.absoluteUrl}
+                          target="_self" // or "_blank" if you want
+                          rel="noopener noreferrer"
+                        >
+                          {post.name}
+                        </a>
+                      </h2>
 
-                    {/* Summary / Post body (optional) */}
-                    {post.postSummary && (
+                      {/* Summary */}
+                      {post.postSummary && (
                         <div className={Styles.blog_summary}>
-                        <RichText html={post.postSummary} />
+                          <RichText html={post.postSummary} />
                         </div>
-                    )}
+                      )}
                     </div>
-                ))
+                  ))
                 ) : (
-                <p>No blog posts found.</p>
-                )}
-            </div>
+                  <p>No blog posts found.</p>
+                )
+              }
+            </BlogPosts>
+          ) : (
+            <p>No blog selected.</p>
+          )}
+        </div>
       </div>
     </ResponsiveSpacingWrapper>
   );
