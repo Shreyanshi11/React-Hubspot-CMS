@@ -57,9 +57,7 @@ export function Component(props) {
                         href={getLinkFieldHref(item.buttonContentLink)}
                         rel={getLinkFieldRel(item.buttonContentLink)}
                         target={getLinkFieldTarget(item.buttonContentLink)}
-                        showIcon={item.buttonContentShowIcon}
-                        // iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
-                        // iconFieldPath='add_case_study.buttonContentIcon'
+                        showIcon={item.buttonContentShowIcon}     
                         iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
                         iconPosition={item.buttonContentIconPosition}
                         ctaFieldpath={`add_case_study[${index}].ctaField`}
