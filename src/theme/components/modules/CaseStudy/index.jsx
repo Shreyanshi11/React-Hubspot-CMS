@@ -10,11 +10,11 @@ import {
   getLinkFieldTarget,
 } from '../../utils/content-fields.jsx';
 
+
 export function Component(props) {
   const {
     module_id,
-    add_case_study = [],
-    content_bg_color
+    add_case_study = []
   } = props;
 
 
@@ -45,11 +45,10 @@ export function Component(props) {
                         />
                       </div>
                     )}
-                    {add_case_study.content && (
-                      <div className={Styles.paragraph_text}>
-                        <RichText fieldPath="add_case_study[index]?.content" value={content} />
-                      </div>
-                    )}
+
+                    <div className={Styles.paragraph_text}>
+                      <RichText fieldPath={`add_case_study[${index}].content`} />
+                    </div>
 
                     <div className={Styles.button_content}>
                       <Button
@@ -58,13 +57,16 @@ export function Component(props) {
                         href={getLinkFieldHref(item.buttonContentLink)}
                         rel={getLinkFieldRel(item.buttonContentLink)}
                         target={getLinkFieldTarget(item.buttonContentLink)}
-                        showIcon={item.showIcon}
-                        iconFieldPath={`add_case_study[${index}].groupButton.buttonContentIcon`}
-                        iconPosition={item.iconPosition}
-                        ctaFieldpath={`add_case_study[${index}].groupButton.ctaField`}
+                        showIcon={item.buttonContentShowIcon}     
+                        iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
+                        iconPosition={item.buttonContentIconPosition}
+                        ctaFieldpath={`add_case_study[${index}].ctaField`}
                         buttonType={item.buttonContentType}
-                      >{item.text}</Button>
+                      >{item.buttonContentText}</Button>
                     </div>
+
+
+
                   </div>
                 </div>
 

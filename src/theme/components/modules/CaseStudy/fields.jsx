@@ -10,13 +10,13 @@ import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 
 
 const matchButtonType = {
-  controlling_field_path: 'add_case_study.groupButton.buttonContentType',
+  controlling_field_path: 'add_case_study.buttonContentType',
   operator: 'MATCHES_REGEX',
   controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-  controlling_field_path: 'add_case_study.groupButton.buttonContentType',
+  controlling_field_path: 'add_case_study.buttonContentType',
   operator: 'MATCHES_REGEX',
   controlling_value_regex: '^cta$'
 };
@@ -36,7 +36,7 @@ const iconTypeVisibility = {
   criteria: [
     matchButtonType,
     {
-      controlling_field_path: 'add_case_study.groupButton.buttonContentShowIcon',
+      controlling_field_path: 'add_case_study.buttonContentShowIcon',
       operator: 'MATCHES_REGEX',
       controlling_value_regex: '^true$'
     }
@@ -66,11 +66,6 @@ export const fields = (
         showLoading={true}
    
       />
-       <FieldGroup
-        label='Button Section'
-        name='groupButton'
-        display='inline'
-      >
 
         <ButtonContent
           textDefault='Learn more'
@@ -87,7 +82,7 @@ export const fields = (
           buttonSizeDefault='medium'
         />
 
-      </FieldGroup>
+   
       <ColorField name='content_bg_color' label='Content BG Color' default=''>
       </ColorField>
 
