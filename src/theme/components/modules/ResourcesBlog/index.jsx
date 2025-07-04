@@ -1,5 +1,5 @@
 import React from 'react';
-import { logInfo, RichText, Link } from '@hubspot/cms-components';
+import { logInfo, RichText } from '@hubspot/cms-components';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import Styles from '../ResourcesBlog/Resourcesblog.module.css';
 
@@ -28,7 +28,24 @@ export function Component(props) {
 
                     {/* Title */}
                     <h2 className={Styles.blog_title}>
-                        <Link href={post.absoluteUrl}>{post.name}</Link>
+                            <a
+                         href={post.absoluteUrl}
+                         target={
+                           linkedin_link.open_in_new_tab ? '_blank' : '_self'
+                         }
+                         rel={
+                           [
+                             linkedin_link.no_follow ? 'nofollow' : '',
+                             linkedin_link.sponsored ? 'sponsored' : '',
+                             linkedin_link.user_generated_content ? 'ugc' : '',
+                             linkedin_link.rel || '',
+                           ]
+                             .filter(Boolean)
+                             .join(' ') || undefined
+                         }
+                       >
+                        {post.name}
+                       </a>
                     </h2>
 
                     {/* Summary / Post body (optional) */}
