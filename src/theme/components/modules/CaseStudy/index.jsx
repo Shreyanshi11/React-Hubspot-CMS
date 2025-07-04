@@ -58,9 +58,9 @@ export function Component(props) {
                         rel={getLinkFieldRel(item.buttonContentLink)}
                         target={getLinkFieldTarget(item.buttonContentLink)}
                         showIcon={item.showIcon}
-                        iconFieldPath={`add_case_study[${index}].groupButton.buttonContentIcon`}
+                        iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
                         iconPosition={item.iconPosition}
-                        ctaFieldpath={`add_case_study[${index}].groupButton.ctaField`}
+                        ctaFieldpath={`add_case_study[${index}].ctaField`}
                         buttonType={item.buttonContentType}
                       >{item.text}</Button>
                     </div>
