@@ -20,7 +20,7 @@ export function Component(props) {
     logInfo(props, 'Alternate Image Text');
     return (
         <>
-            <ResponsiveSpacingWrapper moduleId={props?.module.module_id} fields={props?.fieldValues}>
+            <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
                 <div className={Styles.alternate_image_text}>
                     <div className="page-center">
                         <div className={Styles.heading_block}>
