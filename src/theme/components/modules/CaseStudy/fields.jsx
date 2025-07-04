@@ -8,6 +8,40 @@ import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx'
 
 
 
+
+const matchButtonType = {
+  controlling_field_path: 'add_case_study.groupButton.buttonContentType',
+  operator: 'MATCHES_REGEX',
+  controlling_value_regex: '^button$'
+};
+
+const matchCtaType = {
+  controlling_field_path: 'add_case_study.groupButton.buttonContentType',
+  operator: 'MATCHES_REGEX',
+  controlling_value_regex: '^cta$'
+};
+
+const buttonTypeVisibility = {
+  boolean_operator: 'OR',
+  criteria: [matchButtonType]
+};
+
+const ctaTypeVisibility = {
+  boolean_operator: 'OR',
+  criteria: [matchCtaType]
+};
+
+const iconTypeVisibility = {
+  boolean_operator: 'AND',
+  criteria: [
+    matchButtonType,
+    {
+      controlling_field_path: 'add_case_study.groupButton.buttonContentShowIcon',
+      operator: 'MATCHES_REGEX',
+      controlling_value_regex: '^true$'
+    }
+  ]
+};
 export const fields = (
   <ModuleFields>
     <FieldGroup tab="STYLE" name="groupStyle" label="Style">
@@ -15,7 +49,7 @@ export const fields = (
       <CommonStylesSpacingFields />
     </FieldGroup>
 
-    <RepeatedFieldGroup label="Add Case Study" name="add_case_study" display="inline">
+    <RepeatedFieldGroup label="Add Case Study" name="add_case_study">
 
 
       <HeadingContent />
@@ -51,8 +85,6 @@ export const fields = (
         <ButtonStyle
           buttonStyleDefault='primary'
           buttonSizeDefault='medium'
-          buttonSizeVisibility={buttonFieldVisibility}
-          buttonStyleVisibility={buttonFieldVisibility}
         />
 
       </FieldGroup>
