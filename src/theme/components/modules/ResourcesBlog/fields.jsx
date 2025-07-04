@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     ModuleFields,
-    BlogField
+    BlogField,
+    FieldGroup
 } from '@hubspot/cms-components/fields';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 
