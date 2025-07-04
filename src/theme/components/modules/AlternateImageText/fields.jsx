@@ -29,12 +29,12 @@ const matchSectionCtaType = {
 
 const sectionButtonTypeVisibility = {
     boolean_operator: 'OR',
-    criteria: [matchButtonType]
+    criteria: [matchSectionButtonType]
 };
 
 const sectionCtaTypeVisibility = {
     boolean_operator: 'OR',
-    criteria: [matchCtaType]
+    criteria: [matchSectionCtaType]
 };
 
 const sectionIconTypeVisibility = {
@@ -96,8 +96,8 @@ export const fields = (
                 <ButtonStyle
                     buttonStyleDefault='primary'
                     buttonSizeDefault='medium'
-                    buttonSizeVisibility={buttonFieldVisibility}
-                // buttonStyleVisibility={buttonFieldVisibility}
+                    buttonSizeVisibility={sectionButtonFieldVisibility}
+                    buttonStyleVisibility={sectionButtonFieldVisibility}
                 />
             </FieldGroup>
             <CommonStylesSpacingFields />
@@ -121,9 +121,9 @@ export const fields = (
                     open_in_new_tab: true,
                 }}
                 iconPositionDefault='left'
-                buttonVisibility={buttonTypeVisibility}
-                ctaVisibility={ctaTypeVisibility}
-                iconVisibility={iconTypeVisibility}
+                buttonVisibility={sectionButtonTypeVisibility}
+                ctaVisibility={sectionCtaTypeVisibility}
+                iconVisibility={sectionIconTypeVisibility}
             />
 
         </FieldGroup>
