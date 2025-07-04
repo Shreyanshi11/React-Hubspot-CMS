@@ -41,7 +41,7 @@ return (
                     className={Styles.blog_summary}
                     dangerouslySetInnerHTML={{ __html: post.summary }}
                 />
-                <a href={post.url}>Read More</a>
+                <a href={post.url} className='button--simple'>Read More</a>
                 </div>
             ))
             ) : (
