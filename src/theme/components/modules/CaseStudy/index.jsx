@@ -29,10 +29,10 @@ export function Component(props) {
 
               <div className={Styles.two_col_container}>
                 <div className={Styles.image_container}>
-                  <RenderImage imageField={add_case_study.image} />
+                  <RenderImage imageField={add_case_study[index]?.image} />
                 </div>
 
-                <div className={Styles.text_container} style={{ backgroundColor: content_bg_color }}>
+                <div className={Styles.text_container} style={{ backgroundColor: item.content_bg_color }}>
                   <div className={Styles.text_container_inner}>
 
                     {item.headingAndTextHeading && (
@@ -47,7 +47,7 @@ export function Component(props) {
                     )}
                     {add_case_study.content && (
                       <div className={Styles.paragraph_text}>
-                        <RichText fieldPath="add_case_study[index]?.content" />
+                        <RichText fieldPath="add_case_study[index]?.content" value={content} />
                       </div>
                     )}
 
@@ -59,9 +59,9 @@ export function Component(props) {
                         rel={getLinkFieldRel(item.buttonContentLink)}
                         target={getLinkFieldTarget(item.buttonContentLink)}
                         showIcon={item.showIcon}
-                        iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
+                        iconFieldPath={`add_case_study[${index}].groupButton.buttonContentIcon`}
                         iconPosition={item.iconPosition}
-                        ctaFieldpath={`add_case_study[${index}].ctaField`}
+                        ctaFieldpath={`add_case_study[${index}].groupButton.ctaField`}
                         buttonType={item.buttonContentType}
                       >{item.text}</Button>
                     </div>
