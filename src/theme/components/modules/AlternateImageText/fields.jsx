@@ -8,37 +8,37 @@ import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 
 
 const matchButtonType = {
-  controlling_field_path: 'add_image_text.buttonContentType',
-  operator: 'MATCHES_REGEX',
-  controlling_value_regex: '^button$'
+    controlling_field_path: 'add_image_text.buttonContentType',
+    operator: 'MATCHES_REGEX',
+    controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-  controlling_field_path: 'add_image_text.buttonContentType',
-  operator: 'MATCHES_REGEX',
-  controlling_value_regex: '^cta$'
+    controlling_field_path: 'add_image_text.buttonContentType',
+    operator: 'MATCHES_REGEX',
+    controlling_value_regex: '^cta$'
 };
 
 const buttonTypeVisibility = {
-  boolean_operator: 'OR',
-  criteria: [matchButtonType]
+    boolean_operator: 'OR',
+    criteria: [matchButtonType]
 };
 
 const ctaTypeVisibility = {
-  boolean_operator: 'OR',
-  criteria: [matchCtaType]
+    boolean_operator: 'OR',
+    criteria: [matchCtaType]
 };
 
 const iconTypeVisibility = {
-  boolean_operator: 'AND',
-  criteria: [
-    matchButtonType,
-    {
-      controlling_field_path: 'add_image_text.buttonContentShowIcon',
-      operator: 'MATCHES_REGEX',
-      controlling_value_regex: '^true$'
-    }
-  ]
+    boolean_operator: 'AND',
+    criteria: [
+        matchButtonType,
+        {
+            controlling_field_path: 'add_image_text.buttonContentShowIcon',
+            operator: 'MATCHES_REGEX',
+            controlling_value_regex: '^true$'
+        }
+    ]
 };
 
 export const fields = (
@@ -70,6 +70,19 @@ export const fields = (
             <ButtonStyle
                 buttonStyleDefault='primary'
                 buttonSizeDefault='medium'
+            />
+            <ChoiceField
+                name="img_position"
+                label="Image Position"
+                required={false}
+                locked={false}
+                multiple={true}
+                display="select"
+                choices={[
+                    ['img--left', 'Image Left - Text Right'],
+                    ['img--right', 'Text Left - Image Right'],
+                ]}
+                default="img--left"
             />
         </RepeatedFieldGroup>
     </ModuleFields>
