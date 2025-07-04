@@ -1,0 +1,92 @@
+import { logInfo, RichText } from '@hubspot/cms-components';
+import Styles from '../CaseStudy/case_study.module.css';
+import RenderImage from '../../components/ImageComponent/imageRenderer.jsx'
+import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
+import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx'
+import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx'
+import {
+  getLinkFieldHref,
+  getLinkFieldRel,
+  getLinkFieldTarget,
+} from '../../utils/content-fields.jsx';
+
+export function Component(props) {
+  const {
+    module_id,
+    add_case_study = [],
+    content_bg_color
+  } = props;
+
+
+  const buttonHref = getLinkFieldHref(link);
+  const buttonRel = getLinkFieldRel(link);
+  const buttonTarget = getLinkFieldTarget(link);
+
+  logInfo(props, 'Case Study');
+  return (
+    <>
+      <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
+        <div className={Styles.two_col_image_text}>
+          <div className='page-center'>
+            {add_case_study.map((item, index) => (
+
+              <div className={Styles.two_col_container}>
+                <div className={Styles.image_container}>
+                  <RenderImage imageField={add_case_study.image} />
+                </div>
+
+                <div className={Styles.text_container} style={{ backgroundColor: content_bg_color }}>
+                  <div className={Styles.text_container_inner}>
+
+                    {item.headingAndTextHeading && (
+                      <div className={Styles.heading_content}>
+                        <HeadingComponent
+                          headingLevel={item.headingAndTextHeadingLevel}
+                          headingStyleVariant={item.headingStyleVariant}
+                          heading={item.headingAndTextHeading}
+                          headingStyleColor={item.headingStyleColor}
+                        />
+                      </div>
+                    )}
+                    {add_case_study.content && (
+                      <div className={Styles.paragraph_text}>
+                        <RichText fieldPath="add_case_study[index]?.content" />
+                      </div>
+                    )}
+
+                    <div className={Styles.button_content}>
+                      <Button
+                        buttonSize={item.buttonStyleSize}
+                        buttonStyle={item.buttonStyleVariant}
+                        href={item.buttonHref}
+                        rel={item.buttonRel}
+                        target={item.buttonTarget}
+                        showIcon={item.showIcon}
+                        iconFieldPath='add_case_study.buttonContentIcon'
+                        iconPosition={item.iconPosition}
+                        additionalClassArray={['button-container__button']}
+                        ctaFieldpath={`add_case_study.ctaField`}
+                        buttonType={item.buttonContentType}
+                      >{item.text}</Button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </ResponsiveSpacingWrapper>
+    </>
+  );
+}
+
+
+export { fields } from './fields.jsx';
+
+
+export const meta = {
+  label: 'Case Study - Repeater',
+};
