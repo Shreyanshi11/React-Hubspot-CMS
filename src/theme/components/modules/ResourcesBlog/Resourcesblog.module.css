@@ -38,6 +38,9 @@ margin: 0 -15px;
 width: calc(33.33% - 30px);
 margin: 0 15px;
 }
+.heading_container{
+    text-align: center;
+}
 
 @media only screen and (max-width:991px){
 .blog_grid {
