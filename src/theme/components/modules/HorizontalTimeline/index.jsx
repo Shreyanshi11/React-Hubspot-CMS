@@ -4,9 +4,6 @@ import HeadingComponent from '../../components/HeadingComponent/HeadingComponent
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import Styles from '../HorizontalTimeline/HorizontalTimeline.module.css';
 
-
-
-
 export function Component(props) {
 
 const {
