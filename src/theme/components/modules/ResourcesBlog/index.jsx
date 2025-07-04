@@ -1,5 +1,6 @@
 import React from 'react';
 import { logInfo } from '@hubspot/cms-components';
+import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import Styles from '../ResourcesBlog/Resourcesblog.module.css';
 
 export function Component(props) {
@@ -9,32 +10,35 @@ export function Component(props) {
   logInfo(posts, 'Resources Blog Module');
 
   return (
-    <section className="page-center">
-      <div className={Styles.blog_grid}>
-        {posts.length > 0 ? (
-          posts.map((post, index) => (
-            <div className={Styles.three_col_card} key={index}>
-              {post.featuredImage && (
-                <img
-                  src={post.featuredImage}
-                  alt={post.altText || 'Blog featured image'}
-                  width={post.featuredImageWidth || 'auto'}
-                  height={post.featuredImageHeight || 'auto'}
-                />
-              )}
-              <h5>{post.title}</h5>
-              <div
-                className={Styles.blog_summary}
-                dangerouslySetInnerHTML={{ __html: post.summary }}
-              />
-              <a href={post.url}>Read More</a>
+        <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
+            <div className="page-center">
+            <div className={Styles.blog_grid}>
+                {posts.length > 0 ? (
+                posts.map((post, index) => (
+                    <div className={Styles.three_col_card} key={index}>
+                    {post.featuredImage && (
+                        <img
+                        src={post.featuredImage}
+                        alt={post.altText || 'Blog featured image'}
+                        width={post.featuredImageWidth || 'auto'}
+                        height={post.featuredImageHeight || 'auto'}
+                        />
+                    )}
+                    <h5>{post.title}</h5>
+                    <div
+                        className={Styles.blog_summary}
+                        dangerouslySetInnerHTML={{ __html: post.summary }}
+                    />
+                    <a href={post.url}>Read More</a>
+                    </div>
+                ))
+                ) : (
+                <p>No blog posts found.</p>
+                )}
             </div>
-          ))
-        ) : (
-          <p>No blog posts found.</p>
-        )}
-      </div>
-    </section>
+            </div>
+        </ResponsiveSpacingWrapper>
+
   );
 }
 
