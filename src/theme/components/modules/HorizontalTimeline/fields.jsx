@@ -11,8 +11,6 @@ import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx
 import RichTextContent from '../../components/fieldLibrary/RichTextField/index.jsx';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 
-
-
 export const fields = (
 <ModuleFields>
 
@@ -32,14 +30,11 @@ export const fields = (
             max: 20,
             default: 3,
         }}
-    >
-            
+    >            
         <HeadingContent />
          <HeadingStyles headingStyleAsDefault='h4' />
         <RichTextField name='description' label='Description'></RichTextField>
-
     </RepeatedFieldGroup>
-
 
     <FieldGroup
         label='Styles'
