@@ -76,7 +76,7 @@ export const fields = (
                 label="Image Position"
                 required={false}
                 locked={false}
-                multiple={true}
+                multiple={false}
                 display="select"
                 choices={[
                     ['img--left', 'Image Left - Text Right'],
