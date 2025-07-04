@@ -24,6 +24,16 @@ export function Component(props) {
                 <div className={Styles.alternate_image_text}>
                     <div className="page-center">
                         <div className={Styles.heading_block}>
+                            {headingAndTextHeading && (
+                                            <div className={Styles.heading_content}>
+                                                <HeadingComponent
+                                                    headingLevel={headingAndTextHeadingLevel}
+                                                    headingStyleVariant={headingStyleVariant}
+                                                    heading={headingAndTextHeading}
+                                                    headingStyleColor={headingStyleColor}
+                                                />
+                                            </div>
+                                        )}
                         </div>
                         <div className={Styles.image_text_container}>
                             {add_image_text.map((item, index) => (
