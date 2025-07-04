@@ -1,3 +1,11 @@
 .image_text_block {
     display: flex;
 }
+
+.img--left {
+    flex-direction: row;
+}
+
+.img--right {
+    flex-direction: row-reverse;
+}
