@@ -13,7 +13,7 @@ import {
 export function Component(props) {
   const {
     module_id,
-    add_case_study = []   
+    add_case_study = []
   } = props;
 
 
@@ -44,11 +44,11 @@ export function Component(props) {
                         />
                       </div>
                     )}
-                    {add_case_study.content && (
-                      <div className={Styles.paragraph_text}>
-                        <RichText fieldPath={`add_case_study[${index}]?.content`} />
-                      </div>
-                    )}
+
+                    <div className={Styles.paragraph_text}>
+                      <RichText fieldPath={`add_case_study[${index}]?.content`} />
+                    </div>
+
 
                     <div className={Styles.button_content}>
                       <Button
