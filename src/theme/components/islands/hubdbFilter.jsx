@@ -1,46 +1,62 @@
 import React, { useState } from 'react';
 import Styles from '../../components/modules/HubdbFilter/hubdbFilter.module.css';
-import { logInfo } from '@hubspot/cms-components';
-
 
 export default function HubdbFilter({ language_type, language_image }) {
+    const [selectedLabel, setSelectedLabel] = useState(null);
+
+    // Flatten the nested language_type array
+    const flattenedLanguageType = language_type.flat();
+
+    // Get unique labels from flattened type
+    const uniqueLabels = [
+        ...new Map(
+            flattenedLanguageType.map((item) => [item.label, item])
+        ).values()
+    ];
+
+    // Combine language_image with label using index
+    const imagesWithLabel = language_image.map((img, index) => ({
+        ...img,
+        label: flattenedLanguageType[index]?.label || 'Unknown'
+    }));
+
+    // Filter images based on selected label
+    const filteredImages = selectedLabel
+        ? imagesWithLabel.filter((img) => img.label === selectedLabel)
+        : imagesWithLabel;
 
     return (
-        <>
-            <div className={Styles.filter_content}>
-                <div className={Styles.language_name_container}>
-                    <div className={Styles.language_name}>
-                        {/* {language_type.map((item, index) => (
-                            item.map((item2, index) => (
-                                <div className={Styles.language_name_inner} key={index}>
-                                    <p>{item2.name}</p>
-                                </div>
-                            ))
-                        ))} */}
-                        {[
-                            ...new Map(
-                                language_type
-                                    .flat() // Flatten the nested arrays
-                                    .map((item) => [item.label, item]) // Use name as key to filter unique
-                            ).values()
-                        ].map((uniqueItem, index) => (
-                            <div className={Styles.language_name_inner} key={index}>
-                                <p>{uniqueItem.label}</p>
-                            </div>
-                        ))}
+        <div className={Styles.filter_content}>
+            {/* Filter Buttons */}
+            <div className={Styles.language_name_container}>
+                {uniqueLabels.map((item, index) => (
+                    <div
+                        className={`${Styles.language_name} ${selectedLabel === item.label ? Styles.active : ''}`}
+                        key={index}
+                        onClick={() =>
+                            setSelectedLabel(
+                                selectedLabel === item.label ? null : item.label
+                            )
+                        }
+                    >
+                        <div className={Styles.language_name_inner}>
+                            <p className='font-700'>{item.label}</p>
+                        </div>
                     </div>
-                </div>
+                ))}
 
-                <div className={Styles.filter_image_container}>
-                    <div className={Styles.filter_image_content}>
-                        {language_image.map((item, index) => (
-                            <div className={Styles.filter_image} key={index}>
-                                <img src={item.url} alt={item.altText} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
-        </>
+
+            {/* Filtered Images */}
+            <div className={Styles.filter_image_container}>
+                {filteredImages.map((item, index) => (
+                    <div className={Styles.filter_image_content}>
+                        <div className={Styles.filter_image} key={index}>
+                            <img src={item.url} alt={item.altText} />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
