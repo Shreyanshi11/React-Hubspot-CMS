@@ -40,7 +40,7 @@ const sectionCtaTypeVisibility = {
 const sectionIconTypeVisibility = {
     boolean_operator: 'AND',
     criteria: [
-        matchButtonType,
+        matchSectionButtonType,
         {
             controlling_field_path: 'groupButton.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
