@@ -3,6 +3,13 @@ import Styles from '../CaseStudy/case_study.module.css';
 import RenderImage from '../../components/ImageComponent/imageRenderer.jsx'
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx'
+import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx'
+import {
+  getLinkFieldHref,
+  getLinkFieldRel,
+  getLinkFieldTarget,
+} from '../../utils/content-fields.jsx';
+
 
 export function Component(props) {
   const {
@@ -43,7 +50,23 @@ export function Component(props) {
                       <RichText fieldPath={`add_case_study[${index}].content`} />
                     </div>
 
-              
+                    <div className={Styles.button_content}>
+                      <Button
+                        buttonSize={item.buttonStyleSize}
+                        buttonStyle={item.buttonStyleVariant}
+                        href={getLinkFieldHref(item.buttonContentLink)}
+                        rel={getLinkFieldRel(item.buttonContentLink)}
+                        target={getLinkFieldTarget(item.buttonContentLink)}
+                        showIcon={item.showIcon}
+                        iconFieldPath={`add_case_study[${index}].groupButton.buttonContentIcon`}
+                        iconPosition={item.iconPosition}
+                        ctaFieldpath={`add_case_study[${index}].groupButton.ctaField`}
+                        buttonType={item.buttonContentType}
+                      >{item.text}</Button>
+                    </div>
+
+
+
                   </div>
                 </div>
 
