@@ -18,9 +18,6 @@ export function Component(props) {
   } = props;
 
 
-  const buttonHref = getLinkFieldHref(link);
-  const buttonRel = getLinkFieldRel(link);
-  const buttonTarget = getLinkFieldTarget(link);
 
   logInfo(props, 'Case Study');
   return (
@@ -58,14 +55,13 @@ export function Component(props) {
                       <Button
                         buttonSize={item.buttonStyleSize}
                         buttonStyle={item.buttonStyleVariant}
-                        href={item.buttonHref}
-                        rel={item.buttonRel}
-                        target={item.buttonTarget}
+                        href={getLinkFieldHref(item.buttonContentLink)}
+                        rel={getLinkFieldRel(item.buttonContentLink)}
+                        target={getLinkFieldTarget(item.buttonContentLink)}
                         showIcon={item.showIcon}
-                        iconFieldPath='add_case_study.buttonContentIcon'
+                        iconFieldPath={`add_case_study[${index}].buttonContentIcon`}
                         iconPosition={item.iconPosition}
-                        additionalClassArray={['button-container__button']}
-                        ctaFieldpath={`add_case_study.ctaField`}
+                        ctaFieldpath={`add_case_study[${index}].ctaField`}
                         buttonType={item.buttonContentType}
                       >{item.text}</Button>
                     </div>
