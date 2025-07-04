@@ -305,7 +305,7 @@ button:disabled,
 
 .button.button--simple {
   font-family: var(--button_simple_font);
-  font-weight: var(--button_primary_fontWeightHover);
+  font-weight: var(--button_simple_fontWeight);
   color: var(--button_simple_fontColor);
   text-transform: var(--button_simple_fontTextTransform);
 }
