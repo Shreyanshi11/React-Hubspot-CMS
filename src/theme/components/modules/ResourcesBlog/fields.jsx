@@ -4,6 +4,8 @@ import {
     BlogField,
     FieldGroup
 } from '@hubspot/cms-components/fields';
+import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx';
+import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx';
 import CommonStylesSpacingFields from '../../components/SpacingStyleComponent/CommonStylesSpacingFields.jsx';
 
 
