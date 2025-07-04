@@ -9,7 +9,7 @@
   <main class="body-container-wrapper">
 
 {# Tag Page #}
-{% if tag %}
+<!-- {% if tag %}
 
   <div class="tag-banner">
   <div class="page-center">
@@ -64,11 +64,11 @@
     </div>
   </div>
 </section>
-{% else %}
+{% else %} -->
 
   
 {# Blog post List #}
-    <section class="blog-listing-section">
+    <!-- <section class="blog-listing-section">
       <div class="page-center">
         <div class="blog-list-container">
           {% for content in contents %}
@@ -98,7 +98,9 @@
                       {{ content.post_list_content|safe|striptags|truncatehtml(200, '...' , true) }}
                     </p>
                   </div>
-                  <div class="read-more-btn button--simple"></div>
+                  <div class="read-more-btn-container button--simple">
+                    <a href="{{ content.absolute_url }}">Read More</a>
+                  </div>
                 </div>
               </div>
               </a>
@@ -107,7 +109,7 @@
           {% endfor %}
         </div>
       </div>
-    </section>
+    </section> -->
 
     {# Blog recent post List #}
     {% set posts = blog_recent_posts('default', 3) %}
@@ -148,6 +150,9 @@
                     post.post_list_content|safe|striptags|truncatehtml(200,
                     '...' , true) }}
                   </p>
+                </div>
+                <div class="btn">
+                  <a href="{{ post.absolute_url }}">Read More</a>
                 </div>
             </div>
           </a>

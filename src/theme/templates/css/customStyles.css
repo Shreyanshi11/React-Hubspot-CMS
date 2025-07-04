@@ -40,6 +40,27 @@
   display: flex !important;
 }
 
+/* blog css start here */
+
+.recent-blog-listing .recent-blog-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+.recent-blog-listing .recent-list-card {
+    width: calc(33.33% - 30px);
+    margin: 0 15px;
+}
+.recent-blog-listing .recent-topic-link {
+    padding: 5px;
+    background-color: orange;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+.recent-blog-listing .recent-card-heading h3 {
+    margin: 20px 0;
+}
+
 @media only screen and (max-width: 1199px) {
   .slick-slider.slick-initialized {
     padding-right: 0;
@@ -48,8 +69,21 @@
     margin: 0 15px;
   }
 }
-
-
+@media only screen and (max-width: 991px) {
+  .recent-blog-listing .recent-list-card {
+      width: calc(50% - 30px);
+      margin: 0 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .recent-blog-listing .recent-list-card {
+      width: 100%;
+      margin: 0;
+  }
+  .recent-blog-listing .recent-blog-list-container {
+    margin: 0;
+}
+}
 /* Timeline Style */
 .beautiful-timeline-item-content,.beautiful-timeline-item-content-opposite{
   border: 1px solid #E7DAED;
