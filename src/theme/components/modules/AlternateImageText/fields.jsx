@@ -46,6 +46,8 @@ export const fields = (
         <FieldGroup tab="STYLE" name="groupStyle" label="Style">
             <CommonStylesSpacingFields />
         </FieldGroup>
+        <HeadingContent />
+        <HeadingStyles headingStyleAsDefault="h2" />
         <RepeatedFieldGroup name="add_image_text" label="Add Image and Text">
             <HeadingContent />
             <HeadingStyles headingStyleAsDefault="h2" />
