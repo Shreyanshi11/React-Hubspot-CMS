@@ -1,0 +1,164 @@
+<!--
+    templateType: blog_listing
+    isAvailableForNewContent: true
+    label: Blog listing
+-->
+{% extends "./layouts/base.hubl.html" %}
+
+{% block body %}
+  <main class="body-container-wrapper">
+
+{# Tag Page #}
+{% if tag %}
+
+  <div class="tag-banner">
+  <div class="page-center">
+    <div class="heading-content">
+      <div class="sub-heading">
+        <p class="small font-700 font-montserrat">Category</p>
+      </div>
+      <div class="heading-text">
+      <h1>{{ tag|replace("-", " ") }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <section class="blog-listing-section">
+  <div class="page-center">
+    <div class="blog-list-container">
+      {% for content in contents %}
+     
+        <div class="list-card">
+        <a href="{{ content.absolute_url }}">
+          <div class="list-card-inner">
+            <div class="tag-content">
+            {% for topic in content.topic_list %}
+            <a class="topic-link" href="{{ blog_tag_url(group.id, topic.slug) }}">
+            {{ topic.name }}
+            </a> 
+            {% break %} 
+          {% endfor %}
+            </div>
+            <div class="heading-text-content">
+              <div class="card-date">
+                <p>{{ content.publish_date|datetimeformat('%B %d, %Y') }}</p>
+              </div>
+              <div class="card-heading">
+                <a href="{{ content.absolute_url }}">
+                  <h3>{{content.name}}</h3>
+                </a>
+              </div>
+              <div class="card-decription">
+                <p>
+                  {{
+                  content.post_list_content|safe|striptags|truncatehtml(200, '...' , true) }}
+                </p>
+              </div>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% else %}
+
+  
+{# Blog post List #}
+    <section class="blog-listing-section">
+      <div class="page-center">
+        <div class="blog-list-container">
+          {% for content in contents %}
+         
+            <div class="list-card">
+            <a href="{{ content.absolute_url }}">
+              <div class="list-card-inner">
+                <div class="tag-content">
+                {% for topic in content.topic_list %}
+                <a class="topic-link" href="{{ blog_tag_url(group.id, topic.slug) }}">
+                {{ topic.name }}
+                </a> 
+                {% break %} 
+              {% endfor %}
+                </div>
+                <div class="heading-text-content">
+                  <div class="card-date">
+                    <p>{{ content.publish_date|datetimeformat('%B %d, %Y') }}</p>
+                  </div>
+                  <div class="card-heading">
+                    <a href="{{ content.absolute_url }}">
+                      <h3>{{content.name}}</h3>
+                    </a>
+                  </div>
+                  <div class="card-decription">
+                    <p>
+                      {{ content.post_list_content|safe|striptags|truncatehtml(200, '...' , true) }}
+                    </p>
+                  </div>
+                  <div class="read-more-btn button--simple"></div>
+                </div>
+              </div>
+              </a>
+            </div>
+ 
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    {# Blog recent post List #}
+    {% set posts = blog_recent_posts('default', 3) %}
+    <section class="recent-blog-listing">
+    <div class="page-center">
+      <div class="recent-blog-list-container">
+      {% for post in posts %}
+
+        <div class="recent-list-card">
+          <a href="{{ post.absolute_url }}">
+            <div class="recent-list-card-inner">
+                <div class="image-container">
+                   <a href="{{ post.absolute_url }}">
+                   <img src="{{ post.featured_image }}" alt="{{post.name}}">
+                  </a>
+                </div>
+                <div class="recent-card-heading">
+                  <a href="{{ post.absolute_url }}">
+                    <h3 class="small">{{post.name}}</h3>
+                  </a>
+                </div>
+                <div class="recent-tag-content">
+                {% for topic in post.topic_list %}
+               
+                <a
+                  class="recent-topic-link"
+                  href="{{ blog_tag_url(group.id, topic.slug) }}"
+                >
+                  {{ topic.name }}
+                </a>
+              {% if not loop.last %}, {% endif %}
+
+             {% endfor %}
+              </div>
+                <div class="recent-card-decription">
+                  <p>
+                    {{
+                    post.post_list_content|safe|striptags|truncatehtml(200,
+                    '...' , true) }}
+                  </p>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% endif %}
+  </main>
+  {% endblock body %}
+  
