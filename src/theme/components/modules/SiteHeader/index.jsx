@@ -13,20 +13,18 @@ const MOBILE_BREAKPOINT_NO_LANG_SWITCHER = '1100px';
 const MOBILE_BREAKPOINT_WITH_LANG_SWITCHER = '1215px';
 
 const SiteHeader = styled.div`
-   width: 100%;
+  width: 100%;
   height: auto;
   background-color: var(--header_bg_color);
   position: relative;
   z-index: 10;
   padding-block: 24px;
   border-bottom: var(--header_border);
-
-  
 `;
 
 const SiteHeaderContainer = styled.div`
   max-width: var(--container_width);
-      padding: 0 15px;
+  padding: 0 15px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -45,9 +43,9 @@ const MainNav = styled.div`
   justify-content: center;
 
   .menu {
-    display: flex; 
-    align-items: center; 
-    margin: 0px;    
+    display: flex;
+    align-items: center;
+    margin: 0px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -58,24 +56,23 @@ const MainNav = styled.div`
       margin: 0;
       min-width: 210px;
     }
-      .menu--has-children {
-          position: relative;
-      }
-      gap: 12px;
 
-      @media (min-width: 800px) {
-        gap: 16px;
-      }
-
-      @media (min-width: 900px) {
-        gap: 32px;
-      }
+    .menu--has-children {
+      position: relative;
     }
 
-  li {
-    border-color: ${({ $navBarBackgroundColor }) => $navBarBackgroundColor};
-    
+    gap: 12px;
 
+    @media (min-width: 800px) {
+      gap: 16px;
+    }
+
+    @media (min-width: 900px) {
+      gap: 32px;
+    }
+  }
+
+  li {
     a {
       font-family: var(--header_primary_nav_font);
       font-weight: var(--header_primary_nav_font_weight);
@@ -92,6 +89,7 @@ const MainNav = styled.div`
       color: var(--header_primary_nav_font_hover_color);
       text-decoration: none;
     }
+
     a:focus {
       font-family: var(--header_primary_nav_font_active);
       font-weight: var(--header_primary_nav_font_active_weight);
@@ -107,12 +105,12 @@ const MainNav = styled.div`
     }
 
     .menu__arrow {
-          pointer-events: none;
-        position: relative;
-        right: 12px;
-        margin: 0;
-        display: inline-flex;
-        transform: translateY(0%) rotate(90deg);
+      pointer-events: none;
+      position: relative;
+      right: 12px;
+      margin: 0;
+      display: inline-flex;
+      transform: translateY(0%) rotate(90deg);
 
       .menu__arrow-path {
         fill: ${({ $menuTextColor }) => $menuTextColor};
@@ -125,7 +123,6 @@ const MainNav = styled.div`
     border-color: ${({ $menuAccentColor }) => $menuAccentColor};
   }
 
-  // All submenus and hover element
   .menu__menu-item-link-container {
     background-color: ${({ $navBarBackgroundColor }) => $navBarBackgroundColor};
   }
@@ -143,13 +140,6 @@ const MainNav = styled.div`
       filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.05));
     }
 
-    > .menu__menu-item-link-container {
-      > .menu__arrow {
-        
-      }
-    }
-
-    // Adjust the behavior of the right most flyouts
     @media (max-width: 1100px) {
       &:last-of-type {
         > ul {
@@ -168,9 +158,6 @@ const MainNav = styled.div`
   @media (max-width: ${props => props.$mobileBreakpoint}) {
     display: none;
   }
-
-
-  
 `;
 
 const ButtonContainer = styled.div`
@@ -184,7 +171,8 @@ const ButtonContainer = styled.div`
 `;
 
 const MobileMenuContainer = styled.div`
-display: none;
+  display: none;
+
   @media (max-width: ${props => props.$mobileBreakpoint}) {
     display: block;
   }
@@ -193,6 +181,17 @@ display: none;
 const LogoButtonContainer = styled.div`
   flex: 0 0 auto;
   margin-right: auto;
+`;
+
+const LanguageSwitcherWrapper = styled.div`
+  select {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+  }
 `;
 
 export const Component = (props) => {
@@ -208,7 +207,7 @@ export const Component = (props) => {
     groupButton,
     styles,
   } = props;
-// logInfo(props)
+
   const {
     showButton,
     buttonContentText: buttonText,
@@ -238,8 +237,6 @@ export const Component = (props) => {
 
   const mobileBreakpoint = showLanguageSwitcher ? MOBILE_BREAKPOINT_WITH_LANG_SWITCHER : MOBILE_BREAKPOINT_NO_LANG_SWITCHER;
 
-
-  // logInfo(props)
   return (
     <StyledComponentsRegistry>
       <SiteHeader className="site-header" $navBarBackgroundColor={menuBackgroundColor} $mobileBreakpoint={mobileBreakpoint}>
@@ -254,6 +251,7 @@ export const Component = (props) => {
                 logoLink={logoLink}
               />
             </LogoButtonContainer>
+
             <MainNav
               $navBarBackgroundColor={menuBackgroundColor}
               $menuAccentColor={menuAccentColor}
@@ -272,12 +270,29 @@ export const Component = (props) => {
                 flyouts={true}
                 wrapperStyle={{ flex: '1 0 100%' }}
                 additionalClassArray={['header__main-nav-menu']}
-
               />
             </MainNav>
 
-            {/* showLanguageSwitcher */}
-            
+            {showLanguageSwitcher && (
+              <LanguageSwitcherWrapper>
+                <select
+                  onChange={(e) => {
+                    const selected = translations.find(
+                      (lang) => lang.language === e.target.value
+                    );
+                    if (selected) window.location.href = selected.href;
+                  }}
+                  defaultValue={translations.find((lang) => lang.isCurrent).language}
+                >
+                  {translations.map((lang) => (
+                    <option key={lang.language} value={lang.language}>
+                      {lang.language}
+                    </option>
+                  ))}
+                </select>
+              </LanguageSwitcherWrapper>
+            )}
+
             {buttonContentType && (
               <ButtonContainer className="header__button-container">
                 <Button
