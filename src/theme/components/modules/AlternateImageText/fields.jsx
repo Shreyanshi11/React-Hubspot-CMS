@@ -19,20 +19,20 @@ import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 const sectionButtonFieldVisibility = {
     boolean_operator: 'OR',
     criteria: [{
-        controlling_field_path: 'groupButtonContent.sectionButton.showButton',
+        controlling_field_path: 'groupButtonContent.showButton',
         controlling_value_regex: 'true',
         operator: 'EQUAL',
     }]
 }
 
 const matchSectionButtonType = {
-    controlling_field_path: 'groupButtonContent.sectionButton.buttonContentType',
+    controlling_field_path: 'groupButtonContent.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchSectionCtaType = {
-    controlling_field_path: 'groupButtonContent.sectionButton.buttonContentType',
+    controlling_field_path: 'groupButtonContent.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -52,7 +52,7 @@ const sectionIconTypeVisibility = {
     criteria: [
         matchSectionButtonType,
         {
-            controlling_field_path: 'groupButtonContent.sectionButton.buttonContentShowIcon',
+            controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -60,13 +60,13 @@ const sectionIconTypeVisibility = {
 };
 
 const matchButtonType = {
-    controlling_field_path: 'add_image_text.blockButton.buttonContentType',
+    controlling_field_path: 'add_image_text.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-    controlling_field_path: 'add_image_text.blockButton.buttonContentType',
+    controlling_field_path: 'add_image_text.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -86,7 +86,7 @@ const iconTypeVisibility = {
     criteria: [
         matchButtonType,
         {
-            controlling_field_path: 'add_image_text.blockButton.buttonContentShowIcon',
+            controlling_field_path: 'add_image_text.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
