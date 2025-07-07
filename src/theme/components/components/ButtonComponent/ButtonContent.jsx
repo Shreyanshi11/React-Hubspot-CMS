@@ -4,13 +4,13 @@ import {
   IconField,
   ChoiceField,
   BooleanField,
-  
+
   CtaField,
 } from '@hubspot/cms-components/fields';
 
 
 export default function ButtonContent(props) {
-  const { 
+  const {
     textDefault = 'Learn more',
     linkDefault = {
       open_in_new_tab: true,
@@ -20,7 +20,7 @@ export default function ButtonContent(props) {
     },
     iconPositionDefault = 'right',
     buttonVisibility = null,
-    ctaVisibility= null,
+    ctaVisibility = null,
     iconVisibility = null
   } = props;
 
@@ -73,16 +73,16 @@ export default function ButtonContent(props) {
       <BooleanField
         label="Show icon"
         name="buttonContentShowIcon"
-        id="buttonContentShowIcon"
+        // id="buttonContentShowIcon"
         display="toggle"
         default={false}
-       visibilityRules='ADVANCED'
+        visibilityRules='ADVANCED'
         advancedVisibility={buttonVisibility}
       />
       <IconField
         label="Icon"
         name="buttonContentIcon"
-        id="buttonContentIcon"
+        // id="buttonContentIcon"
         // visibility={{
         //   controlling_field: 'buttonContentShowIcon',
         //   controlling_value_regex: 'true',

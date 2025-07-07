@@ -30,7 +30,7 @@ export function Component(props) {
             buttonContentLink: link,
             buttonContentShowIcon: showIcon,
             buttonContentIconPosition: iconPosition,
-            buttonContentType
+            buttonContentType : contentType,
         },
         add_image_text = [],
     } = props;
@@ -99,11 +99,11 @@ export function Component(props) {
                                 href={getLinkFieldHref(link)}
                                 rel={getLinkFieldRel(link)}
                                 target={getLinkFieldTarget(link)}
-                                showIcon={groupButtonContent.buttonContentShowIcon}
-                                iconFieldPath={groupButtonContent.buttonContentIcon}
+                                showIcon={showIcon}
+                                iconFieldPath='groupButtonContent.buttonContentIcon'
                                 iconPosition={iconPosition}
                                 ctaFieldpath={`groupButtonContent.ctaField`}
-                                buttonType={buttonContentType}
+                                buttonType={contentType}
                             >{text}</Button>}
                         </div>
                     </div>
