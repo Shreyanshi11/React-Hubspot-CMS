@@ -17,14 +17,14 @@ export function Component(props) {
         groupStyle: {
             headingStyleVariant,
             headingStyleColor,
-            groupButton: {
+            groupButtonStyle: {
                 buttonStyleSize,
                 buttonStyleVariant,
             }
         },
         headingAndTextHeadingLevel,
         headingAndTextHeading,
-        groupButton: {
+        groupButtonContent: {
             showButton,
             buttonContentText: text,
             buttonContentLink: link,
@@ -82,7 +82,7 @@ export function Component(props) {
                                                 rel={getLinkFieldRel(item.buttonContentLink)}
                                                 target={getLinkFieldTarget(item.buttonContentLink)}
                                                 showIcon={item.buttonContentShowIcon}
-                                                iconFieldPath={`add_image_text[${index}].buttonContentIcon`}
+                                                iconFieldPath={`add_image_text[${index}].addImageTextButton.buttonContentIcon`}
                                                 iconPosition={item.buttonContentIconPosition}
                                                 ctaFieldpath={`add_image_text[${index}].ctaField`}
                                                 buttonType={item.buttonContentType}
@@ -100,7 +100,7 @@ export function Component(props) {
                                 rel={getLinkFieldRel(link)}
                                 target={getLinkFieldTarget(link)}
                                 showIcon={showIcon}
-                                iconFieldPath='groupButton.buttonContentIcon'
+                                iconFieldPath='groupButton.groupButtonPage.buttonContentIcon'
                                 iconPosition={iconPosition}
                                 ctaFieldpath={`groupButton.ctaField`}
                                 buttonType={buttonContentType}
