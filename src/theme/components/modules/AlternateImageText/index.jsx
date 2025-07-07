@@ -99,8 +99,8 @@ export function Component(props) {
                                 href={getLinkFieldHref(link)}
                                 rel={getLinkFieldRel(link)}
                                 target={getLinkFieldTarget(link)}
-                                showIcon={showIcon}
-                                iconFieldPath='groupButtonContent.buttonContentIcon'
+                                showIcon={groupButtonContent.buttonContentShowIcon}
+                                iconFieldPath={groupButtonContent.buttonContentIcon}
                                 iconPosition={iconPosition}
                                 ctaFieldpath={`groupButtonContent.ctaField`}
                                 buttonType={buttonContentType}
