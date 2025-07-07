@@ -24,12 +24,12 @@ export function Component(props) {
     headingAndTextHeadingLevel,
     headingAndTextHeading,
     groupButtonContent: {
-      showButton,
-      buttonContentText: text,
-      buttonContentLink: link,
-      buttonContentShowIcon: showIcon,
-      buttonContentIconPosition: iconPosition,
-      buttonContentType
+      group_buttonContentText: text,
+      group_buttonContentLink: link,
+      group_buttonContentShowIcon: showIcon,
+      group_buttonContentIconPosition: iconPosition,
+      group_buttonContentType: buttonContentType,
+      showButton
     },
     add_image_text = [],
   } = props;
@@ -76,21 +76,21 @@ export function Component(props) {
                   <div className={Styles.paragraph_text}>
                     <RichText fieldPath={`add_image_text[${index}].content`} />
                   </div>
-                  {item.buttonContentText && (
+                  {item.repeater_buttonContentText && (
                     <div className={Styles.button_content}>
                       <Button
                         buttonSize={item.buttonStyleSize}
                         buttonStyle={item.buttonStyleVariant}
-                        href={getLinkFieldHref(item.buttonContentLink)}
-                        rel={getLinkFieldRel(item.buttonContentLink)}
-                        target={getLinkFieldTarget(item.buttonContentLink)}
-                        showIcon={item.buttonContentShowIcon}
-                        iconFieldPath={`add_image_text[${index}].repeater.buttonContentIcon`}
-                        iconPosition={item.buttonContentIconPosition}
-                        ctaFieldpath={`add_image_text[${index}].repeater.ctaField`}
-                        buttonType={item.buttonContentType}
+                        href={getLinkFieldHref(item.repeater_buttonContentLink)}
+                        rel={getLinkFieldRel(item.repeater_buttonContentLink)}
+                        target={getLinkFieldTarget(item.repeater_buttonContentLink)}
+                        showIcon={item.repeater_buttonContentShowIcon}
+                        iconFieldPath={`add_image_text[${index}].repeater_buttonContentIcon`}
+                        iconPosition={item.repeater_buttonContentIconPosition}
+                        ctaFieldpath={`add_image_text[${index}].repeater_ctaField`}
+                        buttonType={item.repeater_buttonContentType}
                       >
-                        {item.buttonContentText}
+                        {item.repeater_buttonContentText}
                       </Button>
                     </div>
                   )}
@@ -109,9 +109,9 @@ export function Component(props) {
                 rel={getLinkFieldRel(link)}
                 target={getLinkFieldTarget(link)}
                 showIcon={showIcon}
-                iconFieldPath="group.groupButtonContent.buttonContentIcon"
+                iconFieldPath="groupButtonContent.group_buttonContentIcon"
                 iconPosition={iconPosition}
-                ctaFieldpath="group.groupButtonContent.ctaField"
+                ctaFieldpath="groupButtonContent.group_ctaField"
                 buttonType={buttonContentType}
               >
                 {text}
