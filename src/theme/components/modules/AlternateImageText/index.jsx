@@ -17,21 +17,21 @@ export function Component(props) {
         groupStyle: {
             headingStyleVariant,
             headingStyleColor,
-            // groupButtonStyle: {
-            //     buttonStyleSize,
-            //     buttonStyleVariant,
-            // }
+            groupButtonStyle: {
+                buttonStyleSize,
+                buttonStyleVariant,
+            }
         },
         headingAndTextHeadingLevel,
         headingAndTextHeading,
-        // groupButtonContent: {
-        //     showButton,
-        //     buttonContentText: text,
-        //     buttonContentLink: link,
-        //     buttonContentShowIcon: showIcon,
-        //     buttonContentIconPosition: iconPosition,
-        //     buttonContentType : contentType,
-        // },
+        groupButtonContent: {
+            showButton,
+            buttonContentText: text,
+            buttonContentLink: link,
+            buttonContentShowIcon: showIcon,
+            buttonContentIconPosition: iconPosition,
+            buttonContentType : contentType,
+        },
         add_image_text = [],
     } = props;
 
@@ -92,7 +92,7 @@ export function Component(props) {
                                 </div>
                             ))}
                         </div>
-                        {/* <div className={Styles.button_content}>
+                        <div className={Styles.button_content}>
                             {showButton && <Button
                                 buttonSize={buttonStyleSize}
                                 buttonStyle={buttonStyleVariant}
@@ -105,7 +105,7 @@ export function Component(props) {
                                 ctaFieldpath={`groupButtonContent.ctaField`}
                                 buttonType={contentType}
                             >{text}</Button>}
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </ResponsiveSpacingWrapper>
