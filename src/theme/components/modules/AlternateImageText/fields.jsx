@@ -108,7 +108,7 @@ export const fields = (
             </FieldGroup>
             <CommonStylesSpacingFields />
         </FieldGroup>
-
+        <HeadingContent />
         <FieldGroup
             label='Button Section'
             name='groupButtonContent'
