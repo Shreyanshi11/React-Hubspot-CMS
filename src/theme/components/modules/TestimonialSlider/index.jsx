@@ -2,7 +2,7 @@ import { logInfo, RichText, Island } from "@hubspot/cms-components";
 import Styles from "../TestimonialSlider/testimonial_slider.module.css";
 import ResponsiveSpacingWrapper from "../../components/SpacingStyleComponent/ResponsiveSpacingWrapper";
 import HeadingComponent from "../../components/HeadingComponent/HeadingComponent";
-import TestimonialBlock from "../../islands/TestimonialSlider.jsx";
+import TestimonialBlock from "../../islands/TestimonialSlider?island";
 
 
 export function Component(props) {
