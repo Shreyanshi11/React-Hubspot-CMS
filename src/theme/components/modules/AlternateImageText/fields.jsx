@@ -9,20 +9,20 @@ import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 const sectionButtonFieldVisibility = {
     boolean_operator: 'OR',
     criteria: [{
-        controlling_field_path: 'groupButton.showButton',
+        controlling_field_path: 'groupButtonContent.showButton',
         controlling_value_regex: 'true',
         operator: 'EQUAL',
     }]
 }
 
 const matchSectionButtonType = {
-    controlling_field_path: 'groupButton.buttonContentType',
+    controlling_field_path: 'groupButtonContent.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchSectionCtaType = {
-    controlling_field_path: 'groupButton.buttonContentType',
+    controlling_field_path: 'groupButtonContent.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -42,7 +42,7 @@ const sectionIconTypeVisibility = {
     criteria: [
         matchSectionButtonType,
         {
-            controlling_field_path: 'groupButton.buttonContentShowIcon',
+            controlling_field_path: 'groupButtonContent.groupButtonPage.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -77,7 +77,7 @@ const iconTypeVisibility = {
     criteria: [
         matchButtonType,
         {
-            controlling_field_path: 'add_image_text.buttonContentShowIcon',
+            controlling_field_path: 'add_image_text.addImageTextButton.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -90,7 +90,7 @@ export const fields = (
             <HeadingStyles headingStyleAsDefault="h2" />
             <FieldGroup
                 label='Button Section'
-                name='groupButton'
+                name='groupButtonStyle'
                 display='inline'
             >
                 <ButtonStyle
@@ -106,7 +106,7 @@ export const fields = (
 
         <FieldGroup
             label='Button Section'
-            name='groupButton'
+            name='groupButtonContent'
             display='inline'
         >
             <BooleanField
@@ -116,6 +116,7 @@ export const fields = (
                 default={true}
             />
             <ButtonContent
+                namePrefix='groupButtonPage'
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
@@ -141,6 +142,7 @@ export const fields = (
                 showLoading={true}
             />
             <ButtonContent
+                namePrefix="addImageTextButton"
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
