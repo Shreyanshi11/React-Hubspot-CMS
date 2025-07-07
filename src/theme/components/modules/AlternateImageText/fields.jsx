@@ -16,48 +16,48 @@ import ButtonContent from "../../components/ButtonComponent/ButtonContent";
 import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 
 // Visibility Conditions
-const sectionButtonFieldVisibility = {
-    boolean_operator: 'OR',
-    criteria: [{
-        controlling_field_path: 'groupButtonContent.showButton',
-        controlling_value_regex: 'true',
-        operator: 'EQUAL',
-    }]
-}
+// const sectionButtonFieldVisibility = {
+//     boolean_operator: 'OR',
+//     criteria: [{
+//         controlling_field_path: 'groupButtonContent.showButton',
+//         controlling_value_regex: 'true',
+//         operator: 'EQUAL',
+//     }]
+// }
 
-const matchSectionButtonType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
-    operator: 'MATCHES_REGEX',
-    controlling_value_regex: '^button$'
-};
+// const matchSectionButtonType = {
+//     controlling_field_path: 'groupButtonContent.buttonContentType',
+//     operator: 'MATCHES_REGEX',
+//     controlling_value_regex: '^button$'
+// };
 
-const matchSectionCtaType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
-    operator: 'MATCHES_REGEX',
-    controlling_value_regex: '^cta$'
-};
+// const matchSectionCtaType = {
+//     controlling_field_path: 'groupButtonContent.buttonContentType',
+//     operator: 'MATCHES_REGEX',
+//     controlling_value_regex: '^cta$'
+// };
 
-const sectionButtonTypeVisibility = {
-    boolean_operator: "OR",
-    criteria: [matchSectionButtonType],
-};
+// const sectionButtonTypeVisibility = {
+//     boolean_operator: "OR",
+//     criteria: [matchSectionButtonType],
+// };
 
-const sectionCtaTypeVisibility = {
-    boolean_operator: "OR",
-    criteria: [matchSectionCtaType],
-};
+// const sectionCtaTypeVisibility = {
+//     boolean_operator: "OR",
+//     criteria: [matchSectionCtaType],
+// };
 
-const sectionIconTypeVisibility = {
-    boolean_operator: 'AND',
-    criteria: [
-        matchSectionButtonType,
-        {
-            controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
-            operator: 'MATCHES_REGEX',
-            controlling_value_regex: '^true$'
-        }
-    ]
-};
+// const sectionIconTypeVisibility = {
+//     boolean_operator: 'AND',
+//     criteria: [
+//         matchSectionButtonType,
+//         {
+//             controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
+//             operator: 'MATCHES_REGEX',
+//             controlling_value_regex: '^true$'
+//         }
+//     ]
+// };
 
 const matchButtonType = {
     controlling_field_path: 'add_image_text.buttonContentType',
@@ -98,18 +98,18 @@ export const fields = (
     <ModuleFields>
         <FieldGroup tab="STYLE" name="groupStyle" label="Style">
             <HeadingStyles headingStyleAsDefault="h2" />
-            <FieldGroup label="Button Section" name="groupButtonStyle" display="inline">
+            {/* <FieldGroup label="Button Section" name="groupButtonStyle" display="inline">
                 <ButtonStyle
                     buttonStyleDefault="primary"
                     buttonSizeDefault="medium"
                     buttonSizeVisibility={sectionButtonFieldVisibility}
                     buttonStyleVisibility={sectionButtonFieldVisibility}
                 />
-            </FieldGroup>
+            </FieldGroup> */}
             <CommonStylesSpacingFields />
         </FieldGroup>
 
-        <FieldGroup
+        {/* <FieldGroup
             label='Button Section'
             name='groupButtonContent'
             display='inline'
@@ -132,7 +132,7 @@ export const fields = (
                 iconVisibility={sectionIconTypeVisibility}
             />
 
-            </FieldGroup>
+            </FieldGroup> */}
 
 
             <RepeatedFieldGroup name="add_image_text" label="Add Image and Text">
