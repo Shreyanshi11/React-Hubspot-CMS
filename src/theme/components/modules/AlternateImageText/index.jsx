@@ -55,8 +55,8 @@ export function Component(props) {
                         </div>
                         <div className={Styles.image_text_container}>
                             {add_image_text.map((item, index) => (
-                                <div className={`${Styles.image_text_block} ${Styles[item.img_position]}`}>
-                                    <div class={Styles.image_block}>
+                                <div className={`${Styles.image_text_block} ${Styles[item.img_position]}`} key={index}>
+                                    <div className={Styles.image_block}>
                                         <RenderImage imageField={add_image_text[index]?.image} />
                                     </div>
                                     <div className={Styles.text_block}>
