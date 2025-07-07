@@ -82,7 +82,7 @@ export function Component(props) {
                                                 rel={getLinkFieldRel(item.buttonContentLink)}
                                                 target={getLinkFieldTarget(item.buttonContentLink)}
                                                 showIcon={item.buttonContentShowIcon}
-                                                iconFieldPath={`add_image_text[${index}].addImageTextButton.buttonContentIcon`}
+                                                iconFieldPath={`add_image_text[${index}].buttonContentIcon`}
                                                 iconPosition={item.buttonContentIconPosition}
                                                 ctaFieldpath={`add_image_text[${index}].ctaField`}
                                                 buttonType={item.buttonContentType}
@@ -100,9 +100,9 @@ export function Component(props) {
                                 rel={getLinkFieldRel(link)}
                                 target={getLinkFieldTarget(link)}
                                 showIcon={showIcon}
-                                iconFieldPath='groupButton.groupButtonPage.buttonContentIcon'
+                                iconFieldPath='groupButtonContent.buttonContentIcon'
                                 iconPosition={iconPosition}
-                                ctaFieldpath={`groupButton.ctaField`}
+                                ctaFieldpath={`groupButtonContent.ctaField`}
                                 buttonType={buttonContentType}
                             >{text}</Button>}
                         </div>

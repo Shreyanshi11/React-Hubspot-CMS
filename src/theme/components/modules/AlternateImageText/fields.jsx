@@ -42,7 +42,7 @@ const sectionIconTypeVisibility = {
     criteria: [
         matchSectionButtonType,
         {
-            controlling_field_path: 'groupButtonContent.groupButtonPage.buttonContentShowIcon',
+            controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -77,7 +77,7 @@ const iconTypeVisibility = {
     criteria: [
         matchButtonType,
         {
-            controlling_field_path: 'add_image_text.addImageTextButton.buttonContentShowIcon',
+            controlling_field_path: 'add_image_text.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -116,7 +116,6 @@ export const fields = (
                 default={true}
             />
             <ButtonContent
-                namePrefix='groupButtonPage'
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
@@ -142,7 +141,6 @@ export const fields = (
                 showLoading={true}
             />
             <ButtonContent
-                namePrefix="addImageTextButton"
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
