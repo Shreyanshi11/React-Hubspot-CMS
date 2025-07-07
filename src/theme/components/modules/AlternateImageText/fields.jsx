@@ -6,7 +6,6 @@ import {
   ImageField,
   RichTextField,
   ChoiceField,
-  BooleanField,
 } from "@hubspot/cms-components/fields";
 
 import CommonStylesSpacingFields from "../../components/SpacingStyleComponent/CommonStylesSpacingFields";
@@ -16,48 +15,38 @@ import ButtonContent from "../../components/ButtonComponent/ButtonContent";
 import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 
 // Visibility Conditions
-const sectionButtonFieldVisibility = {
-    boolean_operator: 'OR',
-    criteria: [{
-        controlling_field_path: 'groupButtonContent.showButton',
-        controlling_value_regex: 'true',
-        operator: 'EQUAL',
-    }]
-}
+// const sectionButtonFieldVisibility = {
+//     boolean_operator: 'OR',
+//     criteria: [{
+//         controlling_field_path: 'groupButtonContent.showButton',
+//         controlling_value_regex: 'true',
+//         operator: 'EQUAL',
+//     }]
+// }
 
-const matchSectionButtonType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
-    operator: 'MATCHES_REGEX',
-    controlling_value_regex: '^button$'
-};
+// const matchSectionButtonType = {
+//     controlling_field_path: 'groupButtonContent.buttonContentType',
+//     operator: 'MATCHES_REGEX',
+//     controlling_value_regex: '^button$'
+// };
 
-const matchSectionCtaType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
-    operator: 'MATCHES_REGEX',
-    controlling_value_regex: '^cta$'
-};
+// const matchSectionCtaType = {
+//     controlling_field_path: 'groupButtonContent.buttonContentType',
+//     operator: 'MATCHES_REGEX',
+//     controlling_value_regex: '^cta$'
+// };
 
-const sectionButtonTypeVisibility = {
-  boolean_operator: "OR",
-  criteria: [matchSectionButtonType],
-};
-
-const sectionCtaTypeVisibility = {
-  boolean_operator: "OR",
-  criteria: [matchSectionCtaType],
-};
-
-const sectionIconTypeVisibility = {
-    boolean_operator: 'AND',
-    criteria: [
-        matchSectionButtonType,
-        {
-            controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
-            operator: 'MATCHES_REGEX',
-            controlling_value_regex: '^true$'
-        }
-    ]
-};
+// const sectionIconTypeVisibility = {
+//     boolean_operator: 'AND',
+//     criteria: [
+//         matchSectionButtonType,
+//         {
+//             controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
+//             operator: 'MATCHES_REGEX',
+//             controlling_value_regex: '^true$'
+//         }
+//     ]
+// };
 
 const matchButtonType = {
     controlling_field_path: 'add_image_text.buttonContentType',
@@ -109,7 +98,7 @@ export const fields = (
       <CommonStylesSpacingFields />
     </FieldGroup>
 
-        <FieldGroup
+        {/* <FieldGroup
             label='Button Section'
             name='groupButtonContent'
             display='inline'
@@ -133,7 +122,7 @@ export const fields = (
             />
 
     
-    </FieldGroup>
+    </FieldGroup>*/}
 
 
             <RepeatedFieldGroup name="add_image_text" label="Add Image and Text">
