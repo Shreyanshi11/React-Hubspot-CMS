@@ -1,11 +1,21 @@
 import React from "react";
-import { FieldGroup, ModuleFields, RepeatedFieldGroup, ImageField, RichTextField, ChoiceField, BooleanField } from "@hubspot/cms-components/fields";
+import {
+  FieldGroup,
+  ModuleFields,
+  RepeatedFieldGroup,
+  ImageField,
+  RichTextField,
+  ChoiceField,
+  BooleanField,
+} from "@hubspot/cms-components/fields";
+
 import CommonStylesSpacingFields from "../../components/SpacingStyleComponent/CommonStylesSpacingFields";
 import HeadingContent from "../../components/HeadingComponent/HeadingContent";
 import HeadingStyles from "../../components/HeadingComponent/HeadingStyle";
 import ButtonContent from "../../components/ButtonComponent/ButtonContent";
 import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 
+// Visibility Conditions
 const sectionButtonFieldVisibility = {
     boolean_operator: 'OR',
     criteria: [{
@@ -28,13 +38,13 @@ const matchSectionCtaType = {
 };
 
 const sectionButtonTypeVisibility = {
-    boolean_operator: 'OR',
-    criteria: [matchSectionButtonType]
+  boolean_operator: "OR",
+  criteria: [matchSectionButtonType],
 };
 
 const sectionCtaTypeVisibility = {
-    boolean_operator: 'OR',
-    criteria: [matchSectionCtaType]
+  boolean_operator: "OR",
+  criteria: [matchSectionCtaType],
 };
 
 const sectionIconTypeVisibility = {
@@ -49,7 +59,6 @@ const sectionIconTypeVisibility = {
     ]
 };
 
-
 const matchButtonType = {
     controlling_field_path: 'add_image_text.blockButton.buttonContentType',
     operator: 'MATCHES_REGEX',
@@ -63,13 +72,13 @@ const matchCtaType = {
 };
 
 const buttonTypeVisibility = {
-    boolean_operator: 'OR',
-    criteria: [matchButtonType]
+  boolean_operator: "OR",
+  criteria: [matchButtonType],
 };
 
 const ctaTypeVisibility = {
-    boolean_operator: 'OR',
-    criteria: [matchCtaType]
+  boolean_operator: "OR",
+  criteria: [matchCtaType],
 };
 
 const iconTypeVisibility = {
@@ -85,24 +94,19 @@ const iconTypeVisibility = {
 };
 
 export const fields = (
-    <ModuleFields>
-        <FieldGroup tab="STYLE" name="groupStyle" label="Style">
-            <HeadingStyles headingStyleAsDefault="h2" />
-            <FieldGroup
-                label='Button Section'
-                name='groupButtonStyle'
-                display='inline'
-            >
-                <ButtonStyle
-                    buttonStyleDefault='primary'
-                    buttonSizeDefault='medium'
-                    buttonSizeVisibility={sectionButtonFieldVisibility}
-                    buttonStyleVisibility={sectionButtonFieldVisibility}
-                />
-            </FieldGroup>
-            <CommonStylesSpacingFields />
-        </FieldGroup>
-        <HeadingContent />
+  <ModuleFields>
+    <FieldGroup tab="STYLE" name="groupStyle" label="Style">
+      <HeadingStyles headingStyleAsDefault="h2" />
+      <FieldGroup label="Button Section" name="groupButtonStyle" display="inline">
+        <ButtonStyle
+          buttonStyleDefault="primary"
+          buttonSizeDefault="medium"
+          buttonSizeVisibility={sectionButtonFieldVisibility}
+          buttonStyleVisibility={sectionButtonFieldVisibility}
+        />
+      </FieldGroup>
+      <CommonStylesSpacingFields />
+    </FieldGroup>
 
         <FieldGroup
             label='Button Section'
@@ -127,7 +131,8 @@ export const fields = (
                 iconVisibility={sectionIconTypeVisibility}
             />
 
-        </FieldGroup>
+    
+    </FieldGroup>
 
 
         <RepeatedFieldGroup name="add_image_text" label="Add Image and Text">
