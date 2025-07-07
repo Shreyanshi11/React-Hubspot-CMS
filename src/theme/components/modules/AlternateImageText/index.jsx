@@ -75,7 +75,7 @@ export function Component(props) {
                                         </div>
 
                                         <div className={Styles.button_content}>
-                                            {showButton && <Button
+                                            <Button
                                                 buttonSize={item.buttonStyleSize}
                                                 buttonStyle={item.buttonStyleVariant}
                                                 href={getLinkFieldHref(item.buttonContentLink)}
@@ -86,14 +86,14 @@ export function Component(props) {
                                                 iconPosition={item.buttonContentIconPosition}
                                                 ctaFieldpath={`add_image_text[${index}].ctaField`}
                                                 buttonType={item.buttonContentType}
-                                            >{item.buttonContentText}</Button>}
+                                            >{item.buttonContentText}</Button>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className={Styles.button_content}>
-                            <Button
+                            {showButton && <Button
                                 buttonSize={buttonStyleSize}
                                 buttonStyle={buttonStyleVariant}
                                 href={getLinkFieldHref(link)}
@@ -104,7 +104,7 @@ export function Component(props) {
                                 iconPosition={iconPosition}
                                 ctaFieldpath={`groupButton.ctaField`}
                                 buttonType={buttonContentType}
-                            >{text}</Button>
+                            >{text}</Button>}
                         </div>
                     </div>
                 </div>
