@@ -9,20 +9,20 @@ import ButtonStyle from "../../components/ButtonComponent/ButtonStyle";
 const sectionButtonFieldVisibility = {
     boolean_operator: 'OR',
     criteria: [{
-        controlling_field_path: 'groupButtonContent.showButton',
+        controlling_field_path: 'groupButtonContent.sectionButton.showButton',
         controlling_value_regex: 'true',
         operator: 'EQUAL',
     }]
 }
 
 const matchSectionButtonType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
+    controlling_field_path: 'groupButtonContent.sectionButton.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchSectionCtaType = {
-    controlling_field_path: 'groupButtonContent.buttonContentType',
+    controlling_field_path: 'groupButtonContent.sectionButton.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -42,7 +42,7 @@ const sectionIconTypeVisibility = {
     criteria: [
         matchSectionButtonType,
         {
-            controlling_field_path: 'groupButtonContent.buttonContentShowIcon',
+            controlling_field_path: 'groupButtonContent.sectionButton.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -51,13 +51,13 @@ const sectionIconTypeVisibility = {
 
 
 const matchButtonType = {
-    controlling_field_path: 'add_image_text.buttonContentType',
+    controlling_field_path: 'add_image_text.blockButton.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-    controlling_field_path: 'add_image_text.buttonContentType',
+    controlling_field_path: 'add_image_text.blockButton.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -77,7 +77,7 @@ const iconTypeVisibility = {
     criteria: [
         matchButtonType,
         {
-            controlling_field_path: 'add_image_text.buttonContentShowIcon',
+            controlling_field_path: 'add_image_text.blockButton.buttonContentShowIcon',
             operator: 'MATCHES_REGEX',
             controlling_value_regex: '^true$'
         }
@@ -116,6 +116,7 @@ export const fields = (
                 default={true}
             />
             <ButtonContent
+            namePrefix="sectionButton"
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
@@ -141,6 +142,7 @@ export const fields = (
                 showLoading={true}
             />
             <ButtonContent
+            namePrefix="blockButton"
                 textDefault='Learn more'
                 linkDefault={{
                     open_in_new_tab: true,
