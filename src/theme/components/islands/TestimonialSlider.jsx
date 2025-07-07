@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Styles from '../modules/TestimonialSlider/testimonial_slider.module.css';
 import $ from 'jquery';
-import 'jquery-match-height';
 import RenderImage from '../components/ImageComponent/imageRenderer.jsx';
 import { logInfo, RichText } from '@hubspot/cms-components';
 import Slider from 'react-slick';
@@ -18,40 +17,8 @@ export default function TestimonialBlock({ add_testimonial }) {
         arrows: true,
         autoplay: true,
         autoplaySpeed: 2000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        // centerMode: true,
-        // centerPadding: '60px',
-        afterChange: index => setCurrentSlide(index),
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToShow: 1,
-                    // centerMode: true,
-                    // centerPadding: '40px',
-                }
-            },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToShow: 1,
-                    // centerMode: true,
-                    // centerPadding: '40px',
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToShow: 1,
-                    // centerMode: true,
-                    // centerPadding: '40px',
-                }
-            }
-        ]
+        slidesToShow: 1,
+        slidesToScroll: 1,        
     };
 
     return (
