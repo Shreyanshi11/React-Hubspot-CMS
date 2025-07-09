@@ -5,7 +5,7 @@ import RenderImage from '../components/ImageComponent/imageRenderer.jsx';
 import { logInfo, RichText } from '@hubspot/cms-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 
 export default function TestimonialBlock({ add_testimonial }) {
