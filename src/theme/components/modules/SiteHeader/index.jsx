@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 import MobileMenuIsland from './islands/MobileMenuIsland.jsx?island';
 import MobileLogoBackButton from './islands/MobileLogoBackButton.jsx?island';
 import StyledIsland from '../../components/StyledComponentsRegistry/StyledIsland.jsx';
-import { logInfo, SharedIslandState, useLanguageVariants } from '@hubspot/cms-components';
+import { SharedIslandState, useLanguageVariants } from '@hubspot/cms-components';
 import { getLinkFieldHref, getLinkFieldRel, getLinkFieldTarget } from '../../utils/content-fields.jsx';
 import "./SiteHeader.css";
 
@@ -28,7 +28,6 @@ const SiteHeaderContainer = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
@@ -38,37 +37,31 @@ const SiteHeaderContainer = styled.div`
 const MainNav = styled.div`
   flex: 1 1 auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 
   .menu {
     display: flex;
     align-items: center;
-    margin: 0px;
     list-style: none;
     padding: 0;
-    margin: 0;
-
-    .menu__submenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      min-width: 210px;
-    }
-
-    .menu--has-children {
-      position: relative;
-    }
-
     gap: 12px;
 
     @media (min-width: 800px) {
       gap: 16px;
     }
-
     @media (min-width: 900px) {
       gap: 32px;
+    }
+
+    .menu__submenu {
+      list-style: none;
+      padding: 0;
+      min-width: 210px;
+    }
+
+    .menu--has-children {
+      position: relative;
     }
   }
 
@@ -87,7 +80,6 @@ const MainNav = styled.div`
       font-family: var(--header_primary_nav_font_hover);
       font-weight: var(--header_primary_nav_font_hover_weight);
       color: var(--header_primary_nav_font_hover_color);
-      text-decoration: none;
     }
 
     a:focus {
@@ -96,20 +88,16 @@ const MainNav = styled.div`
       color: var(--header_primary_nav_font_active_color);
     }
 
-    &[data-menuitem-depth='2'] {
-      .menu__arrow {
-        right: 8px;
-        display: inline-flex;
-        align-items: center;
-      }
+    &[data-menuitem-depth='2'] .menu__arrow {
+      right: 8px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .menu__arrow {
       pointer-events: none;
       position: relative;
       right: 12px;
-      margin: 0;
-      display: inline-flex;
       transform: translateY(0%) rotate(90deg);
 
       .menu__arrow-path {
@@ -118,13 +106,10 @@ const MainNav = styled.div`
     }
   }
 
-  ul {
-    background-color: ${({ $navBarBackgroundColor }) => $navBarBackgroundColor};
-    border-color: ${({ $menuAccentColor }) => $menuAccentColor};
-  }
-
+  ul,
   .menu__menu-item-link-container {
     background-color: ${({ $navBarBackgroundColor }) => $navBarBackgroundColor};
+    border-color: ${({ $menuAccentColor }) => $menuAccentColor};
   }
 
   [data-menuitem-depth='1'] {
@@ -141,15 +126,13 @@ const MainNav = styled.div`
     }
 
     @media (max-width: 1100px) {
-      &:last-of-type {
-        > ul {
-          right: 0;
-          left: initial;
+      &:last-of-type > ul {
+        right: 0;
+        left: initial;
 
-          ul {
-            left: initial;
-            right: calc(100% + 12px);
-          }
+        ul {
+          left: initial;
+          right: calc(100% + 12px);
         }
       }
     }
@@ -194,6 +177,16 @@ const LanguageSwitcherWrapper = styled.div`
   }
 `;
 
+const languageLabels = {
+  en: 'English',
+  fr: 'Français',
+  ar: 'العربية',
+  es: 'Español',
+  de: 'Deutsch',
+  zh: '中文',
+  ja: '日本語',
+};
+
 export const Component = (props) => {
   const {
     hublData: {
@@ -214,7 +207,7 @@ export const Component = (props) => {
     buttonContentLink: buttonLink,
     buttonContentShowIcon: showIcon,
     buttonContentIconPosition: iconPosition,
-    buttonContentType
+    buttonContentType,
   } = groupButton;
 
   defaultLogo.suppress_company_name = logoField.suppress_company_name;
@@ -232,6 +225,8 @@ export const Component = (props) => {
   } = styles;
 
   const translations = useLanguageVariants();
+  console.log("🌍 Translations available:", translations);
+
   const showLanguageSwitcher = translations?.length > 1;
   const langSwitcherIconFieldPath = 'globe_icon';
 
@@ -277,16 +272,14 @@ export const Component = (props) => {
               <LanguageSwitcherWrapper>
                 <select
                   onChange={(e) => {
-                    const selected = translations.find(
-                      (lang) => lang.language === e.target.value
-                    );
+                    const selected = translations.find(lang => lang.language === e.target.value);
                     if (selected) window.location.href = selected.href;
                   }}
-                  defaultValue={translations.find((lang) => lang.isCurrent).language}
+                  defaultValue={translations.find(lang => lang.isCurrent)?.language}
                 >
-                  {translations.map((lang) => (
+                  {translations.map(lang => (
                     <option key={lang.language} value={lang.language}>
-                      {lang.language}
+                      {languageLabels[lang.language] || lang.language}
                     </option>
                   ))}
                 </select>
