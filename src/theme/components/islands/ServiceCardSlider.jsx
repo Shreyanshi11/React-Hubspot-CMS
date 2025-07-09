@@ -15,40 +15,47 @@ export default function ServiceCard({ groupContent }) {
 const [currentSlide, setCurrentSlide] = useState(0);
 
 const settings = {
-  dots: true,
-  infinite: true,
-  speed: 700,
-  arrows: false,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  afterChange: index => setCurrentSlide(index),
-  customPaging: function () {
-    return '<span class="custom-dot"></span>';
-  },
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1
-      }
+dots: true,
+infinite: true,
+speed: 700,
+arrows: false,
+    autoplay: true,
+autoplaySpeed: 2000,
+slidesToShow: 3,
+slidesToScroll: 1,
+// centerMode: true,
+// centerPadding: '60px',
+afterChange: index => setCurrentSlide(index),
+responsive: [
+     {
+    breakpoint: 1024,
+    settings: {
+    slidesToShow: 2,
+    slidesToShow: 1,
+    // centerMode: true,
+    // centerPadding: '40px',
     }
-  ]
+},
+ {
+    breakpoint: 991,
+    settings: {
+    slidesToShow: 2,
+    slidesToShow: 1,
+    // centerMode: true,
+    // centerPadding: '40px',
+    }
+},
+{
+    breakpoint: 768,
+    settings: {
+    slidesToShow: 1,
+    slidesToShow: 1,
+    // centerMode: true,
+    // centerPadding: '40px',
+    }
+}
+]
 };
-
 
 return (
 <>
