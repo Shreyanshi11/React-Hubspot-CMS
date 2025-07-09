@@ -27,7 +27,7 @@ export const fields = (
         name="groupContent"
         occurrence={{
             min: 0,
-            max: 20,
+            max: 6,
             default: 3,
         }}
     >            
