@@ -7,7 +7,7 @@ export default function HubdbFilter({ language_type, language_image }) {
   // Flatten and get unique labels
   const flattenedLanguageType = language_type.flat();
   const uniqueLabels = [
-    ...new Map(flattenedLanguageType.map((item) => [item.label, item])).values()
+    ...new Map(flattenedLanguageType.map((item) => [item.label, item])).values() 
   ];
 
   // Combine image + its associated types
