@@ -225,7 +225,7 @@ export const Component = (props) => {
   } = styles;
 
   const translations = useLanguageVariants();
-  console.log("🌍 Translations available:", translations);
+  console.log("Translations available:", translations);
 
   const showLanguageSwitcher = translations?.length > 1;
   const langSwitcherIconFieldPath = 'globe_icon';
