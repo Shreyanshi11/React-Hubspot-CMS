@@ -34,9 +34,9 @@ const {
 module_id,
 showBorder,
 heading_group: {
-    headingAndTextHeadingLevel,
-    headingAndTextHeading,
-    headingStyleVariant
+headingAndTextHeadingLevel,
+headingAndTextHeading,
+headingStyleVariant
 },
 hubdb_table
 } = props;
@@ -45,35 +45,40 @@ logInfo(props, 'Hubdb Module');
 
 return (
 <>
-    <ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
-    <div className={Styles.hubdb_filter_sec}>
-        <div className="page-center">
-            
+<ResponsiveSpacingWrapper moduleId={props?.module?.module_id} fields={props?.fieldValues}>
+<div className={Styles.hubdb_filter_sec}>
+    <div className="page-center">
+        
 
-        <div className={Styles.heading_container}>
-            {showBorder && <div className='gradient-border' style={{ margin: '0 auto' , marginBottom: '10px' }}></div>}
+    <div className={Styles.heading_container}>
+        {showBorder && <div className='gradient-border' style={{ margin: '0 auto' , marginBottom: '10px' }}></div>}
+        
+        {headingAndTextHeading && (
+        <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
+        )}
+    </div>
+
+    <div className={Styles.hubdb_filter_container}>
+        <div className="image-text-container">
+        <div className="image">
             
-            {headingAndTextHeading && (
-            <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} />
-            )}
         </div>
+        <div className="text">
+                {ltype.map((text, i) => (
+<React.Fragment key={i}>
+{text.map((t, j) => (
+    <p key={j}>{t.label}</p>
+))}
+</React.Fragment>
+))}
 
-        <div className={Styles.hubdb_filter_container}>
-            <div className="image-text-container">
-            <div className="image">
-               
-            </div>
-            <div className="text">
-                    {ltype.map((text, index) => (
-                        <p>{text.label}</p>
-                    ))}
-                
-            </div>
-            </div>
+            
         </div>
         </div>
     </div>
-    </ResponsiveSpacingWrapper>
+    </div>
+</div>
+</ResponsiveSpacingWrapper>
 </>
 );
 }
