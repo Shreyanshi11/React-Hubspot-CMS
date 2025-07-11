@@ -61,7 +61,9 @@ return (
     <div className={Styles.hubdb_filter_container}>
         <div className="image-text-container">
         <div className="image">
-            <img src={image.url} alt="image" />
+             {image.map((img, i) => (
+            <img src={img.url} alt="image" />
+            ))}
         </div>
         <div className="text">
                 {ltype.map((text, i) => (
